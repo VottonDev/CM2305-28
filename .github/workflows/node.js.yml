@@ -20,16 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: PHPUnit Tests
     - uses: actions/checkout@v2
-    - uses: php-actions/composer@v5
-    - uses: php-actions/phpunit@v3
-      with:
-        php_version: 8.0
-        ssh_key: ${{ secrets.SSH_KEY }}
-        ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
-        bootstrap: vendor/autoload.php
-        configuration: ../../test/phpunit/phpunit.xml
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
@@ -38,10 +29,6 @@ jobs:
         cache-dependency-path: api/package-lock.json
     - name: Cache node modules
       uses: actions/cache@v2
-      uses: actions/upload-artifact@v2
-      with:
-        name: debug-output
-        path: output.log
       env:
           cache-name: cache-node-modules
       with:
