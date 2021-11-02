@@ -1,27 +1,5 @@
 <?php include_once 'header.php'; ?>
 
-<!--
-  <h1 class="center-header"> Register </h1>
-  <form action="includes/register.inc.php" method="POST">
-    <div class="form_item">
-    <label> Username </label>
-    <input type="text" name="username" placeholder="Username...">
-  </div>
-<br>
-<div class="form_item">
-    <label> Password </label>
-    <input type="password" name="password" placeholder="Password...">
-  </div>
-<br>
-<div class="form_item">
-    <label> Confirm Password </label>
-    <input type="password" name="confirm_password" placeholder="Confirm Password...">
-  </div>
-<br>
-    <button type="submit" name="submit">Register </button>
-  </form>
--->
-
 <div style="background-image: url('images/frontpage_map.png');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3" style="padding-top: 2%; padding-bottom: 5%;">
     <div class="container h-100">
