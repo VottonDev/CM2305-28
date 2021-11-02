@@ -30,7 +30,6 @@ jobs:
         ssh_key: ${{ secrets.SSH_KEY }}
         ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
         node-version: ${{ matrix.node-version }}
-        configuration: ../../phpunit.xml
         cache: 'npm'
         cache-dependency-path: api/package-lock.json
     - uses: actions/upload-artifact@v2
