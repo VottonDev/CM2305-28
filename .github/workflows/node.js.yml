@@ -26,9 +26,16 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
+        php_version: 8.0
+        ssh_key: ${{ secrets.SSH_KEY }}
+        ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: api/package-lock.json
+    - uses: actions/upload-artifact@v2
+      with:
+        name: debug-output
+        path: output.log
     - name: Cache node modules
       uses: actions/cache@v2
       env:
