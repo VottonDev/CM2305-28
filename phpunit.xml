@@ -2,11 +2,10 @@
 
 <phpunit
     colors="true"
-    bootstrap="bootstrap.php"
 >
     <testsuites>
         <testsuite>
-            <directory prefix="" suffix="Test.php">./website/</directory>
+            <directory prefix="" suffix="Test.php">./test/website/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
