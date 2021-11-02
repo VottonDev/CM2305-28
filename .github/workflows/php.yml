@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: php-actions/phpunit@v3
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -22,11 +21,8 @@ jobs:
       id: composer-cache
       uses: actions/cache@v2
       with:
-        php_version: 8.0
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        ssh_key: ${{ secrets.SSH_KEY }}
-        ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
         restore-keys: |
           ${{ runner.os }}-php-
 
