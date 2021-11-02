@@ -12,6 +12,6 @@
         "phpunit/phpunit": "9.3"
     },
     "scripts": {
-        "phpunit": "phpunit"
+        "phpunit": "phpunit --configuration test/website/phpunit.xml"
     }
 }
