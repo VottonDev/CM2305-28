@@ -1,6 +1,6 @@
 <?php include_once 'header.php'; ?>
 
-<div style="background-image: url('images/frontpage_map.png');">
+<div style="background-image: url('static/images/frontpage_map.png');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3" style="padding-top: 2%; padding-bottom: 5%;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
