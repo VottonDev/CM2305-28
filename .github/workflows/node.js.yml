@@ -20,8 +20,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
     - name: PHPUnit Tests
+    - uses: actions/checkout@v2
     - uses: php-actions/composer@v5
     - uses: php-actions/phpunit@v3
       with:
@@ -49,7 +49,7 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
     - name: Upload artifacts
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: debug-output
         path: output.log
