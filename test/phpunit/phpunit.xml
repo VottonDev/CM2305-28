@@ -13,7 +13,7 @@
          wait="true">
     <testsuites>
         <testsuite>
-            <directory prefix="" suffix="Test.php">../website/</directory>
+            <directory prefix="" suffix="Test.php">./website/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
