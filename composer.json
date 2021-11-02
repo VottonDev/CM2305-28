@@ -1,4 +1,12 @@
-{
+{  
+    "authors": [
+        {
+            "name": "Otto Hooper",
+            "email": "votton.hooper@gmail.com"
+        }
+    ],
+    "description": "",
+    "license": "proprietary",
     "require-dev": {
         "phpunit/phpunit": "9.3"
     },
