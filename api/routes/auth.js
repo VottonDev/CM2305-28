@@ -13,7 +13,7 @@ app.post('/register', (req, res) => {
     } else {
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(password, salt);
-        db.query('INSERT INTO users (username, password) VALUES (?, ?, ?)', [username, hash], (err) => {
+        db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err) => {
             if (err) {
                 res.send('Error with registering the account.');
             } else {
