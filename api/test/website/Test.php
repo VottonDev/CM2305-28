@@ -1,10 +1,9 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 
 final class StackTest extends TestCase
 {
+    /** @covers testPushAndPop */
     public function testPushAndPop(): void
     {
         $stack = [];
