@@ -8,4 +8,10 @@
             <directory prefix="" suffix="Test.php">./api/test/website/</directory>
         </testsuite>
     </testsuites>
+
+    <coverage>
+        <include>
+            <directory suffix=".php"></directory>
+        </include>
+    </coverage>
 </phpunit>

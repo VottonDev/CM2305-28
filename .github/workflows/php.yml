@@ -34,3 +34,8 @@ jobs:
 
     - name: Run test suite
       run: composer run-script phpunit
+
+    - name: Send code coverage report to Codecov.io
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
