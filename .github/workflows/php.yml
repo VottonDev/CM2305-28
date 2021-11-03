@@ -30,7 +30,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     - name: Run friendsofphp/php-cs-fixer
-      run: vendor/bin/php-cs-fixer fix . --dry-run --show-progress=dots --using-cache=no --verbose
+      run: vendor/bin/php-cs-fixer fix . --dry-run --show-progress=dots --using-cache=no
 
     - name: Run test suite
       run: composer run-script phpunit
