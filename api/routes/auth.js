@@ -48,21 +48,38 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-    db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+    db.query('SELECT * FROM Users WHERE username = ?', [username], (err, result) => {
         if (err) {
-            res.send('Error logging in.');
-        } else {
-            if (results.length == 0) {
-                res.send('Account not found.');
-            } else {
-                if (bcrypt.compareSync(password, results[0].password)) {
-                    req.session.user = results[0];
-                    res.send('Succesfully logged in.');
-                } else {
-                    res.send('Password is incorrect.');
-                }
-            }
+            return res.send({
+                success: false,
+                message: 'Error logging in'
+            });
         }
+        if (result.length == 0) {
+            return res.send({
+                success: false,
+                message: 'User does not exist'
+            });
+        }
+        bcrypt.compare(password, result[0].password, (err, valid_password) => {
+            if (err) {
+                return res.send({
+                    success: false,
+                    message: 'Error checking hash.'
+                });
+            }
+            if (!valid_password) {
+                return res.send({
+                    success: false,
+                    message: 'Password is incorrect'
+                });
+            }
+            // Send the response
+            return res.send({
+                success: true,
+                message: 'Login successful'
+            });
+        });
     });
 });
 
