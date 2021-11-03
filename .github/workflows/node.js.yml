@@ -39,7 +39,6 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-      run: | 
-        npm ci
-        npm run test
-        working-directory: api
+    - run: npm ci
+           npm run test
+      working-directory: api
