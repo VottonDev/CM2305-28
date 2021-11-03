@@ -1,11 +1,11 @@
 const test = require('supertest');
-const app = require('../../api/express.js');
+const app = require('../../express.js');
 
 // Test login
-describe('POST /api/login', () => {
+describe('POST /auth/login', () => {
 	it('should return 200', (done) => {
 		test(app)
-			.post('/api/auth/login')
+			.post('/auth/login')
 			.expect(200, done);
 	});
 });
