@@ -23,6 +23,9 @@
         <exclude>
             <directory suffix=".php">./vendor</directory>
             <directory suffix=".">./api</directory>
+            <directory suffix=".">./static</directory>
+            <directory suffix=".">./.github</directory>
+            <file>.php-cs-fixer.php</file>
         </exclude>
     </coverage>
 </phpunit>
