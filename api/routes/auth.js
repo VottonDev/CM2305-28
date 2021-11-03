@@ -8,20 +8,28 @@ app.post('/register', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     let confirm = req.body.confirm;
-    if (password != confirm) {
-        res.send('Passwords are not matching.');
-    } else {
-        let salt = bcrypt.genSaltSync(10);
-        let hash = bcrypt.hashSync(password, salt);
-        db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err) => {
-            if (err) {
-                res.send('Error with registering the account.');
-            } else {
-                res.send('Successfully registered account.');
-            }
+    let hash = bcrypt.hash(password, 10);
+        if (password !== confirm) {
+        return res.send({
+            success: false,
+            message: 'Passwords do not match'
         });
     }
-});
+        // Store the password hash
+        db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err, result) => {
+            if (err) {
+                return res.send({
+                    success: false,
+                    message: 'Error registering user'
+                });
+            }
+            // Send the response
+            return res.send({
+                success: true,
+                message: 'User registered'
+            });
+        });
+    });
 
 // Login to account
 app.post('/login', (req, res) => {
