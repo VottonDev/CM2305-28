@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt');
 app.post('/register', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-    let confirm = req.body.confirm;
-        if (password !== confirm) {
+    let confirm_password = req.body.confirm_password;
+        if (password !== confirm_password) {
         return res.send({
             success: false,
             message: 'Passwords do not match'
