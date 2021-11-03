@@ -8,15 +8,27 @@ app.post('/register', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     let confirm = req.body.confirm;
-    let hash = bcrypt.hash(password, 10);
         if (password !== confirm) {
         return res.send({
             success: false,
             message: 'Passwords do not match'
         });
     }
+    if (username == username) {
+        return res.send({
+            success: false,
+            message: 'Username already exists'
+        });
+    }
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            return res.send({
+                success: false,
+                message: 'Error hashing password'
+            });
+        }
         // Store the password hash
-        db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err, result) => {
+        db.query('INSERT INTO Users (username, password) VALUES (?, ?)', [username, hash], (err, result) => {
             if (err) {
                 return res.send({
                     success: false,
@@ -30,6 +42,7 @@ app.post('/register', (req, res) => {
             });
         });
     });
+});
 
 // Login to account
 app.post('/login', (req, res) => {
