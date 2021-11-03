@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit
-    colors="true"
->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         executionOrder="depends,defects"
+         forceCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         verbose="true">
     <testsuites>
-        <testsuite name="PHP Tests">
-            <directory prefix="" suffix="Test.php">./api/test/website</directory>
+        <testsuite name="default">
+            <directory suffix="Test.php">api/test/website</directory>
         </testsuite>
     </testsuites>
 
-    <coverage>
+    <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php"></directory>
+            <directory suffix=".php">.</directory>
         </include>
+        <exclude>
+            <directory suffix=".php">./vendor</directory>
+        </exclude>
     </coverage>
 </phpunit>
