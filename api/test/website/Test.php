@@ -1,19 +1,18 @@
-<?php declare(strict_types=1);
+<?php
+
+namespace UnitTestFiles\Test;
+
 use PHPUnit\Framework\TestCase;
 
-/** @covers testPushAndPop */
-final class StackTest extends TestCase
+/**
+ * @internal
+ * @coversNothing
+ */
+class FirstTest extends TestCase
 {
-    public function testPushAndPop(): void
+    public function testTrueAssetsToTrue()
     {
-        $stack = [];
-        $this->assertSame(0, count($stack));
-
-        array_push($stack, 'foo');
-        $this->assertSame('foo', $stack[count($stack)-1]);
-        $this->assertSame(1, count($stack));
-
-        $this->assertSame('foo', array_pop($stack));
-        $this->assertSame(0, count($stack));
+        $condition = true;
+        $this->assertTrue($condition);
     }
 }
