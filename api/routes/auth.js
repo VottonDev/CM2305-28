@@ -28,7 +28,7 @@ app.post('/register', (req, res) => {
       });
     }
     // Store the password hash
-    db.query('INSERT INTO Users (username, password) VALUES (?, ?)', [username, hash], (err, result) => {
+    db.query('INSERT INTO Users (username, password) VALUES (?, ?)', [username, hash], (err) => {
       if (err) {
         return res.send({
           success: false,
