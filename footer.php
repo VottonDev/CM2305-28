@@ -1,3 +1,4 @@
+<?php include 'api.php' ?>
 <!-- Footer -->
 <footer class="page-footer font-small teal pt-4 fixed-bottom" style="background-color:#262626;">
 
