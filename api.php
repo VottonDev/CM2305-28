@@ -1,7 +1,13 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+
 // Request function to call the NodeJS API
-function request($route, $post_params = null, $get_params = null, $username = 'root', $password = 'root')
+function request($route, $post_params = null, $get_params = null)
 {
     $req_url = 'localhost:3001'.$route;
 
@@ -60,6 +66,8 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
     $_SESSION['username'] = $response = ['username'];
 
     if ('success' == $response) {
+        session_start();
+        $_SESSION['username'] = $response = ['username'];
         header('Location: dashboard.php');
         echo 'Login succesful.';
     } else {

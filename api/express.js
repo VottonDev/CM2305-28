@@ -17,4 +17,7 @@ app.use('/auth', auth);
 app.use('/twitter', twitter);
 app.use('/flickr', flickr);
 
+// Log all API requests that come in
+
+
 module.exports = app;
