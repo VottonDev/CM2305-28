@@ -9,22 +9,22 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5" style="color: black; opacity: 0.8;">Create an account</h2>
 
-              <form action ="" method="post">
+              <form action="register.php" method="POST" id="register_form">
 
                 <div class="form-outline mb-4">
-                  <input type="text" name="username" placeholder="Username" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="text" name="username" placeholder="Username" id="username" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" name="password" placeholder="Password" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input type="password" name="password" placeholder="Password" id="password" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" name="confirm_password" placeholder="Confirm Password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" name="confirm_password" placeholder="Confirm Password" id="confirm_password" class="form-control form-control-lg" />
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  <input type="submit" name="register" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Register" />
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0" style="font-size:18px;">Already have an account? <a href="login.php" class="fw-bold text-body"><u>Login here</u></a></p>

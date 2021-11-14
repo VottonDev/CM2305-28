@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="static/bootstrap.min.css">
+    <?php include 'api.php'; ?>
     <?php include 'navbar.php'; ?>
   </head>
   <body>
