@@ -14,12 +14,6 @@ app.post('/register', (req, res) => {
       message: 'Passwords do not match',
     });
   }
-  if (username == username) {
-    return res.send({
-      success: false,
-      message: 'Username already exists',
-    });
-  }
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) {
       return res.send({
