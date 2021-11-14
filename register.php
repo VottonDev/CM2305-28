@@ -9,7 +9,7 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5" style="color: black; opacity: 0.8;">Create an account</h2>
 
-              <form action ="" method="post">
+              <form action="register.php" method="POST" id="register">
 
                 <div class="form-outline mb-4">
                   <input type="text" name="username" placeholder="Username" id="form3Example1cg" class="form-control form-control-lg" />
