@@ -25,7 +25,7 @@
                 <br>
 
                 <div class="d-flex justify-content-center">
-                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0" style="font-size:18px;">Don't have an account? <a href="register.php" class="fw-bold text-body"><u>Create one here</u></a></p>
