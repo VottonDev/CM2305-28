@@ -4,7 +4,9 @@ const app = require('../../express.js');
 // Test login
 describe('POST /auth/login', () => {
   it('should return 200', (done) => {
-    test(app).post('/auth/login').expect(200, done);
+    test(app).post('/auth/login')
+    .expect('Content-Type', /json/)
+    .expect(200, done);
   });
 });
 
@@ -12,6 +14,7 @@ describe('POST /auth/login', () => {
 describe('POST /auth/login', () => {
   it('should return 200', (done) => {
     test(app).post('/auth/register')
+    .expect('Content-Type', /json/)
     .expect(200, done);
   });
 });

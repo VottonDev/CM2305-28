@@ -8,6 +8,7 @@ describe('GET /twitter/get_recent_tweets', () => {
     test(app)
       .get('/twitter/get_recent_tweets')
       .send({ token: process.env.TWITTER_TOKEN, query: 'test' })
+      .expect('Content-Type', /json/)
       .expect(200, done);
   });
 });
