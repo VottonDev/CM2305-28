@@ -13,8 +13,8 @@ describe('Login with valid credentials', () => {
       .expect(200, done);
   });
 });
-// Test Login with non-existing credentials
-describe('Login with non-existing credentials', () => {
+// Test Login with non matching password
+describe('Login with non matching password', () => {
   it('should return 401', (done) => {
     test(app).post('/auth/login')
     .send({
@@ -23,6 +23,19 @@ describe('Login with non-existing credentials', () => {
     })
     .expect('Content-Type', /json/)
     .expect(401, done);
+  });
+});
+
+// Test login with non existing credentials
+describe('Login with non-existing credentials', () => {
+  it('should return 401', (done) => {
+    test(app).post('/auth/login')
+    .send({
+      username: 'test123',
+      password: 'wrongpassword123'
+    })
+    .expect('Content-Type', /json/)
+    .expect(403, done);
   });
 });
 

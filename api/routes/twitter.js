@@ -14,7 +14,18 @@ app.get('/get_recent_tweets', async (req, res) => {
       Authorization: 'Bearer '+ token,
     },
   });
-  res.json(response.data);
+  res.status(200).json(response.data);
+});
+
+// Check that authentication works for Twitter routes
+app.get('/get_recent_tweets', async (req, res) => {
+  let twitter_query = req.body.query;
+  const response = await axios.get('https://api.twitter.com/2/tweets/search/recent', {
+    params: {
+      query: twitter_query,
+    },
+  });
+  res.status(200).json(response.data);
 });
 
 module.exports = app;
