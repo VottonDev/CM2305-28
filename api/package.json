@@ -16,7 +16,7 @@
     "prettify:check": "prettier . --check"
   },
   "devDependencies": {
-    "jest": "^27.3.1",
+    "jest": "^27.4.3",
     "supertest": "^6.1.6"
   }
 }
