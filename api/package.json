@@ -7,7 +7,7 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.1"
   },
   "scripts": {
     "dev": "nodemon express.js",
@@ -16,7 +16,7 @@
     "prettify:check": "prettier . --check"
   },
   "devDependencies": {
-    "jest": "^27.4.3",
+    "jest": "^27.4.4",
     "supertest": "^6.1.6"
   }
 }

@@ -11,13 +11,12 @@ app.get('/get_recent_tweets', async (req, res) => {
       query: twitter_query,
     },
     headers: {
-      Authorization: 'Bearer '+ token,
+      Authorization: 'Bearer ' + token,
     },
   });
   if (response.status === 200) {
     res.status(200).json(response.data);
-  }
-  else {
+  } else {
     res.status(401).json(response.data);
   }
 });
