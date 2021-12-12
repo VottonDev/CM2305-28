@@ -86,9 +86,9 @@ app.get('/logout', (req, res) => {
 // Check if user is logged in.
 app.get('/check_login', (req, res) => {
   if (req.session.user) {
-    res.send(req.session.user);
+    res.status(200).send(req.session.user);
   } else {
-    res.send('false');
+    res.status(401).send('false');
   }
 });
 

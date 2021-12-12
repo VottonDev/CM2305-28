@@ -35,3 +35,13 @@ describe('Register route', () => {
   }
 );
 });
+
+// Test check auth route if returns a response
+describe('Check auth route', () => {
+  it('should return a response', (done) => {
+    test(app)
+      .get('/auth/check_login')
+      .expect(500, done);
+  }
+);
+});
