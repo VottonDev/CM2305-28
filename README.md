@@ -7,12 +7,12 @@ Web Application for CM2305
 2. [WAMP Server](https://www.wampserver.com/en/) (Includes PHP, Apache2, MySQL), for production can install these manually.
 
 ### How to the website
-1. Install WAMP
+1. Install [WAMP](https://www.wampserver.com/en/)
 2. Put CM2305 web files (excluding API folder) to /var/www of WAMP
 3. You can now open the website in your localhost
 
 ### How to run the API (Required)
-1. Install NodeJS
+1. Install [NodeJS](https://nodejs.org/en/download/)
 2. Navigate to /api folder and run npm install in console/cmd
 3. To start the api you run the app.js file with "node app.js" or "nodemon app.js"
 
