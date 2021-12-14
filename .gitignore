@@ -3,5 +3,4 @@ coverage.xml
 api/node_modules
 vendor
 .php-cs-fixer.cache
-.vscode
 .env
