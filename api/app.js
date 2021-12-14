@@ -1,4 +1,4 @@
-const app = require('./express.js');
+const app = require('./express');
 
 const port = 3001;
 
