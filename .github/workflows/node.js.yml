@@ -51,6 +51,7 @@ jobs:
         TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
       run: |
         npm ci
+        npm run test
       working-directory: api
 
     - name: Upload coverage to Codecov
