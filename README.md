@@ -14,7 +14,7 @@ Web Application for CM2305
 ### How to run the API (Required)
 1. Install [NodeJS](https://nodejs.org/en/download/)
 2. Navigate to /api folder and run npm install in console/cmd)
-3. Change the db.js file in /api/inc to your local database or leave as default.
+3. Create a .env file and create MySQL environment variables listed at the bottom of the instructions.
 4. Connect to Cardiff University network or use the VPN (Not required if hosting the MySQL database locally)
 5. To start the api you run the app.js file with "node app.js" or "nodemon app.js"
 
@@ -29,6 +29,10 @@ Web Application for CM2305
 4. Run "XDEBUG_MODE=coverage composer run-script phpunit", which will run the composer script to run PHP tests.
 
 ### Environment variables (.env file)
-```TWITTER_TOKEN=yourbearerauthkey```
+```TWITTER_TOKEN=yourbearerauthkey
+   MYSQL_HOST=localhost
+   MYSQL_USER=usernamehere
+   MYSQL_PASSWORD=passwordhere
+   MYSQL_DATABASE=databasenamehere```
 
 
