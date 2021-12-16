@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "nodemon express.js",
-    "test": "jest --coverage",
+    "test": "jest --coverage --forceExit",
     "prettify": "prettier . --write",
     "prettify:check": "prettier . --check"
   },
