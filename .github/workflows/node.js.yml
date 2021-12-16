@@ -51,6 +51,7 @@ jobs:
         TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
       run: |
         npm ci
+      working-directory: api
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
