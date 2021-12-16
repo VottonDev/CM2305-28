@@ -29,10 +29,12 @@ Web Application for CM2305
 4. Run "XDEBUG_MODE=coverage composer run-script phpunit", which will run the composer script to run PHP tests.
 
 ### Environment variables (.env file)
-```TWITTER_TOKEN="AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi"
+```
+   TWITTER_TOKEN="AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi"
    MYSQL_HOST="csmysql.cs.cf.ac.uk"
    MYSQL_USER="c2050462"
    MYSQL_PASSWORD="Hello12345"
-   MYSQL_DATABASE="c2050462_cm2305"```
+   MYSQL_DATABASE="c2050462_cm2305"
+   ```
 
 
