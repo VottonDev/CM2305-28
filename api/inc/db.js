@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const mysql_config = mysql.createConnection({
-  host: 'csmysql.cs.cf.ac.uk',
-  user: 'c2050462',
-  password: 'Hello12345',
-  database: 'c2050462_cm2305',
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
 });
 
 module.exports = mysql_config;
