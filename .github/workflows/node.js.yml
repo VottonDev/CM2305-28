@@ -40,16 +40,15 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-    - name: Install dependencies and test
-      env:
-          TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
+    - name: install and test
+        env:
           MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
           MYSQL_USER: ${{ secrets.MYSQL_USER }}
           MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
-      run: npm ci
-    - working-directory: api
-
+          TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
+        run: |
+          npm ci
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
