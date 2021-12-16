@@ -32,7 +32,6 @@ jobs:
       uses: actions/cache@v2
       env:
           cache-name: cache-node-modules
-          env:
           TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
           MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
           MYSQL_USER: ${{ secrets.MYSQL_USER }}
