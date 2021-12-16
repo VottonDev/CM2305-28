@@ -16,6 +16,7 @@ Web Application for CM2305
 2. Navigate to /api folder and run npm install in console/cmd)
 3. Create a .env file and create MySQL environment variables listed at the bottom of the instructions.
 4. Connect to Cardiff University network or use the VPN (Not required if hosting the MySQL database locally)
+5. Import the db.sql into your database (Optional) (If host locally)
 5. To start the api you run the app.js file with "node app.js" or "nodemon app.js"
 
 ### How to run API tests
