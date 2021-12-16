@@ -47,10 +47,8 @@ jobs:
         MYSQL_USER: ${{ secrets.MYSQL_USER }}
         MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
         MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}    
-      run: |
-        npm install
-        npm test
-      - working-directory: api
+      run: npm ci
+    - working-directory: api
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
