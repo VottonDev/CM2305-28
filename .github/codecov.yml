@@ -3,7 +3,7 @@ coverage:
     project:
       default:
         # basic
-        target: 20%
+        target: auto
         threshold: 0%
         base: auto
         flags:
