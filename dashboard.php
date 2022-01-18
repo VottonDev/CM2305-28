@@ -8,7 +8,7 @@
      <link rel="stylesheet" href="static/bootstrap.min.css">
     <?php include 'navbar.php'; ?>
 
-    <title> Group Project </title>
+    <title> Dashboard </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>  <!-- change to npm maybe -->
     <link
@@ -55,9 +55,3 @@
 </article>
 </body>
 </html>
-
-<!--
-<div style="padding-top:15%;">
-
-</div>
--->
