@@ -60,7 +60,7 @@ color:#ededed;
   padding-left: 30%;
 }
 .mappingbox{
-  padding: 1.4% 2% 1% 2%;
+  padding: 1.4% 2% 1%;
   margin-top:3%;
   margin-left:2.5%;
   margin-right:2.5%;
@@ -79,8 +79,7 @@ color:#ededed;
 }
 .container1{
   max-width: 1500px;
-  margin: 0% 2% 2% 2%;
-
+  margin: 0% 2% 2%;
 }
 .grid_container{
 padding-top:30px;
@@ -106,11 +105,10 @@ padding-right:5%;
   min-height:70px;
 }
 .container2{
-  margin: 0% 2% 2% 2%;
-  padding: 0px 10px 450px 10px;
+  margin: 0% 2% 2%;
+  padding: 0 10px 450px;
 }
 .db_output{
-  display:inline-block;
   margin:0 auto;
   width:60%;
   height:50vh;
@@ -119,12 +117,11 @@ padding-right:5%;
   float:left;
 }
 .chart{
-  display:inline-block;
   width:35%;
   height:50vh; /* placeholder padding before adding content */
   border-radius:8px;
   background-color: #212121;
-  float:right;
+  float: right;
 }
 .titles{
   font-size:20px;
