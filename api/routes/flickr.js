@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
+const axios = require('axios').default;
 
 // Flickr get geolocation data of an image      
 app.get('/get_geolocation', (req, res) => {
     let photo_id = req.params.photo_id;
     let token = req.params.token;
-    const response = await axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation`, 
+    const response = await axios.get(
+        `https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation`, 
     {
         params: {
             query: photo_id,
