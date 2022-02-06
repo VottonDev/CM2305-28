@@ -1,17 +1,22 @@
 const express = require('express');
 const app = express();
 const axios = require('axios').default;
+const oauth = require('axios-oauth-client');
+const getAuthorizationCode = oauth.client(axios.create(), {
+    url: 'https://www.flickr.com/services/oauth/request_token',
+    signature_method: 'HMAC-SHA1',
+    grant_type: 'authorization_code',
+    oauth_consumer_key: '071f3f6f5f5e79e5cc6eda80fd083fb8',
+    oauth_consumer_secret: '0b427c4f59d39c46',
+});
+const auth = getAuthorizationCode();
 
 
 // get a list of configured blogs for the calling user
 app.get('/get_blog', async (req, res) => {
-    let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.blogs.getList',
+        'https://api.flickr.com/services/rest/?method=flickr.blogs.getList' + '&api_key=' + auth + '&format=json&nojsoncallback=1',
     {
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
     });
     if (response.status === 200) {
         res.status(200).json(response.data);
