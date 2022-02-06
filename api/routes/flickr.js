@@ -7,7 +7,7 @@ const axios = require('axios').default;
 app.get('/get_blog', async (req, res) => {
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.blogs.getList',
+        'https://api.flickr.com/services/rest/?method=flickr.blogs.getList',
     {
         headers: {
             Authorization: 'Bearer ' + api_key,
@@ -26,7 +26,7 @@ app.get('/get_contactsPublic', async (req, res) => {
     let contact_id = req.params.user_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.contacts.getPublicList',
+        'https://api.flickr.com/services/rest/?method=flickr.contacts.getPublicList',
     {
         params: {
             query: contact_id,
@@ -48,7 +48,7 @@ app.get('/get_favouritePublicPhoto', async (req, res) => {
     let favourite_id = req.params.user_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.favorites.getPublicList',
+        'https://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList',
     {
         params: {
             query: favourite_id,
@@ -70,7 +70,7 @@ app.get('/get_peopleInfo', async (req, res) => {
     let peopleinfo_id = req.params.user_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.people.getInfo',
+        'https://api.flickr.com/services/rest/?method=flickr.people.getInfo',
     {
         params: {
             query: peopleinfo_id,
@@ -91,7 +91,7 @@ app.get('/get_peopleInfo', async (req, res) => {
 app.get('/get_photoGeoData', async (req, res) => {
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.getWithGeoData',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.getWithGeoData',
     {
         headers: {
             Authorization: 'Bearer ' + api_key,
@@ -109,7 +109,7 @@ app.get('/get_photoGeoData', async (req, res) => {
 app.get('/get_visiblePhoto', async (req, res) => {
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.search',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.search',
     {
         headers: {
             Authorization: 'Bearer ' + api_key,
@@ -128,7 +128,7 @@ app.get('/get_photoInfo', async (req, res) => {
     let photoInfo_id = req.params.photo_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.getInfo',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo',
     {
         params: {
             query: photoInfo_id,
@@ -150,7 +150,7 @@ app.get('/get_photoFavourites', async (req, res) => {
     let photoFavourites_id = req.params.photo_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.getInfo',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo',
     {
         params: {
             query: photoFavourites_id,
@@ -172,7 +172,7 @@ app.get('/get_photoComments', async (req, res) => {
     let photoComments_id = req.params.photo_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.comments.getList',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.comments.getList',
     {
         params: {
             query: photoComments_id,
@@ -194,7 +194,7 @@ app.get('/get_geolocation', async (req, res) => {
     let photo_id = req.params.photo_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.geo.getLocation',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation',
     {
         params: {
             query: photo_id,
@@ -218,7 +218,7 @@ app.get('/get_geoPhotoLocation', async (req, res) => {
     let lontitude = req.params.lon;
     let accuracy = req.params.accuracy;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.geo.photosForLocation',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.geo.photosForLocation',
     {
         params: {
             latitude: latitude,
@@ -242,7 +242,7 @@ app.get('/get_peopleInPhoto', async (req, res) => {
     let people_id = req.params.people_id;
     let api_key = req.params.api_key;
     const response = await axios.get(
-        'https://www.flickr.com/services/api/flickr.photos.people.getList',
+        'https://api.flickr.com/services/rest/?method=flickr.photos.people.getList',
     {
         params: {
             query: people_id,
