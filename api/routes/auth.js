@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('../inc/db.js');
+const mail = require('../inc/mail.js');
 const bcrypt = require('bcrypt');
 
 // Register an account
@@ -32,7 +33,7 @@ app.post('/register', (req, res) => {
       // Send the response
       return res.status(200).send({
         success: true,
-        message: 'User registered',
+        message: 'User registered; please verify your email',
       });
     });
   });
