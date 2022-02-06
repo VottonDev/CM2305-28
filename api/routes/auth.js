@@ -97,4 +97,43 @@ app.get('/check_login', (req, res) => {
   }
 });
 
+// Verify e-mail
+app.get('/verify/:email:token', (req, res) => {
+  let email = req.params.email;
+  let token = req.params.token;
+  db.query('SELECT * FROM Users WHERE username = ?', [email], (err, result) => {
+    if (err) {
+      return res.status(500).send({
+        success: false,
+        message: 'Error verifying e-mail',
+      });
+    }
+    if (result.length == 0) {
+      return res.status(403).send({
+        success: false,
+        message: 'User does not exist',
+      });
+    }
+    if (result[0].token == token) {
+      db.query('UPDATE Users SET verified = 1 WHERE username = ?', [email], (err) => {
+        if (err) {
+          return res.status(500).send({
+            success: false,
+            message: 'Error verifying e-mail',
+          });
+        }
+        return res.status(200).send({
+          success: true,
+          message: 'E-mail verified',
+        });
+      });
+    } else {
+      return res.status(403).send({
+        success: false,
+        message: 'Invalid token',
+      });
+    }
+  });
+});
+
 module.exports = app;
