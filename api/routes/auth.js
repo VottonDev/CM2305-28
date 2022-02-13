@@ -9,6 +9,7 @@ app.post('/register', (req, res) => {
   // Used to generate e-mail verification token
   // let token = require('crypto').randomBytes(64).toString('hex');
   let username = req.body.username;
+  let email = req.body.email;
   let password = req.body.password;
   let confirm_password = req.body.confirm_password;
   if (password !== confirm_password) {
@@ -25,7 +26,7 @@ app.post('/register', (req, res) => {
       });
     }
     // Store the password hash
-    db.query('INSERT INTO Users (username, password) VALUES (?, ?)', [username, hash], (err) => {
+    db.query('INSERT INTO Users (username, email, password) VALUES (?, ?)', [username, email, hash], (err) => {
       if (err) {
         return res.status(500).send({
           success: false,
