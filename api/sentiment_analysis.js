@@ -5,7 +5,7 @@ const port = 3000;
 const vader = require('vader-sentiment');
 var fs = require('fs');
 var input = fs.readFileSync('test.txt', 'utf8')
-const intensity = vader.SentimentIntensityAnalyzer.polarity_scores(input);
+vader.SentimentIntensityAnalyzer.polarity_scores(input);
 
 fs.readFile('test.txt', function(err, data) {
 if(err) throw err;
