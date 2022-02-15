@@ -13,7 +13,8 @@
     "dev": "nodemon express.js",
     "test": "jest --coverage --forceExit",
     "prettify": "prettier . --write",
-    "prettify:check": "prettier . --check"
+    "prettify:check": "prettier . --check",
+    "start": "nodemon app.js"
   },
   "devDependencies": {
     "jest": "^27.4.5",
