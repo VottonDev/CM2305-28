@@ -46,7 +46,7 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
-  db.query('SELECT * FROM Users WHERE username = ? OR email = ?', [username, username], (err, results) => {
+  db.query('SELECT * FROM Users WHERE username = ? OR email = ?', [username, username], (err, result) => {
     if (err) {
       return res.status(500).send({
         success: false,
