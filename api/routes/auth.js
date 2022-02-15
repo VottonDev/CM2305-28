@@ -6,8 +6,7 @@ const bcrypt = require('bcrypt');
 
 // Register an account
 app.post('/register', (req, res) => {
-  // Used to generate e-mail verification token
-  // let token = require('crypto').randomBytes(64).toString('hex');
+  let token = require('crypto').randomBytes(64).toString('hex');
   let username = req.body.username;
   let email = req.body.email;
   let password = req.body.password;
@@ -38,8 +37,7 @@ app.post('/register', (req, res) => {
         success: true,
         message: 'User registered; please verify your email',
       });
-      // Won't work yet as we need to ask for email during registration
-      // mail.sendEmail(username, 'Verify your email', 'Please verify your email by clicking the link below: http://localhost:3000/verify/' + username);
+      mail.sendEmail(email, 'Verify your email', 'Please verify your email by clicking the link below: http://localhost:3000/verify/' + email + '/' + token);
     });
   });
 });
