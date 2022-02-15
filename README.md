@@ -36,6 +36,9 @@ Web Application for CM2305
    MYSQL_USER="c2050462"
    MYSQL_PASSWORD="Hello12345"
    MYSQL_DATABASE="c2050462_cm2305"
+   MAIL_HOST="smtp.mailgun.org"
+   MAIL_USER="postmaster@sandboxe732894598d74d4186370f1b1314af5e.mailgun.org"
+   MAIL_PASSWORD="9fe0aa66a914978f4334870419826a8b-c3d1d1eb-2235ab4c"
    ```
 
 
