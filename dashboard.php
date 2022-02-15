@@ -10,9 +10,8 @@
 
     <title> Group Project </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>  <!-- change to npm maybe -->
-    <link
-      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel='stylesheet'/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     <script src="mapConfig.js" defer></script>
   </head>
 
