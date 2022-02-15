@@ -16,6 +16,10 @@
                 </div>
 
                 <div class="form-outline mb-4">
+                  <input type="text" name="email" placeholder="Email" id="email" class="form-control form-control-lg" />
+                </div>
+
+                <div class="form-outline mb-4">
                   <input type="password" name="password" placeholder="Password" id="password" class="form-control form-control-lg" />
                 </div>
 

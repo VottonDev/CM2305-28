@@ -41,6 +41,7 @@ function request($route, $post_params = null, $get_params = null)
 if (isset($_POST['register']) && !empty($_POST['register'])) {
     $params = [
         'username' => $_POST['username'],
+        'email' => $_POST['email'],
         'password' => $_POST['password'],
         'confirm_password' => $_POST['confirm_password'],
     ];
