@@ -25,7 +25,7 @@ app.post('/register', (req, res) => {
           message: err
         });
       } else {
-        db.query('INSERT INTO users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err, results, fields) => {
+        db.query('INSERT INTO users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
           if (err) {
             res.json({
               success: false,
