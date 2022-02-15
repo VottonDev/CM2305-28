@@ -13,27 +13,27 @@ app.post('/register', (req, res) => {
   let confirm_password = req.body.confirm_password;
 
   if (password !== confirm_password) {
-    res.json({
+    return res.status(400).send({
       success: false,
       message: 'Passwords do not match'
     });
   } else {
     bcrypt.hash(password, 10, (err, hash) => {
       if (err) {
-        res.json({
+        return res.status(500).send({
           success: false,
           message: err
         });
       } else {
         db.query('INSERT INTO users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
           if (err) {
-            res.json({
+            return res.status(500).send({
               success: false,
               message: err
             });
           } else {
             mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3000/confirm/' + token);
-            res.json({
+            return res.status(200).send({
               success: true,
               message: 'Account created successfully'
             });
