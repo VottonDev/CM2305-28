@@ -52,6 +52,7 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
         echo 'Account created succesfully.';
     } else {
         echo 'Failed to register.';
+        print_r($response);
     }
 }
 
@@ -70,5 +71,6 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         echo 'Login succesful.';
     } else {
         echo 'Login failed.';
+        print_r($response);
     }
 }

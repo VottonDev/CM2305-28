@@ -25,7 +25,7 @@ app.post('/register', (req, res) => {
         });
       } else {
         var token = require('crypto').randomBytes(64).toString('hex');
-        db.query('INSERT INTO users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
+        db.query('INSERT INTO Users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
           if (err) {
             return res.status(500).send({
               success: false,
