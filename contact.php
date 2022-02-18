@@ -1,4 +1,4 @@
-<?php include_once 'header.php' ?>
+<?php include_once 'header.php'; ?>
 
 <div class="enquiry-form-container">
 <h1 style="text-align:center;"> Contact Us </h1>
@@ -25,4 +25,4 @@
 </form>
 </div>
 
-<?php include_once 'footer.php' ?>
+<?php include_once 'footer.php'; ?>
