@@ -49,7 +49,7 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
 
     if (1 == $response->success) {
         header('Location: login.php');
-        echo 'Account created succesfully.';
+        echo 'Account created succesfully. Check your e-mail for verification code.';
     } else {
         echo 'Failed to register.';
         print_r($response);
