@@ -32,7 +32,7 @@ app.post('/register', (req, res) => {
               message: err
             });
           } else {
-            mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3001/auth/confirm/' + email + '/' + token);
+            mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3001/auth/verify/' + email + '/' + token);
             return res.status(200).send({
               success: true,
               message: 'Account created successfully'
