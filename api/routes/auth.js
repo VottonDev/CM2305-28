@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt');
 
 // Register an account
 app.post('/register', (req, res) => {
-  let token = require('crypto').randomBytes(64).toString('hex');
   let username = req.body.username;
   let email = req.body.email;
   let password = req.body.password;
@@ -25,6 +24,7 @@ app.post('/register', (req, res) => {
           message: err
         });
       } else {
+        let token = require('crypto').randomBytes(64).toString('hex');
         db.query('INSERT INTO users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
           if (err) {
             return res.status(500).send({
