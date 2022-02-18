@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const db = require('../inc/db.js');
 const mail = require('../inc/mail.js');
 
 // Send email route
