@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1deb3+focal1
+-- version 5.1.3deb1+focal2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 16, 2021 at 02:18 PM
--- Server version: 10.5.13-MariaDB-1:10.5.13+maria~focal
--- PHP Version: 7.4.26
+-- Generation Time: Feb 17, 2022 at 07:43 PM
+-- Server version: 10.5.15-MariaDB-1:10.5.15+maria~focal
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -54,15 +54,11 @@ CREATE TABLE `Competitors` (
 CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` varchar(60) NOT NULL,
-  `password` varchar(60) NOT NULL
+  `email` varchar(60) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `token` varchar(128) NOT NULL,
+  `verified` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `Users`
---
-
-INSERT INTO `Users` (`id`, `username`, `password`) VALUES
-(1, 'test', '$2b$10$47KsKlizsiLzAguo.j3X9uU20p83xCo23WvAEX2mFjgpCdNCg8aky');
 
 --
 -- Indexes for dumped tables
@@ -106,7 +102,7 @@ ALTER TABLE `Competitors`
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
