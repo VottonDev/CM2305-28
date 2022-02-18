@@ -56,7 +56,7 @@ CREATE TABLE `Users` (
   `username` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(60) NOT NULL,
-  `token` varchar(64) NOT NULL,
+  `token` varchar(128) NOT NULL,
   `verified` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
