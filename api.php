@@ -74,3 +74,22 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         print_r($response);
     }
 }
+
+// Contact us form
+if (isset($_POST['contact']) && !empty($_POST['contact'])) {
+    $params = [
+        'name' => $_POST['name'],
+        'email' => $_POST['email'],
+        'subject' => $_POST['subject'],
+        'message' => $_POST['message'],
+    ];
+    $response = request('/mail/send_email', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: contact.php');
+        echo 'Message sent succesfully.';
+    } else {
+        echo 'Failed to send message.';
+        print_r($response);
+    }
+}
