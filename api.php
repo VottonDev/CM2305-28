@@ -41,6 +41,7 @@ function request($route, $post_params = null, $get_params = null)
 if (isset($_POST['register']) && !empty($_POST['register'])) {
     $params = [
         'username' => $_POST['username'],
+        'email' => $_POST['email'],
         'password' => $_POST['password'],
         'confirm_password' => $_POST['confirm_password'],
     ];
@@ -48,9 +49,10 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
 
     if (1 == $response->success) {
         header('Location: login.php');
-        echo 'Account created succesfully.';
+        echo 'Account created succesfully. Check your e-mail for verification code.';
     } else {
         echo 'Failed to register.';
+        print_r($response);
     }
 }
 
@@ -69,5 +71,6 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         echo 'Login succesful.';
     } else {
         echo 'Login failed.';
+        print_r($response);
     }
 }
