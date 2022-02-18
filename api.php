@@ -83,7 +83,7 @@ if (isset($_POST['contact']) && !empty($_POST['contact'])) {
         'subject' => $_POST['subject'],
         'message' => $_POST['message'],
     ];
-    $response = request('/mail/send_email', $post_params = $params);
+    $response = request('/mail/contact', $post_params = $params);
 
     if (1 == $response->success) {
         header('Location: contact.php');
