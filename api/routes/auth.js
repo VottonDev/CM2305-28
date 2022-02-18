@@ -32,7 +32,7 @@ app.post('/register', (req, res) => {
               message: err
             });
           } else {
-            mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3000/confirm/' + token);
+            mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3000/confirm/' + email + '/' + token);
             return res.status(200).send({
               success: true,
               message: 'Account created successfully'
@@ -123,11 +123,9 @@ app.get('/verify/:email:token', (req, res) => {
             message: 'Error verifying e-mail',
           });
         }
-        return res.status(200).send({
-          success: true,
-          message: 'E-mail verified',
+        // Redirect to dashboard.php if succesful verification  and send success message
+        return res.redirect(200), '/dashboard.php' + '?success=true&message=E-mail verified successfully.';
         });
-      });
     } else {
       return res.status(403).send({
         success: false,
