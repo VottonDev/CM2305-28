@@ -30,14 +30,15 @@ describe('GET /twitter/search_recent_tweets', () => {
   });
 });
 
-describe('GET /twitter/get_public_tweets', () => {
-  it('should return 200', (done) => {
-    test(app).get('/twitter/get_public_tweets').send({
-      token: process.env.TWITTER_TOKEN,
-      query: 'Twitter' // Pass a username here
-    }).expect('Content-Type', /json/).expect(200, done);
-  });
-});
+// Disabling as needs academic access
+// describe('GET /twitter/get_public_tweets', () => {
+//   it('should return 200', (done) => {
+//     test(app).get('/twitter/get_public_tweets').send({
+//       token: process.env.TWITTER_TOKEN,
+//       query: 'Twitter' // Pass a username here
+//     }).expect('Content-Type', /json/).expect(200, done);
+//   });
+// });
 
 describe('GET /twitter/get_followers', () => {
   it('should return 200', (done) => {
