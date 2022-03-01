@@ -18,6 +18,6 @@ app.use(compression());
 app.use('/auth', auth);
 app.use('/twitter', twitter);
 app.use('/flickr', flickr);
-app.use('mail', mail);
+app.use('/mail', mail);
 
 module.exports = app;
