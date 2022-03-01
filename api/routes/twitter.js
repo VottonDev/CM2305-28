@@ -66,26 +66,26 @@ app.get('/search_recent_tweets', async (req, res) => {
 });
 
 // Twitter return complete history of public tweets (Need to apply for academic access)
-app.get('/get_public_tweets', async (req, res) => {
-  let twitter_query = req.body.query;
-  let token = req.body.token;
-  const response = await axios.get(
-    'https://api.twitter.com/2/tweets/search/all' + '?expansions=geo.place_id&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type',
-    {
-      params: {
-        query: twitter_query,
-      },
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    }
-);
-  if (response.status === 200) {
-    res.status(200).json(response.data);
-  } else {
-    res.status(401).json(response.data);
-  }
-});
+// app.get('/get_public_tweets', async (req, res) => {
+//   let twitter_query = req.body.query;
+//   let token = req.body.token;
+//   const response = await axios.get(
+//     'https://api.twitter.com/2/tweets/search/all' + '?expansions=geo.place_id&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type',
+//     {
+//       params: {
+//         query: twitter_query,
+//       },
+//       headers: {
+//         Authorization: 'Bearer ' + token,
+//       },
+//     }
+// );
+//   if (response.status === 200) {
+//     res.status(200).json(response.data);
+//   } else {
+//     res.status(401).json(response.data);
+//   }
+// });
 
 // Twitter return a list of users who somebody follows
 app.get('/get_followers', async (req, res) => {
