@@ -139,3 +139,36 @@ padding-right:5%;
   text-align: justify;
   text-indent: 1em;
 }
+.enquiry-form-container{
+  position:relative;
+  height:90vh;
+  width:60%;
+  left:20%;
+  margin-top:2%;
+  margin-bottom:10%;
+  border-style: solid;
+  border-color:#212121;
+}
+.enquiry-form{
+  position:absolute;
+  top:10%;
+  left:10%;
+  width:80%;
+  height:600px;
+}
+.enquiry-form input, textarea{
+  width:100%;
+  margin-top:2rem;
+  border:none;
+  border-bottom: 2px solid black;
+  font-family: "Century Gothic";
+}
+.submit-btn{
+  padding:1rem;   
+  text-align: center;
+  background-color:#ffffff;
+  cursor:pointer;
+}
+.submit-btn:hover{
+  opacity:0.7;
+}
