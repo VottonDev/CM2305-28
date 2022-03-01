@@ -16,7 +16,7 @@ describe('GET /twitter/get_tweet_geolocation', () => {
   it('should return 200', (done) => {
     test(app).get('/twitter/get_tweet_geolocation').send({
       token: process.env.TWITTER_TOKEN,
-      query: 'test'
+      query: '913376878131433472' // You need to pass an actual tweet id here
     }).expect('Content-Type', /json/).expect(200, done);
   });
 });
@@ -34,7 +34,7 @@ describe('GET /twitter/get_public_tweets', () => {
   it('should return 200', (done) => {
     test(app).get('/twitter/get_public_tweets').send({
       token: process.env.TWITTER_TOKEN,
-      query: 'test'
+      query: 'Twitter' // Pass a username here
     }).expect('Content-Type', /json/).expect(200, done);
   });
 });
@@ -43,7 +43,7 @@ describe('GET /twitter/get_followers', () => {
   it('should return 200', (done) => {
     test(app).get('/twitter/get_followers').send({
       token: process.env.TWITTER_TOKEN,
-      query: 'test'
+      query: '1241234123' // Needs to be a Twitter user_id instead of handle
     }).expect('Content-Type', /json/).expect(200, done);
   });
 });
@@ -52,7 +52,7 @@ describe('GET /twitter/get_user_tweets', () => {
   it('should return 200', (done) => {
     test(app).get('/twitter/get_user_tweets').send({
       token: process.env.TWITTER_TOKEN,
-      query: 'test'
+      query: '21312322' // Needs to be a Twitter user_id instead of handle
     }).expect('Content-Type', /json/).expect(200, done);
   });
 });
