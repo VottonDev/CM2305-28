@@ -57,7 +57,9 @@
       </div>
 
     </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="pieChart.js"></script>
 </article>
 </body>
 </html>
