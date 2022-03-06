@@ -172,3 +172,8 @@ padding-right:5%;
 .submit-btn:hover{
   opacity:0.7;
 }
+.chart-wrapper {
+  width: 550px;
+  height: 500px;
+  margin: 0 auto;
+}
