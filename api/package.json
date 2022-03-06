@@ -1,12 +1,12 @@
 {
   "dependencies": {
     "axios": "^0.25.0",
-    "axios-oauth-client": "^1.4.4",
     "axios-token-interceptor": "^0.2.0",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "flickr-sdk": "^6.0.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"

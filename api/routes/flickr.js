@@ -1,268 +1,152 @@
-const express = require('express');
-const app = express();
-const axios = require('axios').default;
-const oauth = require('axios-oauth-client');
-const getAuthorizationCode = oauth.client(axios.create(), {
-    url: 'https://www.flickr.com/services/oauth/request_token',
-    signature_method: 'HMAC-SHA1',
-    grant_type: 'authorization_code',
-    oauth_consumer_key: '071f3f6f5f5e79e5cc6eda80fd083fb8',
-    oauth_consumer_secret: '0b427c4f59d39c46',
-});
-const auth = getAuthorizationCode();
+const Flickr = require('flickr-sdk');
+const flickr = new Flickr(process.env.FLICKR_API_KEY);
 
 
 // get a list of configured blogs for the calling user
-app.get('/get_blog', async (req, res) => {
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.blogs.getList' + '&api_key=' + auth + '&format=json&nojsoncallback=1',
-    {
+// GET /api/flickr/blogs
+exports.getBlogs = (req, res) => {
+    flickr.blogs.getList(req.user.flickr.access_token, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // get the contact list for a user
-app.get('/get_contactsPublic', async (req, res) => {
-    let contact_id = req.params.user_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.contacts.getPublicList',
-    {
-        params: {
-            query: contact_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/contacts
+exports.getContacts = (req, res) => {
+    flickr.contacts.getList(req.user.flickr.access_token, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
-
+};
 
 // return a list of favourite public photos for the given user
-app.get('/get_favouritePublicPhoto', async (req, res) => {
-    let favourite_id = req.params.user_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList',
-    {
-        params: {
-            query: favourite_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/favorites
+exports.getFavorites = (req, res) => {
+    flickr.favorites.getList(req.user.flickr.access_token, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // get information about a user
-app.get('/get_peopleInfo', async (req, res) => {
-    let peopleinfo_id = req.params.user_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.people.getInfo',
-    {
-        params: {
-            query: peopleinfo_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/user
+exports.getUser = (req, res) => {
+    flickr.people.getInfo(req.user.flickr.access_token, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // get geolocations data
-app.get('/get_photoGeoData', async (req, res) => {
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.getWithGeoData',
-    {
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/geo
+exports.getGeo = (req, res) => {
+    flickr.places.getInfo(req.user.flickr.access_token, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // return a list of photos matching criteria
-app.get('/get_visiblePhoto', async (req, res) => {
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.search',
-    {
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos
+exports.getPhotos = (req, res) => {
+    flickr.photos.search(req.user.flickr.access_token, req.query, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // get information about a photo
-app.get('/get_photoInfo', async (req, res) => {
-    let photoInfo_id = req.params.photo_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo',
-    {
-        params: {
-            query: photoInfo_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos/:id
+exports.getPhoto = (req, res) => {
+    flickr.photos.getInfo(req.user.flickr.access_token, req.params.id, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
+
 
 
 // return the list of people who have favourited a given photo
-app.get('/get_photoFavourites', async (req, res) => {
-    let photoFavourites_id = req.params.photo_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo',
-    {
-        params: {
-            query: photoFavourites_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos/:id/favourites
+exports.getPhotoFavourites = (req, res) => {
+    flickr.photos.getFavorites(req.user.flickr.access_token, req.params.id, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // get comments for a photo
-app.get('/get_photoComments', async (req, res) => {
-    let photoComments_id = req.params.photo_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.comments.getList',
-    {
-        params: {
-            query: photoComments_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos/:id/comments
+exports.getPhotoComments = (req, res) => {
+    flickr.photos.comments.getList(req.user.flickr.access_token, req.params.id, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // get the geo data for a photo
-app.get('/get_geolocation', async (req, res) => {
-    let photo_id = req.params.photo_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation',
-    {
-        params: {
-            query: photo_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos/:id/geo
+exports.getPhotoGeo = (req, res) => {
+    flickr.photos.geo.getLocation(req.user.flickr.access_token, req.params.id, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // return a list of photos for the calling user at a specific latitude, longitude and accuracy
-app.get('/get_geoPhotoLocation', async (req, res) => {
-    let api_key = req.params.api_key;
-    let latitude = req.params.lat;
-    let lontitude = req.params.lon;
-    let accuracy = req.params.accuracy;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.geo.photosForLocation',
-    {
-        params: {
-            latitude: latitude,
-            longtitude: lontitude,
-            accuracy: accuracy,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos/geo/:lat/:lon/:accuracy
+exports.getPhotosGeo = (req, res) => {
+    flickr.photos.search(req.user.flickr.access_token, {
+        lat: req.params.lat,
+        lon: req.params.lon,
+        accuracy: req.params.accuracy
+    }, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
+};
 
 
 // return a list of people in a given photo
-app.get('/get_peopleInPhoto', async (req, res) => {
-    let people_id = req.params.people_id;
-    let api_key = req.params.api_key;
-    const response = await axios.get(
-        'https://api.flickr.com/services/rest/?method=flickr.photos.people.getList',
-    {
-        params: {
-            query: people_id,
-        },
-        headers: {
-            Authorization: 'Bearer ' + api_key,
-        },
+// GET /api/flickr/photos/:id/people
+exports.getPhotoPeople = (req, res) => {
+    flickr.photos.people.getList(req.user.flickr.access_token, req.params.id, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
     });
-    if (response.status === 200) {
-        res.status(200).json(response.data);
-    } else {
-        res.status(401).json(response.data);
-    }
-});
-
-
+};
 
 module.exports = app;
