@@ -1,5 +1,5 @@
 const Flickr = require('flickr-sdk');
-const flickr = new Flickr(process.env.FLICKR_API_KEY);
+const flickr = new Flickr(process.env.FLICKR_API_KEY, process.env.FLICKR_API_SECRET);
 const express = require('express');
 const app = express();
 
