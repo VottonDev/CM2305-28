@@ -56,8 +56,5 @@ function setupMap(){
                     'circle-stroke-color': '#ffffff'
                }
           });
-
-          
-       }
-     )
+       })
 }
