@@ -98,7 +98,7 @@ if (isset($_POST['contact']) && !empty($_POST['contact'])) {
 if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
     $params = [
         'new_password' => $_POST['new_password'],
-        'confirming_password' => $_POST['confirming_password']
+        'confirming_password' => $_POST['confirming_password'],
     ];
     $response = request('/profile/change_password', $post_params = $params);
 
@@ -114,7 +114,7 @@ if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
 // Change email address
 if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
     $params = [
-        'email' => $_POST['email']
+        'email' => $_POST['email'],
     ];
     $response = request('/profile/change_email', $post_params = $params);
 
@@ -127,7 +127,7 @@ if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
     }
 }
 
-// Change password 
+// Change password
 if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
     $params = [
         'confirming_password' => $_POST['new_password'],
