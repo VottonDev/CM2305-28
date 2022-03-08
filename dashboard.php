@@ -13,6 +13,11 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     <script src="mapConfig.js" defer></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css">
+
   </head>
 
   <body style="background-color: #1a1a1a;">
@@ -45,11 +50,16 @@
       </div>
 
       <div class="chart">
-        <div class="titles"> Insert Chart </div>
+        <div class="titles"> Pie Chart </div>
+        <div class="chart-wrapper">
+          <canvas id="myChart"></canvas>
+        </div>
       </div>
 
     </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="pieChart.js"></script>
 </article>
 </body>
 </html>
