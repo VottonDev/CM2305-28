@@ -17,7 +17,7 @@ app.post('/change_password', (req, res) => {
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(new_password, salt);
 
-        db.query('UPDATE users SET password = ? WHERE username = ?', [hash, username], (err, result) => {
+        db.query('UPDATE users SET password = ? WHERE username = ?', [hash, username], (err) => {
             if (err) {
                 res.send({
                     status: false,
