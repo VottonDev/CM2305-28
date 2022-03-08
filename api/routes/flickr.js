@@ -1,5 +1,6 @@
 const Flickr = require('flickr-sdk');
 const flickr = new Flickr.OAuth(process.env.FLICKR_API_KEY, process.env.FLICKR_API_SECRET);
+// Get flickr access token
 const express = require('express');
 const app = express();
 
