@@ -93,3 +93,53 @@ if (isset($_POST['contact']) && !empty($_POST['contact'])) {
         print_r($response);
     }
 }
+
+// Change password
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'new_password' => $_POST['new_password'],
+        'confirming_password' => $_POST['confirming_password'],
+    ];
+    $response = request('/profile/change_password', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Password changed succesfully.';
+    } else {
+        echo 'Failed to change password.';
+        print_r($response);
+    }
+}
+
+// Change email address
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'email' => $_POST['email'],
+    ];
+    $response = request('/profile/change_email', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Email changed succesfully.';
+    } else {
+        echo 'Failed to change email.';
+        print_r($response);
+    }
+}
+
+// Change password
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'confirming_password' => $_POST['new_password'],
+        'new_password' => $_POST['confirm_password'],
+    ];
+    $response = request('/profile/change_password', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Password changed succesfully.';
+    } else {
+        echo 'Failed to change password.';
+        print_r($response);
+    }
+}
