@@ -18,9 +18,7 @@ function setupMap(){
               data: './sampleData2.geojson', //temp data file. Wider spread of data 
               cluster: true, //enable clustering
               clusterMaxZoom: 15,
-              clusterRadius: 40
-             
-              
+              clusterRadius: 40    
           });
           
           map.addLayer({ //add clusters and set radius based on no. of data points
