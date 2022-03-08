@@ -4,66 +4,29 @@ const db = require('../inc/db.js');
 
 // Change password
 app.post('/change_password', (req, res) => {
-    let username = req.body.username;
-    let old_password = req.body.old_password;
     let new_password = req.body.new_password;
     let confirm_password = req.body.confirm_password;
 
-    if (new_password !== confirm_password) {
-        return res.status(400).send({
-            success: false,
-            message: 'Passwords do not match'
+    if (new_password != confirm_password) {
+        res.send({
+            status: false,
+            message: 'Password and Confirm Password do not match'
         });
     } else {
-        db.query('SELECT * FROM Users WHERE username = ? OR email = ?', [username, username], (err, result) => {
+        // Use bcrypt to hash the password and store it in the database instead of plain text password
+        let salt = bcrypt.genSaltSync(10);
+        let hash = bcrypt.hashSync(new_password, salt);
+
+        db.query('UPDATE users SET password = ? WHERE username = ?', [hash, username], (err, result) => {
             if (err) {
-                return res.status(500).send({
-                    success: false,
-                    message: err
-                });
-            }
-            if (result.length == 0) {
-                return res.status(403).send({
-                    success: false,
-                    message: 'User not found'
+                res.send({
+                    status: false,
+                    message: 'Error updating password'
                 });
             } else {
-                bcrypt.compare(old_password, result[0].password, (err, result) => {
-                    if (err) {
-                        return res.status(500).send({
-                            success: false,
-                            message: err
-                        });
-                    }
-                    if (result == false) {
-                        return res.status(403).send({
-                            success: false,
-                            message: 'Old password is incorrect'
-                        });
-                    } else {
-                        bcrypt.hash(new_password, 10, (err, hash) => {
-                            if (err) {
-                                return res.status(500).send({
-                                    success: false,
-                                    message: err
-                                });
-                            } else {
-                                db.query('UPDATE Users SET password = ? WHERE username = ? OR email = ?', [hash, username, username], (err) => {
-                                    if (err) {
-                                        return res.status(500).send({
-                                            success: false,
-                                            message: err
-                                        });
-                                    } else {
-                                        return res.status(200).send({
-                                            success: true,
-                                            message: 'Password changed successfully'
-                                        });
-                                    }
-                                });
-                            }
-                        });
-                    }
+                res.send({
+                    status: true,
+                    message: 'Password updated successfully'
                 });
             }
         });
@@ -120,5 +83,40 @@ app.post('/change_email', (req, res) => {
         }
     });
 });
+
+// Change username 
+app.post('/change_username', (req, res) => {
+    let username = req.body.username;
+    
+    db.query('SELECT * FROM Users WHERE username = ?', [username], (err, result) => {
+        if (err) {
+            return res.status(500).send({
+                success: false,
+                message: err
+            });
+        }
+        if (result.length == 0) {
+            return res.status(403).send({
+                success: false,
+                message: 'User not found'
+            });
+        } else {
+            db.query('UPDATE Users SET username = ?', [username], (err) => {
+                if (err) {
+                    return res.status(500).send({
+                        success: false,
+                        message: err
+                    });
+                } else {
+                    return res.status(200).send({
+                        success: true,
+                        message: 'Username changed successfully'
+                    });
+                }
+            });
+        }
+    });
+});
+
 
 module.exports = app;

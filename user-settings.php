@@ -1,10 +1,10 @@
 <?php include_once 'header.php'; ?>
 
-<h1 class="usersetting">User Setting</h1>
+<h1 class="usersetting">User Settings</h1>
 
 <div class="usersetting_container">
     <div class="usersetting_form">
-        <form method="post" action="update.php" onsubmit="return checkForm()">
+        <form method="post" action="user-settings.php" onsubmit="return checkForm()">
             <labal>Username</labal>&nbsp&nbsp
             <input type="text" id="username" name="username" style="width: 300px;">
             <span id="username" class="error">*</span><br><br>
@@ -21,7 +21,7 @@
             <input type="text" id="email" name="email" style="width: 300px;">
             <span id="email" class="error">*</span><br><br>
             
-            <input class="usersetting_btn" type="submit" name="submit" value="Confirm">
+            <input class="usersetting_btn" type="submit" name="usersettings" value="Confirm">
         </form>
     </div>  
 </div>
