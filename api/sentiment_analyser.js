@@ -4,7 +4,6 @@ const fs = require('fs');
 
 //check if statement is positivie or negative and ouputs statement and its compund score
 function analysis(text){
-    console.log();
     var texts = sentiment(text);
     if(texts.score>=0){
       var score = 'positive';
