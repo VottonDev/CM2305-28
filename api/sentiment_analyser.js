@@ -1,29 +1,82 @@
 //install npm install multilang-sentiment
 var sentiment = require('multilang-sentiment');
+const fs = require('fs');
 
 //check if statement is positivie or negative and ouputs statement and its compund score
 function analysis(text){
-    console.log();
+
     var texts = sentiment(text);
-    console.log(texts.score);
-    if(texts.score>0){
-      var score = 'positive statement';
+    if(texts.score>=0){
+      var score = 'positive';
     }
     else if (texts.score < 0){
-      var score = 'negative statement';
-    }
-    else {
-      var score = "neutral"
+      var score = 'negative';
     }
     return score;
 }
 
 //read in json payload
 const jsonData= require('./json.json');
+const { Console } = require('console');
+
+// hold all objects to later convert to JSON file
+var text_temp = " "
+var author_temp = " "
+var geoArray = [];
 
 //carry out analysis on each posts in json payload
 for (i = 0; i<jsonData['data'].length; i++){
-  var text = jsonData['data'][i]["text"];
-  console.log(text);
-  console.log(analysis(text));
+
+  //created object for geoJSON variable
+  const geoJSON = {
+    type: "Feature",
+    geometry: {type: "Point", coordinates: []},
+    properties:{text: " ", author_id: " ", sentiment: " "}
+  };
+
+  // add field values to geoJSON object
+  text_temp = jsonData['data'][i]['text'];
+  author_temp = jsonData['data'][i]['author_id'];
+
+  geoJSON['properties']['text'] = text_temp;
+  geoJSON['properties']['author_id'] = author_temp;
+  //Add sentiment field to the json object
+  jsonData['data'][i]['sentiment'] = analysis(jsonData['data'][i]["text"]);
+  geoJSON['properties']['sentiment'] = analysis(jsonData['data'][i]["text"]);
+
+  var temp = geoJSON;
+  geoArray.push(temp);
+
 }
+
+//var geoConvert = JSON.stringify(geoArray);
+var updatedJson = JSON.stringify(jsonData);
+
+//wrap data points in FeatureCollection
+const geoWrap = { 
+  "type": "FeatureCollection",
+  "features": geoArray
+};
+
+var geoWrapConvert = JSON.stringify(geoWrap);
+
+
+//create updated json file and store data with sentiment field as updated.json
+fs.writeFile("updated.json", updatedJson, 'utf8', function (err) {
+    if (err) {
+        console.log("An error occured while writing JSON Object to File.");
+        return console.log(err);
+    }
+
+    console.log("JSON file has been saved.");
+});
+
+// create geo.json file for formatting required in map box
+fs.writeFile("pulledData.geojson", geoWrapConvert, 'utf8', function (err) {
+    if (err) {
+        console.log("An error occured while writing JSON Object to File.");
+        return console.log(err);
+    }
+
+    console.log("JSON file for geoJSON file has been saved.");
+});
