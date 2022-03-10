@@ -20,6 +20,20 @@ function setupMap(){
               clusterMaxZoom: 15,
               clusterRadius: 40    
           });
+
+          // Add markers to map for each point in the source data 
+          map.addLayer({
+                 id: 'markers',
+                     type: 'symbol',
+                         source: 'sampleData',
+                         layout: {
+                               'icon-image': 'marker-15',
+                                   'text-field': '{title}',
+                                   'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                                   'text-offset': [0, 0.6],
+                                   'text-anchor': 'top'
+                         }
+          });
           
           map.addLayer({ //add clusters and set radius based on no. of data points
                id: 'clusters',
