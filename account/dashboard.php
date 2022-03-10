@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="static/style.css">
      <link rel="stylesheet" href="static/bootstrap.min.css">
-    <?php include 'navbar.php'; ?>
+    <?php include '../navbar.php'; ?>
 
     <title> Group Project </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />

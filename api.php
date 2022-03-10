@@ -48,7 +48,7 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
     $response = request('/auth/register', $post_params = $params);
 
     if (1 == $response->success) {
-        header('Location: login.php');
+        header('Location: account/login.php');
         echo 'Account created succesfully. Check your e-mail for verification code.';
     } else {
         echo 'Failed to register.';
@@ -67,7 +67,7 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
     if (1 == $response->success) {
         session_start();
         $_SESSION['username'] = $response = ['username'];
-        header('Location: dashboard.php');
+        header('Location: account/dashboard.php');
         echo 'Login succesful.';
     } else {
         echo 'Login failed.';
