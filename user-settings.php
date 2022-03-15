@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php'; session_start(); ?>
 
 <h1 class="usersetting">User Settings</h1>
 
@@ -8,11 +8,7 @@
             <tr>
                 <td align="right">Username &nbsp</td>
                 <td align="left">
-                    <!-- <input type="text" id="username" name="new_username" placeholder=".$_SESSION[\'username\']"/> -->
-                    <?php
-                        session_start();
-                        echo "<input type=\"text\" id=\"username\" name=\"new_username\" placeholder=\".$_SESSION[\'username\']\"/>";
-                    ?>
+                    <input type="text" id="username" name="new_username" placeholder="<?php echo $_SESSION['username']; ?>"/>
                 </td>
             </tr>
             <tr>
