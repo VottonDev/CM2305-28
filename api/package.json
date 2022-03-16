@@ -9,7 +9,7 @@
     "mysql": "^2.18.1",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.0"
   },
   "scripts": {
     "dev": "nodemon express.js",
