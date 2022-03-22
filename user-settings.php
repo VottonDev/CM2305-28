@@ -28,7 +28,7 @@
                         &nbsp <input type="radio" name="password" checked="checked">Do not change. <br>
                         &nbsp <input type="radio" name="password">Set new password
                         &nbsp <input type="password" name="new_password" id="new_password">
-                        &nbsp Confirm new password<input type="password" name="confirm_password" id="confirm_password">
+                        &nbsp <br>Confirm new password<input type="password" name="confirm_password" id="confirm_password">
                 </td>
             </tr>
         </tbody>
