@@ -8,7 +8,7 @@
       <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="about.php">About</a>
       <a class="nav-item nav-link" href="contact.php">Contact Us</a>
-      <a class="nav-item nav-link" href="user-settings.php"><img src="../static/images/user_setting.png" alt="userSetting" width="20" class="right-align">
+      <a class="nav-item nav-link" href="account/user-settings.php"><img src="../static/images/user_setting.png" alt="userSetting" width="20" class="right-align">
       </a>
     </div>
   </div>
