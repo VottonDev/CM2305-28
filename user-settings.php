@@ -8,7 +8,12 @@
             <tr>
                 <td align="right">Username &nbsp</td>
                 <td align="left">
-                    <input type="text" id="username" name="new_username" placeholder="<?php echo $_SESSION['username']; ?>"/>
+                    <input type="text" id="username" name="new_username" placeholder="
+                    <?php
+                        if (isset($_SESSION['username'])) {
+                            echo $_SESSION['username'];
+                        }
+                    ?>"/>
                 </td>
             </tr>
             <tr>
@@ -23,6 +28,7 @@
                         &nbsp <input type="radio" name="password" checked="checked">Do not change. <br>
                         &nbsp <input type="radio" name="password">Set new password
                         &nbsp <input type="password" name="new_password" id="new_password">
+                        &nbsp Confirm new password<input type="password" name="confirm_password" id="confirm_password">
                 </td>
             </tr>
         </tbody>
