@@ -5,6 +5,7 @@
     "compression": "^1.7.4",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "flickr-sdk": "^6.0.0",
     "multilang-sentiment": "^2.0.0",
     "mysql": "^2.18.1",
     "nodemailer": "^6.7.2",
