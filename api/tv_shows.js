@@ -1,7 +1,5 @@
-API_KEY =  ''
-
 var Trakt = require('trakt-api');
-var trakt = Trakt(API_KEY);
+var trakt = Trakt(process.env.TRANKT_API_KEY);
 
 var country =  "us";
 
