@@ -78,6 +78,10 @@ app.post('/login', (req, res) => {
       return res.status(200).send({
         success: true,
         message: 'Login successful',
+        body : {
+        username: result[0].username,
+        email: result[0].email
+        }
       });
     });
   });

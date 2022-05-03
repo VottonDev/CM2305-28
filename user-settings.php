@@ -6,17 +6,6 @@
     <table class="usersettingTable">
         <tbody>
             <tr>
-                <td align="right">Username &nbsp</td>
-                <td align="left">
-                    &nbsp <input type="text" id="username" name="new_username" placeholder="
-                    <?php
-                        if (isset($_SESSION['username'])) {
-                            echo $_SESSION['username'];
-                        }
-                    ?>"/>
-                </td>
-            </tr>
-            <tr>
                 <td align="right">Email &nbsp</td>
                 <td align="left">
                     &nbsp <input type="text" id="email" name="new_email" placeholder="">

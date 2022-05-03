@@ -66,9 +66,11 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
 
     if (1 == $response->success) {
         session_start();
-        $_SESSION['username'] = $response = ['username'];
-        header('Location: dashboard.php');
-        echo 'Login succesful.';
+        $_SESSION['email'] = $response->body->email = ['email'];
+        $_SESSION['username'] = $response->body->email = ['username'];
+        $_SESSION['logged_in'] = true;
+        echo "Logged in status is:" . $_SESSION['logged_in'] . '<br>';
+        print_r($response);
     } else {
         echo 'Login failed.';
         print_r($response);
@@ -90,22 +92,6 @@ if (isset($_POST['contact']) && !empty($_POST['contact'])) {
         echo 'Message sent succesfully.';
     } else {
         echo 'Failed to send message.';
-        print_r($response);
-    }
-}
-
-// Change username
-if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
-    $params = [
-        'new_username' => $_POST['new_username'],
-    ];
-    $response = request('/profile/change_username', $post_params = $params);
-
-    if (1 == $response->success) {
-        header('Location: user-settings.php');
-        echo 'Username changed succesfully.';
-    } else {
-        echo 'Failed to change username.';
         print_r($response);
     }
 }
