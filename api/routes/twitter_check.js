@@ -77,7 +77,7 @@ async function get_recent_tweets(){
     }
     //console.log(json);
   } else {
-    //res.status(401).json(response.data);
+    res.status(401).json(response.data);
   }
 };
 
