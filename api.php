@@ -41,6 +41,7 @@ function request($route, $post_params = null, $get_params = null)
 if (isset($_POST['register']) && !empty($_POST['register'])) {
     $params = [
         'username' => $_POST['username'],
+        'email' => $_POST['email'],
         'password' => $_POST['password'],
         'confirm_password' => $_POST['confirm_password'],
     ];
@@ -48,9 +49,10 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
 
     if (1 == $response->success) {
         header('Location: login.php');
-        echo 'Account created succesfully.';
+        echo 'Account created succesfully. Check your e-mail for verification code.';
     } else {
         echo 'Failed to register.';
+        print_r($response);
     }
 }
 
@@ -69,5 +71,75 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         echo 'Login succesful.';
     } else {
         echo 'Login failed.';
+        print_r($response);
+    }
+}
+
+// Contact us form
+if (isset($_POST['contact']) && !empty($_POST['contact'])) {
+    $params = [
+        'name' => $_POST['name'],
+        'email' => $_POST['email'],
+        'subject' => $_POST['subject'],
+        'message' => $_POST['message'],
+    ];
+    $response = request('/mail/contact', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: contact.php');
+        echo 'Message sent succesfully.';
+    } else {
+        echo 'Failed to send message.';
+        print_r($response);
+    }
+}
+
+// Change password
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'new_password' => $_POST['new_password'],
+        'confirming_password' => $_POST['confirming_password'],
+    ];
+    $response = request('/profile/change_password', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Password changed succesfully.';
+    } else {
+        echo 'Failed to change password.';
+        print_r($response);
+    }
+}
+
+// Change email address
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'email' => $_POST['email'],
+    ];
+    $response = request('/profile/change_email', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Email changed succesfully.';
+    } else {
+        echo 'Failed to change email.';
+        print_r($response);
+    }
+}
+
+// Change password
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'confirming_password' => $_POST['new_password'],
+        'new_password' => $_POST['confirm_password'],
+    ];
+    $response = request('/profile/change_password', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Password changed succesfully.';
+    } else {
+        echo 'Failed to change password.';
+        print_r($response);
     }
 }
