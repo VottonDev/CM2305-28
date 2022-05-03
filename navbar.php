@@ -10,9 +10,9 @@
       <a class="nav-item nav-link" href="contact.php">Contact Us</a>
       <?php
         if (!(isset($_SESSION['email']))) {
-          echo '<a class="nav-item nav-link right-align" href="login.php">Login</a>';
+            echo '<a class="nav-item nav-link right-align" href="login.php">Login</a>';
         } else {
-          echo '<a class="nav-item nav-link" href="user-settings.php"><img src="../static/images/user_setting.png" alt="userSetting" width="20" class="right-align">';
+            echo '<a class="nav-item nav-link" href="user-settings.php"><img src="../static/images/user_setting.png" alt="userSetting" width="20" class="right-align">';
         }
       ?>
       </a>

@@ -69,8 +69,7 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         $_SESSION['email'] = $response->body->email = ['email'];
         $_SESSION['username'] = $response->body->email = ['username'];
         $_SESSION['logged_in'] = true;
-        echo "Logged in status is:" . $_SESSION['logged_in'] . '<br>';
-        print_r($response);
+        header('Location: dashboard.php');
     } else {
         echo 'Login failed.';
         print_r($response);

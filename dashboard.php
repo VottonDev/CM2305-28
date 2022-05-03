@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 <?php
   if (!(isset($_SESSION['email']))) {
-    header('Location: login.php');
+      header('Location: login.php');
   }
 ?>
 <!DOCTYPE html>
