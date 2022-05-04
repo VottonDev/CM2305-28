@@ -1,7 +1,10 @@
 FROM node:16-alpine3.14
 
 WORKDIR /usr/webapp
-COPY package.json package-lock.json ./
+
+COPY . .
+
+WORKDIR /usr/webapp/api
 
 RUN apk update \
 && apk add --no-cache ca-certificates libwebp libwebp-tools expat \
@@ -12,6 +15,4 @@ RUN apk update \
 
 RUN npm install
 
-COPY . .
-
-CMD ["sh", "-c", "nodemon /api/app.js"]
+CMD ["sh", "-c", "nodemon app.js"]

@@ -29,6 +29,9 @@ Web Application for CM2305
 3. Enable XDEBUG module in your php.ini if hasn't been enabled by default.
 4. Run "XDEBUG_MODE=coverage composer run-script phpunit", which will run the composer script to run PHP tests.
 
+### Docker
+1. 
+
 ### Environment variables (.env file)
 ```
    TWITTER_TOKEN="AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi"

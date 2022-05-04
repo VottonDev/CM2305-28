@@ -1,7 +1,7 @@
 FROM node:16-alpine3.14
 
 WORKDIR /usr/webapp
-COPY package.json package-lock.json ./
+COPY ./api/package.json ./api/package-lock.json ./
 
 RUN apk update \
 && apk add --no-cache ca-certificates libwebp libwebp-tools expat \
