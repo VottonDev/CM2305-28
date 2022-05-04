@@ -8,7 +8,7 @@ describe('Get Flickr blogs', () => {
             .get('/flickr/get_blogs')
             .expect(200)
             .expect('Content-Type', /json/)
-            .end((err, res) => {
+            .end((err) => {
                 if (err) {
                     return done(err);
                 }
