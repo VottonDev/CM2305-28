@@ -10,8 +10,8 @@ const roClient = twitterClient.readOnly;
 export const getTweets = async (req, res) => {
   const { searchTerm } = req.query;
   const tweets = await roClient.get('search/tweets', { q: searchTerm });
-  const geoTweets = tweets.statuses.filter(tweet => tweet.geo);
-  const geoTweetsWithCoordinates = geoTweets.map(tweet => {
+  const geoTweets = tweets.statuses.filter((tweet) => tweet.geo);
+  const geoTweetsWithCoordinates = geoTweets.map((tweet) => {
     const { coordinates } = tweet.geo;
     return {
       ...tweet,
