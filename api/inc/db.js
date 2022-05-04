@@ -12,8 +12,8 @@ mysql_config.connect(function(err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
-
-  console.log('connected as id ' + mysql_config.threadId);
+  // Debug message to see if connected to database
+  // console.log('connected as id ' + mysql_config.threadId);
 });
 
 module.exports = mysql_config;
