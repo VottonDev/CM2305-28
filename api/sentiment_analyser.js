@@ -43,8 +43,7 @@ for (let i = 0; i<jsonData['data'].length; i++){
   jsonData['data'][i]['sentiment'] = analysis(jsonData['data'][i]["text"]);
   geoJSON['properties']['sentiment'] = analysis(jsonData['data'][i]["text"]);
 
-    const temp = geoJSON;
-    geoArray.push(temp);
+    geoArray.push(geoJSON);
 
 }
 
