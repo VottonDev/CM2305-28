@@ -52,7 +52,6 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
         echo 'Account created succesfully. Check your e-mail for verification code.';
     } else {
         echo 'Failed to register.';
-        print_r($response);
     }
 }
 
@@ -71,7 +70,6 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         echo 'Login succesful.';
     } else {
         echo 'Login failed.';
-        print_r($response);
     }
 }
 
@@ -90,6 +88,51 @@ if (isset($_POST['contact']) && !empty($_POST['contact'])) {
         echo 'Message sent succesfully.';
     } else {
         echo 'Failed to send message.';
-        print_r($response);
+    }
+}
+
+// Change username
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'new_username' => $_POST['new_username'],
+    ];
+    $response = request('/profile/change_username', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Username changed succesfully.';
+    } else {
+        echo 'Failed to change username.';
+    }
+}
+
+// Change email address
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'email' => $_POST['email'],
+    ];
+    $response = request('/profile/change_email', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Email changed succesfully.';
+    } else {
+        echo 'Failed to change email.';
+    }
+}
+
+// Change password
+if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
+    $params = [
+        'new_password' => $_POST['new_password'],
+        'confirming_password' => $_POST['confirm_password'],
+    ];
+    $response = request('/profile/change_password', $post_params = $params);
+
+    if (1 == $response->success) {
+        header('Location: user-settings.php');
+        echo 'Password changed succesfully.';
+    } else {
+        echo 'Failed to change password.';
     }
 }
