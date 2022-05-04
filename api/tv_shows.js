@@ -1,7 +1,7 @@
-var Trakt = require('trakt-api');
-var trakt = Trakt(process.env.TRAKT_API_KEY);
+const Trakt = require('trakt-api');
+const trakt = Trakt(process.env.TRAKT_API_KEY);
 
-var country =  "us";
+const country = "us";
 
 trakt.showTrending({countries: country, extended: 'full'}).then(function(show){
   console.log("list of trending tv shows in specified country: ");
