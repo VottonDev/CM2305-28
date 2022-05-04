@@ -7,7 +7,7 @@ app.post('/change_password', (req, res) => {
     let new_password = req.body.new_password;
     let confirm_password = req.body.confirm_password;
 
-    if (new_password != confirm_password) {
+    if (new_password !== confirm_password) {
         res.send({
             status: false,
             message: 'Password and Confirm Password do not match'
@@ -46,7 +46,7 @@ app.post('/change_email', (req, res) => {
                 message: err
             });
         }
-        if (result.length == 0) {
+        if (result.length === 0) {
             return res.status(403).send({
                 success: false,
                 message: 'User not found'
@@ -59,7 +59,7 @@ app.post('/change_email', (req, res) => {
                         message: err
                     });
                 }
-                if (result == false) {
+                if (result === false) {
                     return res.status(403).send({
                         success: false,
                         message: 'Password is incorrect'
@@ -95,7 +95,7 @@ app.post('/change_username', (req, res) => {
                 message: err
             });
         }
-        if (result.length == 0) {
+        if (result.length === 0) {
             return res.status(403).send({
                 success: false,
                 message: 'User not found'

@@ -113,13 +113,13 @@ app.get('/verify/:email:token', (req, res) => {
         message: 'Error verifying e-mail',
       });
     }
-    if (result.length == 0) {
+    if (result.length === 0) {
       return res.status(403).send({
         success: false,
         message: 'User does not exist',
       });
     }
-    if (result[0].token == token) {
+    if (result[0].token === token) {
       db.query('UPDATE Users SET verified = 1 WHERE username = ?', [email], (err) => {
         if (err) {
           return res.status(500).send({
