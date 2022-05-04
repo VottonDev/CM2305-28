@@ -15,8 +15,6 @@ services:
   mysql:
     container_name: mysql-server
     image: mysql
-    expose:
-      - '3306'
     ports:
       - '3306:3306'
     restart: always
@@ -26,8 +24,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    expose:
-      - '3001'
     ports:
       - '3001:3001'
     restart: unless-stopped
