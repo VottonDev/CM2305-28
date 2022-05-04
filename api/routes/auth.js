@@ -14,14 +14,14 @@ app.post('/register', (req, res) => {
   if (password !== confirm_password) {
     return res.status(400).send({
       success: false,
-      message: 'Passwords do not match'
+      message: 'Passwords do not match',
     });
   } else {
     bcrypt.hash(password, 10, (err, hash) => {
       if (err) {
         return res.status(500).send({
           success: false,
-          message: err
+          message: err,
         });
       } else {
         var token = require('crypto').randomBytes(64).toString('hex');
@@ -29,13 +29,13 @@ app.post('/register', (req, res) => {
           if (err) {
             return res.status(500).send({
               success: false,
-              message: err
+              message: err,
             });
           } else {
             mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3001/auth/verify/' + email + '/' + token);
             return res.status(200).send({
               success: true,
-              message: 'Account created successfully'
+              message: 'Account created successfully',
             });
           }
         });
@@ -78,10 +78,10 @@ app.post('/login', (req, res) => {
       return res.status(200).send({
         success: true,
         message: 'Login successful',
-        body : {
-        username: result[0].username,
-        email: result[0].email
-        }
+        body: {
+          username: result[0].username,
+          email: result[0].email,
+        },
       });
     });
   });
@@ -129,7 +129,7 @@ app.get('/verify/:email:token', (req, res) => {
         }
         // Redirect to dashboard.php if succesful verification  and send success message
         return res.redirect(200), '/dashboard.php' + '?success=true&message=E-mail verified successfully.';
-        });
+      });
     } else {
       return res.status(403).send({
         success: false,

@@ -7,7 +7,7 @@ const mysql_config = mysql.createConnection({
   database: process.env.MYSQL_DATABASE,
 });
 
-mysql_config.connect(function(err) {
+mysql_config.connect(function (err) {
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
