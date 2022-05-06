@@ -19,10 +19,21 @@
     "test": "jest --coverage --forceExit",
     "prettify": "prettier . --write",
     "prettify:check": "prettier . --check",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "husky": "^7.0.4",
     "jest": "^28.0.3",
+    "lint-staged": "^12.4.1",
     "supertest": "^6.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
