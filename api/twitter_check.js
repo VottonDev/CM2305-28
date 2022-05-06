@@ -1,16 +1,11 @@
 const {TwitterApi} = require('twitter-api-v2');
 const fs = require('fs');
-
 const client = new TwitterApi('AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi');
-const roClient = client.readOnly;
-
-const express = require('express');
-const app = express();
 const axios = require('axios').default;
 
 // Get recent tweets from twitter
 
-var counter = 0
+let counter = 0;
 
 
 async function get_recent_tweets(jsonArr){
@@ -47,8 +42,8 @@ async function get_recent_tweets(jsonArr){
           //console.log(response.data.includes.places[counter-1].country_code);
           payload.data.country_code = response.data.includes.places[counter-1].country_code;
 
-          var temp = payload;
-          //console.log(temp);
+            const temp = payload;
+            //console.log(temp);
 
           jsonArr.push(temp);
 
@@ -59,7 +54,7 @@ async function get_recent_tweets(jsonArr){
   } else {
     //res.status(401).json(response.data);
   }
-  main_json = JSON.stringify(jsonArr);
+    let main_json = JSON.stringify(jsonArr);
   console.log(jsonArr);
   fs.writeFile("json.json", main_json, 'utf8', function (err) {
       if (err) {
@@ -69,6 +64,6 @@ async function get_recent_tweets(jsonArr){
 
       console.log("JSON file has been saved.");
   });
-};
+}
 
 get_recent_tweets();

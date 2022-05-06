@@ -1,5 +1,5 @@
 const Trakt = require('trakt.tv');
-var Promise = require("promise");
+const Promise = require("promise");
 require('dotenv').config();
 
 let options = {
