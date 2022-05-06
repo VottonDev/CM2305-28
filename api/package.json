@@ -19,7 +19,7 @@
     "prettify": "prettier . --write",
     "prettify:check": "prettier . --check",
     "start": "nodemon app.js",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install api/.husky"
   },
   "devDependencies": {
     "husky": "^7.0.4",
