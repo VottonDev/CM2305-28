@@ -51,7 +51,7 @@ function setupMap(){
           //add 2 data sources (1 for clusters, 1 for heatmap)
           map.addSource('sampleDataCluster', {
               type: 'geojson',
-              data: './geo.json', //temp data file. Wider spread of data 
+              data: 'sampleData2.geojson', //temp data file. Wider spread of data 
               cluster: true, //enable clustering
               clusterMaxZoom: 9,
               clusterRadius: 50,
@@ -61,7 +61,7 @@ function setupMap(){
 
           map.addSource('sampleDataHeat', {
                type: 'geojson',
-               data: './geo.json',
+               data: 'sampleData2.geojson',
                cluster:false
           });
 
@@ -131,9 +131,8 @@ function setupMap(){
                source: 'sampleDataCluster',
                filter: ['has', 'point_count'],
                layout: {
-                    'text-field': '{point_count_abbreviated}',
-                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                    'text-size': 10,
+                    
+                    
                     'icon-image': 'ps4' //add custom marker to the clusters
                }      
           });
@@ -143,6 +142,8 @@ function setupMap(){
                const features = map.queryRenderedFeatures(e.point, {
                     layers: ['cluster-count']
                });
+               var clusterPoints = features[0].properties.point_count;  //get total points in cluster
+
                const clusterId = features[0].properties.cluster_id;
                map.getSource('sampleDataCluster').getClusterExpansionZoom(
                     clusterId,
@@ -158,7 +159,7 @@ function setupMap(){
                //popup on cluster click (display total point count)
                new mapboxgl.Popup()
                 .setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(`<strong>SOME POPUP:</strong> {}`)
+                .setHTML(`<strong>Total Tweets in Area:</strong> ` + clusterPoints )
                 .addTo(map);
             
                  
