@@ -40,14 +40,6 @@ function setupMap(){
                {url: "static/images/ps4-marker.png", id: 'ps4'},
              ]).then(() => {
                   
-/*
-          map.loadImage(
-               'static\\images\\xbox-marker.png',  
-               (error, image) =>{
-                    if (error) throw error;
-                    map.addImage('xbox-marker', image);
-         */
-
           //add 2 data sources (1 for clusters, 1 for heatmap)
           map.addSource('sampleDataCluster', {
               type: 'geojson',
@@ -130,9 +122,7 @@ function setupMap(){
                type: 'symbol',
                source: 'sampleDataCluster',
                filter: ['has', 'point_count'],
-               layout: {
-                    
-                    
+               layout: { 
                     'icon-image': 'ps4' //add custom marker to the clusters
                }      
           });
@@ -215,14 +205,14 @@ function setupMap(){
           });
 
            // click on unclustered data point to display popup showing magnitude
-       map.on('click', 'data-point', (event) => {
-          new mapboxgl.Popup()
-            .setLngLat(event.features[0].geometry.coordinates)
-            .setHTML(`<strong>Magnitude:</strong> ${event.features[0].properties.mag}, <br> ${event.features[0].properties.time}`)
-            .addTo(map);
-        });
+          map.on('click', 'data-point', (event) => {
+             new mapboxgl.Popup()
+               .setLngLat(event.features[0].geometry.coordinates)
+               .setHTML(`<strong>Magnitude:</strong> ${event.features[0].properties.mag}, <br> ${event.features[0].properties.time}`)
+               .addTo(map);
+          });
 
-            map.moveLayer('cluster-count');  
+          map.moveLayer('cluster-count');  //move icons to top layer
 
 
      });
