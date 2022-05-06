@@ -1,7 +1,6 @@
-const { TwitterApi } = require('twitter-api-v2');
 const fs = require('fs');
-const client = new TwitterApi('AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi');
 const axios = require('axios').default;
+require('dotenv').config();
 
 // Get recent tweets from twitter
 
@@ -10,7 +9,7 @@ let counter = 0;
 async function get_recent_tweets(jsonArr) {
   //let token = req.body.token;
   jsonArr = [];
-  let token = 'AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi';
+  let token = process.env.TWITTER_TOKEN;
   const response = await axios.get(
     'https://api.twitter.com/2/tweets/search/recent' + '?expansions=geo.place_id&tweet.fields=lang,author_id&place.fields=geo,country_code,contained_within&max_results=100',
     {
