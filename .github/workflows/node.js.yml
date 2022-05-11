@@ -55,6 +55,8 @@ jobs:
         MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
         MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
         TWITTER_TOKEN: ${{ secrets.TWITTER_TOKEN }}
+        FLICKR_API_KEY: ${{ secrets.FLICKR_API_KEY }}
+        FLICKR_API_SECRET: ${{ secrets.FLICKR_API_SECRET }}
       run: |
         npm ci
         npm run test
