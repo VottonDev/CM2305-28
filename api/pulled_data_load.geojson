@@ -1,6 +1,7 @@
 {
     "type": "FeatureCollection",
     "features": [
-        {"type":"Feature","properties":{"text":"Unas ganas de tomar una Fanta con doritos","author_id":"1031712557650903041","sentiment":"positive","tv_show":"MasterChef Australia"},"geometry":{"type":"Point","coordinates":[-4.1158701,55.747775,-4.016585,55.808597]}}
+        {"type":"Feature","properties":{"text":"Unas ganas de tomar una Fanta con doritos","author_id":"1031712557650903041","sentiment":"positive","tv_show":"MasterChef Australia"},"geometry":{"type":"Point","coordinates":[-4.1158701,55.747775,-4.016585,55.808597]}},
+        {"type":"Feature","properties":{"text":"fanta &gt; sumol","author_id":"1047932166531895297","sentiment":"positive","tv_show":"New Amsterdam","product":"Fanta"},"geometry":{"type":"Point","coordinates":"-49.75226, -72.51403"}}
     ]
 }
