@@ -1,9 +1,12 @@
 <?php include_once 'header.php'; ?>
 <?php
-   # Count how many text fields are in the json file
+  if (!(isset($_SESSION['email']))) {
+      header('Location: login.php');
+  }
+   // Count how many text fields are in the json file
    $json = file_get_contents('./api/json.json');
    $json_data = json_decode($json, true);
-   # Count the number of text fields
+   // Count the number of text fields
    $totalPosts = count($json_data['data']);
 ?>
 <!DOCTYPE html>
