@@ -1,17 +1,12 @@
 <?php include_once 'header.php'; ?>
 <?php
-  if (!(isset($_SESSION['email']))) {
-      header('Location: login.php');
-  }
+   # Count how many text fields are in the json file
+   $json = file_get_contents('./api/json.json');
+   $json_data = json_decode($json, true);
+   # Count the number of text fields
+   $totalPosts = count($json_data['data']);
 ?>
 <!DOCTYPE html>
-<?php
-  # Count how many text fields are in the json file
-  $json = file_get_contents('./api/json.json');
-  $json_data = json_decode($json, true);
-  # Count the number of text fields
-  $totalPosts = count($json_data['data']);
-?>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -46,10 +41,6 @@
         </div>
 
         <div class="stat">
-          <div class="stat_name"> Post Share % </div>
-        </div>
-
-        <div class="stat">
           <div class="stat_name"> Overall Sentiment </div>
         </div>
       </div>
@@ -61,9 +52,9 @@
       </div>
 
       <div class="chart">
-        <div class="titles"> Pie Chart </div>
+        <div class="titles"> Product Posts </div>
         <div class="chart-wrapper">
-          <canvas id="myChart"></canvas>
+          <canvas id="postChart"></canvas>
         </div>
       </div>
 
