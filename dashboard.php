@@ -1,4 +1,14 @@
-
+<?php include_once 'header.php'; ?>
+<?php
+  if (!(isset($_SESSION['email']))) {
+      header('Location: login.php');
+  }
+   // Count how many text fields are in the json file
+   $json = file_get_contents('./api/json.json');
+   $json_data = json_decode($json, true);
+   // Count the number of text fields
+   $totalPosts = count($json_data['data']);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +16,6 @@
 
     <link rel="stylesheet" href="static/style.css">
      <link rel="stylesheet" href="static/bootstrap.min.css">
-    <?php include 'navbar.php'; ?>
-
     <title> Group Project </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
@@ -32,10 +40,7 @@
       <div class="grid_container">
         <div class="stat">
           <div class="stat_name"> Total Posts </div>
-        </div>
-
-        <div class="stat">
-          <div class="stat_name"> Post Share % </div>
+          <div class="stat_value"> <?php echo $totalPosts; ?> </div>
         </div>
 
         <div class="stat">
@@ -50,9 +55,9 @@
       </div>
 
       <div class="chart">
-        <div class="titles"> Pie Chart </div>
+        <div class="titles"> Product Posts </div>
         <div class="chart-wrapper">
-          <canvas id="myChart"></canvas>
+          <canvas id="postChart"></canvas>
         </div>
       </div>
 
