@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  php:
+    image: php:8.0-apache
+    container_name: php-webserver
+    ports:
+      - 9000:9000
+      - 443:443
+      - 80:80
+    restart: unless-stopped
+    volumes:
+      - /usr/webapp:/usr/webapp
+
+  mysql:
+    container_name: mysql-server
+    image: mysql
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
+    restart: always
+
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - '3001'
+    ports:
+      - '3001:3001'
+    restart: unless-stopped
