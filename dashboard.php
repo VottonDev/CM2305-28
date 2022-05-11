@@ -1,5 +1,12 @@
 
 <!DOCTYPE html>
+<?php
+  # Count how many text fields are in the json file
+  $json = file_get_contents('./api/json.json');
+  $json_data = json_decode($json, true);
+  # Count the number of text fields
+  $totalPosts = count($json_data['data']);
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -32,6 +39,7 @@
       <div class="grid_container">
         <div class="stat">
           <div class="stat_name"> Total Posts </div>
+          <div class="stat_value"> <?php echo $totalPosts; ?> </div>
         </div>
 
         <div class="stat">
