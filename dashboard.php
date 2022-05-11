@@ -1,4 +1,9 @@
-
+<?php include_once 'header.php'; ?>
+<?php
+  if (!(isset($_SESSION['email']))) {
+      header('Location: login.php');
+  }
+?>
 <!DOCTYPE html>
 <?php
   # Count how many text fields are in the json file
@@ -13,8 +18,6 @@
 
     <link rel="stylesheet" href="static/style.css">
      <link rel="stylesheet" href="static/bootstrap.min.css">
-    <?php include 'navbar.php'; ?>
-
     <title> Group Project </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
