@@ -1,7 +1,7 @@
 let ctx = document.getElementById('myChart').getContext('2d');
 let labels = ['Xbox ', 'ps4'];
 let colorHex = ['#FB3640', '#EFCA08', '#43AA8B', '#253D5B'];
-// eslint-disable-next-line no-unused-vars
+
 let myChart = new Chart(ctx, {
   type: 'pie',
   data: {

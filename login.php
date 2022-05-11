@@ -1,8 +1,4 @@
 <?php include_once 'header.php'; ?>
-<?php if ((isset($_SESSION['email']))) {
-    header('Location: dashboard.php');
-}
-?>
 
 
 <div style="background-image: url('static/images/frontpage_map.png');">

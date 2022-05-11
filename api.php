@@ -52,6 +52,7 @@ if (isset($_POST['register']) && !empty($_POST['register'])) {
         echo 'Account created succesfully. Check your e-mail for verification code.';
     } else {
         echo 'Failed to register.';
+        print_r($response);
     }
 }
 
@@ -70,6 +71,7 @@ if (isset($_POST['login']) && !empty($_POST['login'])) {
         echo 'Login succesful.';
     } else {
         echo 'Login failed.';
+        print_r($response);
     }
 }
 
@@ -88,21 +90,24 @@ if (isset($_POST['contact']) && !empty($_POST['contact'])) {
         echo 'Message sent succesfully.';
     } else {
         echo 'Failed to send message.';
+        print_r($response);
     }
 }
 
-// Change username
+// Change password
 if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
     $params = [
-        'new_username' => $_POST['new_username'],
+        'new_password' => $_POST['new_password'],
+        'confirming_password' => $_POST['confirming_password'],
     ];
-    $response = request('/profile/change_username', $post_params = $params);
+    $response = request('/profile/change_password', $post_params = $params);
 
     if (1 == $response->success) {
         header('Location: user-settings.php');
-        echo 'Username changed succesfully.';
+        echo 'Password changed succesfully.';
     } else {
-        echo 'Failed to change username.';
+        echo 'Failed to change password.';
+        print_r($response);
     }
 }
 
@@ -118,14 +123,15 @@ if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
         echo 'Email changed succesfully.';
     } else {
         echo 'Failed to change email.';
+        print_r($response);
     }
 }
 
 // Change password
 if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
     $params = [
-        'new_password' => $_POST['new_password'],
-        'confirming_password' => $_POST['confirm_password'],
+        'confirming_password' => $_POST['new_password'],
+        'new_password' => $_POST['confirm_password'],
     ];
     $response = request('/profile/change_password', $post_params = $params);
 
@@ -134,5 +140,6 @@ if (isset($_POST['usersettings']) && !empty($_POST['usersettings'])) {
         echo 'Password changed succesfully.';
     } else {
         echo 'Failed to change password.';
+        print_r($response);
     }
 }
