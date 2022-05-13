@@ -68,18 +68,6 @@ for (i = 0; i<jsonData.length; i++){
 
 
   var geoConvert = JSON.stringify(myObject);
-
-  /*
-//create FeatureCollection wrap for geojson file
-const geoWrap = {
-  "type": "FeatureCollection",
-  "features": myObject
-};
-
-var geoWrapConvert = JSON.stringify(geoWrap);
-*/
-
-
   fs.writeFile("pulled_data_load.geojson", geoConvert, 'utf8', function (err) {
     if (err) {
         console.log("An error occured while writing JSON Object to File.");

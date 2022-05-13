@@ -1,6 +1,6 @@
 <?php include_once 'header.php'; ?>
 <?php
-  if (!(isset($_SESSION['email']))) {
+  if (!(isset($_SESSION['username']))) {
       header('Location: login.php');
   }
    // Count how many text fields are in the json file
