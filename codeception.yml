@@ -1,8 +1,5 @@
 coverage:
     enabled: true
-include:
-        - api/test/website/logincest.suite.yml
-        - api/test/website/registercest.suite.yml
 paths:
     tests: api/test/website
     log: api/coverage/_logs
