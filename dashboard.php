@@ -36,7 +36,7 @@
             $tv_show_names[] = $tv_show_name;
             $tv_show_count[] = 1;
         } else {
-            $tv_show_count[array_search($tv_show_name, $tv_show_names)] += 1;
+            ++$tv_show_count[array_search($tv_show_name, $tv_show_names)];
         }
     }
 
@@ -50,7 +50,7 @@
             $product_names[] = $product_name;
             $product_count[] = 1;
         } else {
-            $product_count[array_search($product_name, $product_names)] += 1;
+            ++$product_count[array_search($product_name, $product_names)];
         }
     }
 ?>
