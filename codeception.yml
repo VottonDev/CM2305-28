@@ -1,5 +1,9 @@
 coverage:
     enabled: true
+include:
+        - /*
+exclude:
+        - api/website/*
 paths:
     tests: api/test/website
     log: api/coverage/_logs
