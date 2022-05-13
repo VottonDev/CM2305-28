@@ -1,0 +1,5 @@
+actor: LoginCest
+modules:
+    enabled:
+        - PhpBrowser:
+            url: https://cm2305-28.herokuapp.com/
