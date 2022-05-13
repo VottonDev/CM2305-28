@@ -159,19 +159,19 @@ function setupMap(){
                          //get total product and competitor counts per cluster (for popup)
                          
                          for (let i in dataPoints){
-                              if(dataPoints[i].properties.product == "Fanta"){
+                              if(dataPoints[i].properties.product === "Fanta"){
                                    product++;
-                                   if(dataPoints[i].properties.sentiment == "positive"){
+                                   if(dataPoints[i].properties.sentiment === "positive"){
                                         prod_pos++;
                                    }
                               } else {
                                    competitor++;
-                                   if(dataPoints[i].properties.sentiment == "positive"){
+                                   if(dataPoints[i].properties.sentiment === "positive"){
                                         compet_pos++;
                                    }
                               }
                          }
-                    
+
                          prod_pos = Math.round((prod_pos/product)*100);
                          compet_pos = Math.round((compet_pos/competitor)*100);
                     
