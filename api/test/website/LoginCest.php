@@ -1,12 +1,13 @@
 <?php
+
 class LoginCest
 {
-    function _before(AcceptanceTester $I)
+    public function _before(AcceptanceTester $I)
     {
     }
-    
+
     public function _after(AcceptanceTester $I)
-    {        
+    {
     }
 
     public function tryToTest(AcceptanceTester $I)
@@ -15,4 +16,3 @@ class LoginCest
         $I->see('Sign In');
     }
 }
-?>
