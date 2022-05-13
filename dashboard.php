@@ -8,21 +8,38 @@
    $json_data = json_decode($json, true);
    $totalPosts = count($json_data['features']);
 
-   // Get the sentiment and calculate how many positive and negative posts there are
-    $sentiment = [];
-    $sentiment['positive'] = 0;
-    $sentiment['negative'] = 0;
-    $sentiment['neutral'] = 0;
-    $sentiment['total'] = 0;
+   // Get the sentiment of coca cola and calculate how many positive and negative posts there are
+    $sentiment_cola = [];
+    $sentiment_cola['positive'] = 0;
+    $sentiment_cola['negative'] = 0;
+    $sentiment_cola['neutral'] = 0;
+    $sentiment_cola['total'] = 0;
 
-    for ($i = 0; $i < $totalPosts; ++$i) {
-        ++$sentiment['total'];
-        if ('positive' == $json_data['features'][$i]['properties']['sentiment']) {
-            ++$sentiment['positive'];
-        } elseif ('negative' == $json_data['features'][$i]['properties']['sentiment']) {
-            ++$sentiment['negative'];
-        } else {
-            ++$sentiment['neutral'];
+    $sentiment_fanta = [];
+    $sentiment_fanta['positive'] = 0;
+    $sentiment_fanta['negative'] = 0;
+    $sentiment_fanta['neutral'] = 0;
+    $sentiment_fanta['total'] = 0;
+
+    foreach ($json_data['features'] as $post) {
+        if ('Coca Cola' == $post['properties']['product']) {
+            ++$sentiment_cola['total'];
+            if ('positive' == $post['properties']['sentiment']) {
+                ++$sentiment_cola['positive'];
+            } elseif ('negative' == $post['properties']['sentiment']) {
+                ++$sentiment_cola['negative'];
+            } else {
+                ++$sentiment_cola['neutral'];
+            }
+        } elseif ('Fanta' == $post['properties']['product']) {
+            ++$sentiment_fanta['total'];
+            if ('positive' == $post['properties']['sentiment']) {
+                ++$sentiment_fanta['positive'];
+            } elseif ('negative' == $post['properties']['sentiment']) {
+                ++$sentiment_fanta['negative'];
+            } else {
+                ++$sentiment_fanta['neutral'];
+            }
         }
     }
 
