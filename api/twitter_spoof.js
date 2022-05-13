@@ -10,6 +10,8 @@ const axios = require('axios').default;
 var randomCoordinates = require('random-coordinates');
 var prev_data = fs.readFileSync('json.json');
 var myObject = JSON.parse(prev_data);
+var wc = require('which-country');
+
 
 console.log(myObject.length);
 
@@ -19,8 +21,15 @@ var counter = 0
 
 
 async function get_recent_tweets(jsonArr){
+
+  function getRandomFloat(min, max, decimals) {
+  const str = (Math.random() * (max - min) + min).toFixed(decimals);
+
+  return parseFloat(str);
+}
+
   //let token = req.body.token;
-  query  = 'Coca-cola';
+  query  = 'Fanta';
   jsonArr = [];
   let token = 'AAAAAAAAAAAAAAAAAAAAAL65WAEAAAAA%2Bz3MLAMpuqpuAbdRVV7l3WUMPxU%3DNez0849RCsrNP6MEKDGGZxYlwxENJA6TBhIOcJTW0bzG2wgHJi';
   const response = await axios.get(
@@ -42,25 +51,20 @@ async function get_recent_tweets(jsonArr){
           const payload = {
             data:{product: query, text: " ", author_id: " ", coordinates:" ", country_code: " "}
           };
-          //console.log(response.data.data[i].text);
-          payload.data.text = response.data.data[i].text;
-          //console.log(response.data.data[i].author_id);
-          payload.data.author_id = response.data.data[i].author_id;
-          counter += 1;
-          //console.log(response.data.includes.places[counter-1].geo.bbox);
-          payload.data.coordinates = randomCoordinates();
-          //console.log(response.data.includes.places[counter-1].country_code);
-          payload.data.country_code = 'us';
-
-          var temp = payload;
-          //console.log(temp);
-
-          myObject.push(temp);
-          //console.log(temp);
-
-
-          //console.log(payload);
-
+          var lat = getRandomFloat(-90.00,90.00,2);
+          var long = getRandomFloat(-180.00,180.00,2);
+          if (wc([long,lat])!= null){
+            payload.data.text = response.data.data[i].text;
+            payload.data.author_id = response.data.data[i].author_id;
+            payload.data.country_code = 'us';
+            payload.data.coordinates = [long,lat];
+            counter += 1;
+            var temp = payload;
+            console.log(wc([long,lat]));
+            console.log(long,lat);
+            //console.log(temp);
+            myObject.push(temp);
+          }
     }
     //console.log(json);
   } else {
