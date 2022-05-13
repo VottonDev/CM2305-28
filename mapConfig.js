@@ -142,52 +142,51 @@ function setupMap(){
                clusterSource = map.getSource('sampleDataCluster');
                var clusterLoc = e.features[0].geometry.coordinates;
 
-               function createPopUp(clusterLoc, clusterId, clusterSource, totalPosts){
+               function createPopUp(clusterLoc, clusterId, clusterSource, totalPosts){          
+                    //variables to hold no. of posts for both products in clicked cluster
+                    var product =0;
+                    var competitor = 0;
                     
-               //variables to hold no. of posts for both products in clicked cluster
-               var product =0;
-               var competitor = 0;
-
-               prod_pos=0;
-               compet_pos=0;
-
-               //get cluster leaves (all data points under clicked cluster)
-               clusterSource.getClusterLeaves(clusterId, totalPosts, 0, (error,features) => {
-                    console.log('cluster leaves', features);
-                    console.log('cluster loc', clusterLoc );
-                    const dataPoints = features; //get list of data points in a cluster
-
-                    //get total product and competitor counts per cluster (for popup)
+                    prod_pos=0;
+                    compet_pos=0;
                     
-                    for (let i in dataPoints){
-                         if(dataPoints[i].properties.product == "Fanta"){
-                              product++;
-                              if(dataPoints[i].properties.sentiment == "positive"){
-                                   prod_pos++;
-                              }
-                         } else {
-                              competitor++;
-                              if(dataPoints[i].properties.sentiment == "positive"){
-                                   compet_pos++;
+                    //get cluster leaves (all data points under clicked cluster)
+                    clusterSource.getClusterLeaves(clusterId, totalPosts, 0, (error,features) => {
+                         console.log('cluster leaves', features);
+                         console.log('cluster loc', clusterLoc );
+                         const dataPoints = features; //get list of data points in a cluster
+                    
+                         //get total product and competitor counts per cluster (for popup)
+                         
+                         for (let i in dataPoints){
+                              if(dataPoints[i].properties.product == "Fanta"){
+                                   product++;
+                                   if(dataPoints[i].properties.sentiment == "positive"){
+                                        prod_pos++;
+                                   }
+                              } else {
+                                   competitor++;
+                                   if(dataPoints[i].properties.sentiment == "positive"){
+                                        compet_pos++;
+                                   }
                               }
                          }
-                    }
-
-                    prod_pos = Math.round((prod_pos/product)*100);
-                    compet_pos = Math.round((compet_pos/competitor)*100);
-
-                    console.log('product:' + product + ' compet:' + competitor);
                     
-                    map.getSource('sampleDataCluster').getClusterExpansionZoom(
-                         clusterId,
-                         (err, zoom) => {
-                              if (err) return;
-     
-                              map.easeTo({
-                                   center: features[0].geometry.coordinates, zoom: zoom
-                              });
-                         }
-                    ); 
+                         prod_pos = Math.round((prod_pos/product)*100);
+                         compet_pos = Math.round((compet_pos/competitor)*100);
+                    
+                         console.log('product:' + product + ' compet:' + competitor);
+                         
+                         map.getSource('sampleDataCluster').getClusterExpansionZoom(
+                              clusterId,
+                              (err, zoom) => {
+                                   if (err) return;
+                              
+                                   map.easeTo({
+                                        center: features[0].geometry.coordinates, zoom: zoom
+                                   });
+                              }
+                         ); 
      
                     //popup on cluster click (display total point count)
                     new mapboxgl.Popup()
