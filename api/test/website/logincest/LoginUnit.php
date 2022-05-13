@@ -1,4 +1,8 @@
 <?php
+/**
+ * @internal
+ * @coversNothing
+ */
 class UserTest extends \Codeception\Test\Unit
 {
     public function testValidation()
@@ -15,4 +19,3 @@ class UserTest extends \Codeception\Test\Unit
         $this->assertTrue($user->validate(['username']));
     }
 }
-?>
