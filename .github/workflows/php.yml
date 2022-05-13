@@ -32,6 +32,9 @@ jobs:
     - name: Run friendsofphp/php-cs-fixer
       run: PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix . --dry-run --show-progress=dots --using-cache=no --verbose
 
+    - name: Build test suite
+      run: php vendor/bin/codecept build
+
     - name: Run test suite
       run: XDEBUG_MODE=coverage composer run-script codecept
 
