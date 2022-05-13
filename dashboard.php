@@ -1,13 +1,30 @@
 <?php include_once 'header.php'; ?>
 <?php
-  if (!(isset($_SESSION['username']))) {
-      header('Location: login.php');
-  }
+ if (!(isset($_SESSION['username']))) {
+     header('Location: login.php');
+ }
    // Count how many text fields are in the json file
-   $json = file_get_contents('./api/json.json');
+   $json = file_get_contents('./api/mapData.geojson');
    $json_data = json_decode($json, true);
-   // Count the number of text fields
-   $totalPosts = count($json_data['data']);
+   $totalPosts = count($json_data['features']);
+
+   // Get the sentiment and calculate how many positive and negative posts there are
+    $sentiment = [];
+    $sentiment['positive'] = 0;
+    $sentiment['negative'] = 0;
+    $sentiment['neutral'] = 0;
+    $sentiment['total'] = 0;
+
+    for ($i = 0; $i < $totalPosts; ++$i) {
+        ++$sentiment['total'];
+        if ('positive' == $json_data['features'][$i]['properties']['sentiment']) {
+            ++$sentiment['positive'];
+        } elseif ('negative' == $json_data['features'][$i]['properties']['sentiment']) {
+            ++$sentiment['negative'];
+        } else {
+            ++$sentiment['neutral'];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +62,7 @@
 
         <div class="stat">
           <div class="stat_name"> Overall Sentiment </div>
+          <div class="stat_value"> <?php echo $overallSentiment; ?> </div>
         </div>
       </div>
     </div>
