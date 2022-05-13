@@ -8,7 +8,7 @@
    $json_data = json_decode($json, true);
    $totalPosts = count($json_data['features']);
 
-   // Get the sentiment of coca cola and calculate how many positive and negative posts there are
+   // Get the sentiment of Coca-cola and calculate how many positive and negative posts there are
     $sentiment_cola = [];
     $sentiment_cola['positive'] = 0;
     $sentiment_cola['negative'] = 0;
@@ -22,7 +22,7 @@
     $sentiment_fanta['total'] = 0;
 
     foreach ($json_data['features'] as $post) {
-        if ('Coca Cola' == $post['properties']['product']) {
+        if ('Coca-cola' == $post['properties']['product']) {
             ++$sentiment_cola['total'];
             if ('positive' == $post['properties']['sentiment']) {
                 ++$sentiment_cola['positive'];
