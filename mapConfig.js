@@ -1,5 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFsLXdvb2QiLCJhIjoiY2oyZ2t2em50MDAyMzJ3cnltMDFhb2NzdiJ9.X-D4Wvo5E5QxeP7K_I3O8w';
 
+dataPoints = " ";
 
 setupMap()
 
@@ -43,7 +44,7 @@ function setupMap(){
           //add 2 data sources (1 for clusters, 1 for heatmap)
           map.addSource('sampleDataCluster', {
               type: 'geojson',
-              data: 'sampleData2.geojson', //temp data file. Wider spread of data 
+              data: 'api\\pain.geojson', //temp data file. Wider spread of data 
               cluster: true, //enable clustering
               clusterMaxZoom: 9,
               clusterRadius: 50,
@@ -53,7 +54,7 @@ function setupMap(){
 
           map.addSource('sampleDataHeat', {
                type: 'geojson',
-               data: 'sampleData2.geojson',
+               data: 'api\\pain.geojson',
                cluster:false
           });
 
@@ -127,39 +128,82 @@ function setupMap(){
                }      
           });
 
-          //perform action on cluster point click (zoom in and popup)
+
+          //perform action on cluster click (zoom in and popup)
           map.on('click', 'cluster-count', (e) => {
+
                const features = map.queryRenderedFeatures(e.point, {
                     layers: ['cluster-count']
                });
-               var clusterPoints = features[0].properties.point_count;  //get total points in cluster
+               var totalPosts = features[0].properties.point_count;  //get total points in cluster
+               console.log('cluster: ' +features[0].properties)
 
-               const clusterId = features[0].properties.cluster_id;
-               map.getSource('sampleDataCluster').getClusterExpansionZoom(
-                    clusterId,
-                    (err, zoom) => {
-                         if (err) return;
+               var clusterId = features[0].properties.cluster_id;
+               clusterSource = map.getSource('sampleDataCluster');
+               var clusterLoc = e.features[0].geometry.coordinates;
 
-                         map.easeTo({
-                              center: features[0].geometry.coordinates, zoom: zoom
-                         });
+               function createPopUp(clusterLoc, clusterId, clusterSource, totalPosts){
+                    
+               //variables to hold no. of posts for both products in clicked cluster
+               var product =0;
+               var competitor = 0;
+
+               prod_pos=0;
+               compet_pos=0;
+
+               //get cluster leaves (all data points under clicked cluster)
+               clusterSource.getClusterLeaves(clusterId, totalPosts, 0, (error,features) => {
+                    console.log('cluster leaves', features);
+                    console.log('cluster loc', clusterLoc );
+                    const dataPoints = features; //get list of data points in a cluster
+
+                    //get total product and competitor counts per cluster (for popup)
+                    
+                    for (let i in dataPoints){
+                         if(dataPoints[i].properties.product == "Fanta"){
+                              product++;
+                              if(dataPoints[i].properties.sentiment == "positive"){
+                                   prod_pos++;
+                              }
+                         } else {
+                              competitor++;
+                              if(dataPoints[i].properties.sentiment == "positive"){
+                                   compet_pos++;
+                              }
+                         }
                     }
-               ); 
 
-               //popup on cluster click (display total point count)
-               new mapboxgl.Popup()
-                .setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(`<strong>Total Tweets in Area:</strong> ` + clusterPoints )
-                .addTo(map);
-            
-                 
+                    prod_pos = Math.round((prod_pos/product)*100);
+                    compet_pos = Math.round((compet_pos/competitor)*100);
+
+                    console.log('product:' + product + ' compet:' + competitor);
+                    
+                    map.getSource('sampleDataCluster').getClusterExpansionZoom(
+                         clusterId,
+                         (err, zoom) => {
+                              if (err) return;
+     
+                              map.easeTo({
+                                   center: features[0].geometry.coordinates, zoom: zoom
+                              });
+                         }
+                    ); 
+     
+                    //popup on cluster click (display total point count)
+                    new mapboxgl.Popup()
+                     .setLngLat(clusterLoc)
+                     .setHTML(`<strong>Total Tweets in Area:</strong> ` + totalPosts + '<br>Product Posts: ' + product + ' (' + prod_pos + '% positive)' +  '<br> Competitor Posts: ' + competitor + ' (' + compet_pos + '% positive)')
+                     .addTo(map);
+               });
+                    
+               }
+               createPopUp(clusterLoc, clusterId, clusterSource, totalPosts);
           });
-
-
+             
 
           //--------------HEATMAP LAYERS-----------------
           map.addLayer({
-               'id': 'heatmap',
+               'id': 'heatmap_layer',
                'type': 'heatmap',
                'source': 'sampleDataHeat',
                'maxzoom': 15,
@@ -174,7 +218,7 @@ function setupMap(){
                     0.8, 'rgb(239,138,98)',
                     1, 'rgb(239,96,78)'
                ],
-               'heatmap-radius': ['interpolate', ['linear'], ['zoom'],0, 2, 9, 20],
+               'heatmap-radius': ['interpolate', ['linear'], ['zoom'],0, 6, 2, 16],
                     // Transition from heatmap to circle layer by zoom level
                     'heatmap-opacity': ['interpolate', ['linear'], ['zoom'], 7, 1, 9, 0]
                }
@@ -184,17 +228,16 @@ function setupMap(){
                'id': 'data-point',
                'type': 'circle',
                'source': 'sampleDataHeat',
-               'minzoom': 7,
+               'minzoom': 5,
 
                'paint': {
                     'circle-radius': 4,
                     'circle-stroke-width': 1,
                     'circle-stroke-color': '#fff',
      
-                    'circle-color': [
-                         'match', 
-                         ['get', 'felt'],
-                         '3',
+                    'circle-color': 
+                    ['match', ['get', 'sampleDataHeat'],
+                         'Fanta',
                          '#0000ff', //e.g. color if xbox
                           //other e.g. ps4
                          '#00ff00' 
@@ -208,12 +251,20 @@ function setupMap(){
           map.on('click', 'data-point', (event) => {
              new mapboxgl.Popup()
                .setLngLat(event.features[0].geometry.coordinates)
-               .setHTML(`<strong>Magnitude:</strong> ${event.features[0].properties.mag}, <br> ${event.features[0].properties.time}`)
+               .setHTML(`<strong>Product:</strong> ${event.features[0].properties.product}, <br> <strong>Sentiment:</strong> ${event.features[0].properties.sentiment}, <br> <strong>Tweet: </strong> ${event.features[0].properties.text} `)
                .addTo(map);
           });
 
           map.moveLayer('cluster-count');  //move icons to top layer
+          
+          /*
+          //filters points by product cocacola
+          map.setFilter('heatmap_layer', ['==', 'product', 'Coca-cola']); 
 
+          //filters points by product fanta
+          map.setFilter('heatmap_layer', ['==', 'product', 'Fanta']); 
+
+          */
 
      });
 });
