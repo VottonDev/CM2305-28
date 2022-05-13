@@ -44,7 +44,7 @@ function setupMap(){
           //add 2 data sources (1 for clusters, 1 for heatmap)
           map.addSource('sampleDataCluster', {
               type: 'geojson',
-              data: 'api\\pain.geojson', //temp data file. Wider spread of data 
+              data: 'api\\mapData.geojson', //temp data file. Wider spread of data 
               cluster: true, //enable clustering
               clusterMaxZoom: 9,
               clusterRadius: 50,
@@ -54,7 +54,7 @@ function setupMap(){
 
           map.addSource('sampleDataHeat', {
                type: 'geojson',
-               data: 'api\\pain.geojson',
+               data: 'api\\mapData.geojson',
                cluster:false
           });
 
