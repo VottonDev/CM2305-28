@@ -107,12 +107,12 @@
       <div class="grid_container">
         <div class="stat">
           <div class="stat_name"> Total Posts </div>
-          <div class="stat_value"> <?php echo $totalPosts; ?> </div>
+          <div class="num"> <?php echo $totalPosts; ?> </div>
         </div>
 
         <div class="stat">
           <div class="stat_name"> Overall Sentiment </div>
-          <div class="stat_value">  </div>
+          <div class="stat_value">  <?php echo $tv_show_name; ?> </div>  </div>
         </div>
       </div>
     </div>
