@@ -81,10 +81,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <script type="text/javascript">
-        var fantaP = '<?php echo $sentiment_fanta['positive'];?>';
-        var fantaN = '<?php echo $sentiment_fanta['negative'];?>';
-        var colaP = '<?php echo $sentiment_cola['positive'];?>';
-        var colaN = '<?php echo $sentiment_cola['negative'];?>';
+        var fantaP = '<?php echo $sentiment_fanta['positive']; ?>';
+        var fantaN = '<?php echo $sentiment_fanta['negative']; ?>';
+        var colaP = '<?php echo $sentiment_cola['positive']; ?>';
+        var colaN = '<?php echo $sentiment_cola['negative']; ?>';
     </script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     <script src="mapConfig.js" defer></script>
@@ -111,16 +111,15 @@
         </div>
 
         <div class="stat">
-          <div class="stat_name"> Overall Sentiment </div>
-          <div class="stat_value">  <?php echo $tv_show_name; ?> </div>  </div>
+          <div class="stat_name"> Most trending TV show </div>
+          <div class="num">  <?php echo $tv_show_name; ?> </div>
         </div>
       </div>
     </div>
 
-    <!-- This bit contains the table for DB stats -->
     <div class="container2">
       <div class="db_output">
-      <div class="titles">  DB Stats </div>
+      <div class="titles">  Overall Sentiment </div>
       <table class="table">
   <thead class="thead-dark">
     <tr>
