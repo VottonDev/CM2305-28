@@ -42,7 +42,6 @@
             }
         }
     }
-
     // Get the tv_show from properties and count how many times each tv show is mentioned
     $tv_show_names = [];
     $tv_show_count = [];
@@ -81,6 +80,12 @@
     <title> Group Project </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <script type="text/javascript">
+        var fantaP = '<?php echo $sentiment_fanta['positive'];?>';
+        var fantaN = '<?php echo $sentiment_fanta['negative'];?>';
+        var colaP = '<?php echo $sentiment_cola['positive'];?>';
+        var colaN = '<?php echo $sentiment_cola['negative'];?>';
+    </script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     <script src="mapConfig.js" defer></script>
 
@@ -107,14 +112,46 @@
 
         <div class="stat">
           <div class="stat_name"> Overall Sentiment </div>
-          <div class="stat_value"> <?php echo $overallSentiment; ?> </div>
+          <div class="stat_value">  </div>
         </div>
       </div>
     </div>
 
+    <!-- This bit contains the table for DB stats -->
     <div class="container2">
       <div class="db_output">
       <div class="titles">  DB Stats </div>
+      <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Fanta</th>
+      <th scope="col">Coca-Cola</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Positive</th>
+      <td><?php echo $sentiment_fanta['positive']; ?></td>
+      <td><?php echo $sentiment_cola['positive']; ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Negative</th>
+      <td><?php echo $sentiment_fanta['negative']; ?></td>
+      <td><?php echo $sentiment_cola['negative']; ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Neutral</th>
+      <td><?php echo $sentiment_fanta['neutral']; ?></td>
+      <td><?php echo $sentiment_cola['neutral']; ?></td>
+    </tr>
+    <tr>
+      <th scope="row">Total</th>
+      <td><?php echo $sentiment_fanta['total']; ?></td>
+      <td><?php echo $sentiment_cola['total']; ?></td>
+    </tr>
+  </tbody>
+</table>
       </div>
 
       <div class="chart">
