@@ -56,6 +56,20 @@
         }
     }
 
+    // Get the product from properties and count how many times each product is mentioned
+    $product_names = [];
+    $product_count = [];
+
+    for ($i = 0; $i < $totalPosts; ++$i) {
+        $product_name = $json_data['features'][$i]['properties']['product'];
+        if (!(in_array($product_name, $product_names))) {
+            $product_names[] = $product_name;
+            $product_count[] = 1;
+        } else {
+            ++$product_count[array_search($product_name, $product_names)];
+        }
+    }
+
     // Get the likes and retweets from properties and count how many times each like and retweet is mentioned for each product
     // Uncomment once mapData.geojson is updated
     // $likes_cola = [];
@@ -75,20 +89,6 @@
     //         $reweets_fanta['retweets'] += $json_data['features'][$i]['properties']['retweets'];
     //     }
     // }
-
-    // Get the product from properties and count how many times each product is mentioned
-    $product_names = [];
-    $product_count = [];
-
-    for ($i = 0; $i < $totalPosts; ++$i) {
-        $product_name = $json_data['features'][$i]['properties']['product'];
-        if (!(in_array($product_name, $product_names))) {
-            $product_names[] = $product_name;
-            $product_count[] = 1;
-        } else {
-            ++$product_count[array_search($product_name, $product_names)];
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
