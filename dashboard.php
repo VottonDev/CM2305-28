@@ -56,6 +56,26 @@
         }
     }
 
+    // Get the likes and retweets from properties and count how many times each like and retweet is mentioned for each product
+    // Uncomment once mapData.geojson is updated
+    // $likes_cola = [];
+    // $likes_cola['likes'] = 0;
+    // $reweets_cola['retweets'] = 0;
+
+    // $likes_fanta = [];
+    // $likes_fanta['likes'] = 0;
+    // $reweets_fanta['retweets'] = 0;
+
+    // for ($i = 0; $i < $totalPosts; ++$i) {
+    //     if ('Coca-cola' == $json_data['features'][$i]['properties']['product']) {
+    //         $likes_cola['likes'] += $json_data['features'][$i]['properties']['likes'];
+    //         $reweets_cola['retweets'] += $json_data['features'][$i]['properties']['retweets'];
+    //     } elseif ('Fanta' == $json_data['features'][$i]['properties']['product']) {
+    //         $likes_fanta['likes'] += $json_data['features'][$i]['properties']['likes'];
+    //         $reweets_fanta['retweets'] += $json_data['features'][$i]['properties']['retweets'];
+    //     }
+    // }
+
     // Get the product from properties and count how many times each product is mentioned
     $product_names = [];
     $product_count = [];
