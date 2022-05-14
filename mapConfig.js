@@ -264,6 +264,11 @@ function setupMap(){
           map.setFilter('heatmap_layer', ['==', 'product', 'Fanta']); 
 
           */
+          
+          /*
+          // Filter by country
+          map.setFilter('heatmap_layer', ['==', 'country', 'United States']);
+          */
 
      });
 });
