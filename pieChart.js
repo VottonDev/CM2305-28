@@ -1,5 +1,5 @@
 let ctx = document.getElementById('postChart').getContext('2d');
-let labels = ['Xbox ', 'ps4'];
+let labels = ['Fanta -', 'Fanta +', 'Coca-Cola -', 'Coca-Cola +'];
 let colorHex = ['#FB3640', '#EFCA08', '#43AA8B', '#253D5B'];
 
 // Display posts difference between two products
@@ -8,7 +8,7 @@ let postChart = new Chart(ctx, {
   type: 'pie',
   data: {
     datasets: [{
-      data: [30, 40],
+      data: [fantaN, fantaP, colaN, colaP],
       backgroundColor: colorHex
     }],
     labels: labels
