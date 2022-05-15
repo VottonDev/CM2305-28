@@ -1,0 +1,7 @@
+coverage:
+    enabled: true
+paths:
+    tests: api/test/website
+    log: api/coverage/_logs
+    data: api/coverage/tests/_data
+    helpers: api/coverage/tests/_helpers
