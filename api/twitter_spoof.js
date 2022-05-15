@@ -52,7 +52,7 @@ async function get_recent_tweets(jsonArr) {
       const payload = {
         data: { product: query, text: ' ', author_id: ' ', coordinates: ' ', country_code: ' ', source: ' ', retweets: ' ', likes: ' ', interests: ' ' },
       };
-      const lat = getRandomFloat(-90.0, 90.0, 2);
+      const lat = getRandomFloat(-66.5, 66.5, 2);
       const long = getRandomFloat(-180.0, 180.0, 2);
       if (wc([long, lat]) != null && 'context_annotations' in response.data.data[i]) {
         const country_code_hold = wc([long, lat]);
