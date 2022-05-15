@@ -1,6 +1,14 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFsLXdvb2QiLCJhIjoiY2oyZ2t2em50MDAyMzJ3cnltMDFhb2NzdiJ9.X-D4Wvo5E5QxeP7K_I3O8w';
 
+
+filter_button="";
 dataPoints = " ";
+
+//get filter option from button click
+function getButtonFilter(val){
+     filter_button = val;
+     console.log(filter_button);
+}
 
 setupMap()
 
@@ -44,7 +52,7 @@ function setupMap(){
           //add 2 data sources (1 for clusters, 1 for heatmap)
           map.addSource('sampleDataCluster', {
               type: 'geojson',
-              data: 'api\\mapData.geojson', //temp data file. Wider spread of data 
+              data: 'api\\pulled_data_load (4).geojson', //temp data file. Wider spread of data 
               cluster: true, //enable clustering
               clusterMaxZoom: 9,
               clusterRadius: 50,
@@ -54,9 +62,15 @@ function setupMap(){
 
           map.addSource('sampleDataHeat', {
                type: 'geojson',
-               data: 'api\\mapData.geojson',
+               data: 'api\\pulled_data_load (4).geojson',
                cluster:false
           });
+
+          map.addSource('invisData', {
+               type: 'geojson',
+               data: 'api\\pulled_data_load (4).geojson',
+               cluster:false
+          })
 
 /*
           // Add markers to map for each point in the source data 
@@ -124,10 +138,25 @@ function setupMap(){
                source: 'sampleDataCluster',
                filter: ['has', 'point_count'],
                layout: { 
-                    'icon-image': 'ps4' //add custom marker to the clusters
+                    'icon-image': 'xbox' //add custom marker to the clusters
                }      
           });
-
+/*
+          var posProductFilter = [
+               "all",
+               ["in", "product", 'Coca-cola'],
+               ["in", "sentiment", 'positive']
+         ]
+         map.setFilter('heatmap_layer', posProductFilter);
+*/
+          map.addLayer({
+               id: 'invisLayer',
+               type: 'symbol',
+               source: 'invisData',
+               layout:{
+                    'visibility': 'none'
+               }
+          });
 
           //perform action on cluster click (zoom in and popup)
           map.on('click', 'cluster-count', (e) => {
@@ -135,10 +164,10 @@ function setupMap(){
                const features = map.queryRenderedFeatures(e.point, {
                     layers: ['cluster-count']
                });
-               var totalPosts = features[0].properties.point_count;  //get total points in cluster
-               console.log('cluster: ' +features[0].properties)
+               var totalPosts = e.features[0].properties.point_count;  //get total points in cluster
+               console.log('cluster: ' + e.features[0].properties)
 
-               var clusterId = features[0].properties.cluster_id;
+               var clusterId = e.features[0].properties.cluster_id;
                clusterSource = map.getSource('sampleDataCluster');
                var clusterLoc = e.features[0].geometry.coordinates;
 
@@ -147,8 +176,14 @@ function setupMap(){
                     var product =0;
                     var competitor = 0;
                     
+                    //variables to hold sentiment count for each product
                     prod_pos=0;
                     compet_pos=0;
+
+                    //variable to hold list of tv shows in clicked cluster
+                    tv_show_list=[];
+
+
                     
                     //get cluster leaves (all data points under clicked cluster)
                     clusterSource.getClusterLeaves(clusterId, totalPosts, 0, (error,features) => {
@@ -157,26 +192,48 @@ function setupMap(){
                          const dataPoints = features; //get list of data points in a cluster
                     
                          //get total product and competitor counts per cluster (for popup)
-                         
                          for (let i in dataPoints){
-                              if(dataPoints[i].properties.product === "Fanta"){
+                              if(dataPoints[i].properties.product == "Fanta"){
                                    product++;
-                                   if(dataPoints[i].properties.sentiment === "positive"){
+                                   if(dataPoints[i].properties.sentiment == "positive"){
                                         prod_pos++;
                                    }
                               } else {
                                    competitor++;
-                                   if(dataPoints[i].properties.sentiment === "positive"){
+                                   if(dataPoints[i].properties.sentiment == "positive"){
                                         compet_pos++;
                                    }
                               }
+                              //add data point tv shows to tv show list
+                              tv_show_list[i]=dataPoints[i].properties.tv_show;
                          }
 
+                         console.log('tv show list:' + tv_show_list[1]);
+                    
+                         //calculate positive sentiment percentage
                          prod_pos = Math.round((prod_pos/product)*100);
                          compet_pos = Math.round((compet_pos/competitor)*100);
                     
                          console.log('product:' + product + ' compet:' + competitor);
-                         
+
+                         //get most common tv show value
+                         var modeMap = {};
+                         var mode_show = tv_show_list[0], mode_count = 1;
+                         for(var i = 0; i < tv_show_list.length; i++){
+                             var el = tv_show_list[i];
+                             if(modeMap[el] == null)
+                                 modeMap[el] = 1;
+                             else
+                                 modeMap[el]++;  
+                             if(modeMap[el] > mode_count)
+                             {
+                                 mode_show = el;
+                                 mode_count = modeMap[el];
+                             }
+                         }
+                         console.log('mode:' + mode_show + ' mode count:' + mode_count);
+                     /*    
+                         //zoom slightly on clicked cluster
                          map.getSource('sampleDataCluster').getClusterExpansionZoom(
                               clusterId,
                               (err, zoom) => {
@@ -187,11 +244,13 @@ function setupMap(){
                                    });
                               }
                          ); 
-     
+     */
                     //popup on cluster click (display total point count)
                     new mapboxgl.Popup()
                      .setLngLat(clusterLoc)
-                     .setHTML(`<strong>Total Tweets in Area:</strong> ` + totalPosts + '<br>Product Posts: ' + product + ' (' + prod_pos + '% positive)' +  '<br> Competitor Posts: ' + competitor + ' (' + compet_pos + '% positive)')
+                     .setHTML(`<strong>Total Tweets in Area:</strong> ` + totalPosts + 
+                              '<br>Product Posts: ' + product + ' (' + prod_pos + '% positive)' +  '<br> Competitor Posts: ' + competitor + ' (' + compet_pos + '% positive)' + 
+                              '<br>TV Show to Advertise During: ' + mode_show)
                      .addTo(map);
                });
                     
@@ -250,7 +309,7 @@ function setupMap(){
           map.on('click', 'data-point', (event) => {
              new mapboxgl.Popup()
                .setLngLat(event.features[0].geometry.coordinates)
-               .setHTML(`<strong>Product:</strong> ${event.features[0].properties.product}, <br> <strong>Sentiment:</strong> ${event.features[0].properties.sentiment}, <br> <strong>Tweet: </strong> ${event.features[0].properties.text} `)
+               .setHTML(`<strong>Product:</strong> ${event.features[0].properties.product}, <br> <strong>Sentiment:</strong> ${event.features[0].properties.sentiment}, <br> <strong>Tweet: </strong> ${event.features[0].properties.text}, <br> <strong>Country Code: </strong> ${event.features[0].properties.country_code}`)
                .addTo(map);
           });
 
@@ -264,11 +323,70 @@ function setupMap(){
           map.setFilter('heatmap_layer', ['==', 'product', 'Fanta']); 
 
           */
+
+         
+         //filter by our product--------------------------------
+
+     /*
+          var posProductFilter = [
+               "all",
+               ["in", "product", 'Coca-cola'],
+               ["in", "sentiment", 'positive']
+         ]
+         map.setFilter('heatmap_layer', posProductFilter);
+     */
+
+         //filter by competitor product--------------------------
+
+         //filter by country code-------------------------------
+        // const country_code = "DZA";
+        // map.setFilter('heatmap_layer', ['==', ['get', 'country_code'] , country_code]);
+
+         //filter by sentiment
+
+        // map.setFilter('cluster-count', ['==', ['get','product'], 'Coca-cola']);
+         
+        // map.getSource('sampleDataCluster').setData('invisLayer');
+
+        //function to re-add cluster layer when filter is applied
+        function clusterLayer(filter_option){
           
-          /*
-          // Filter by country
-          map.setFilter('heatmap_layer', ['==', 'country', 'United States']);
-          */
+          //remove current cluster source and layer
+          map.removeLayer('cluster-count');
+          map.removeSource('sampleDataCluster');
+
+           //re-add cluster source
+          var filter_file = `api\\${filter_option}.geojson`;
+          map.addSource('sampleDataCluster',{
+               type: 'geojson',
+               data: filter_file, //temp data file. Wider spread of data 
+               cluster: true, //enable clustering
+               clusterMaxZoom: 9,
+               clusterRadius: 50,
+               clusterMinPoints: 5    
+          });  
+
+          //re-add cluster layer
+          map.addLayer({ //add data count for each cluster
+               id: 'cluster-count',
+               type: 'symbol',
+               source: 'sampleDataCluster',
+               filter: ['has', 'point_count'],
+               layout: { 
+                    'icon-image': 'xbox' //add custom marker to the clusters
+               }      
+          });
+          console.log('updated sources');
+
+        }
+    
+     console.log(filter_button);
+     if(filter_button=="Coca-cola Only"){
+          console.log("this runs");
+          clusterLayer("coke_only");
+          map.setFilter('heatmap_layer', ['==', ['get', 'product'], 'Coca-cola']);
+    }  
+
 
      });
 });
