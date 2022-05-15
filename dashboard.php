@@ -4,7 +4,7 @@
      header('Location: login.php');
  }
    // Count how many text fields are in the json file
-   $json = file_get_contents('./api/mapData.geojson');
+   $json = file_get_contents('./api/pulled_data_load.geojson');
    $json_data = json_decode($json, true);
    $totalPosts = count($json_data['features']);
 
@@ -71,38 +71,37 @@
     }
 
     // Get the likes and retweets from properties and count how many times each like and retweet is mentioned for each product
-    // Uncomment once mapData.geojson is updated
-    // $likes_cola = [];
-    // $likes_cola['likes'] = 0;
-    // $reweets_cola['retweets'] = 0;
+    $likes_cola = [];
+    $likes_cola['likes'] = 0;
+    $reweets_cola['retweets'] = 0;
 
-    // $likes_fanta = [];
-    // $likes_fanta['likes'] = 0;
-    // $reweets_fanta['retweets'] = 0;
+    $likes_fanta = [];
+    $likes_fanta['likes'] = 0;
+    $reweets_fanta['retweets'] = 0;
 
-    // for ($i = 0; $i < $totalPosts; ++$i) {
-    //     if ('Coca-cola' == $json_data['features'][$i]['properties']['product']) {
-    //         $likes_cola['likes'] += $json_data['features'][$i]['properties']['likes'];
-    //         $reweets_cola['retweets'] += $json_data['features'][$i]['properties']['retweets'];
-    //     } elseif ('Fanta' == $json_data['features'][$i]['properties']['product']) {
-    //         $likes_fanta['likes'] += $json_data['features'][$i]['properties']['likes'];
-    //         $reweets_fanta['retweets'] += $json_data['features'][$i]['properties']['retweets'];
-    //     }
-    // }
+    for ($i = 0; $i < $totalPosts; ++$i) {
+        if ('Coca-cola' == $json_data['features'][$i]['properties']['product']) {
+            $likes_cola['likes'] += $json_data['features'][$i]['properties']['likes'];
+            $reweets_cola['retweets'] += $json_data['features'][$i]['properties']['retweets'];
+        } elseif ('Fanta' == $json_data['features'][$i]['properties']['product']) {
+            $likes_fanta['likes'] += $json_data['features'][$i]['properties']['likes'];
+            $reweets_fanta['retweets'] += $json_data['features'][$i]['properties']['retweets'];
+        }
+    }
 
     // Get top interest from properties and display the top interest
-    // $interest_names = [];
-    // $interest_count = [];
+    $interest_names = [];
+    $interest_count = [];
 
-    // for ($i = 0; $i < $totalPosts; ++$i) {
-    //     $interest_name = $json_data['features'][$i]['properties']['interests'];
-    //     if (!(in_array($interest_name, $interest_names))) {
-    //         $interest_names[] = $interest_name;
-    //         $interest_count[] = 1;
-    //     } else {
-    //         ++$interest_count[array_search($interest_name, $interest_names)];
-    //     }
-    // }
+    for ($i = 0; $i < $totalPosts; ++$i) {
+        $interest_name = $json_data['features'][$i]['properties']['interests'];
+        if (!(in_array($interest_name, $interest_names))) {
+            $interest_names[] = $interest_name;
+            $interest_count[] = 1;
+        } else {
+            ++$interest_count[array_search($interest_name, $interest_names)];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +150,7 @@
 
         <div class="stat">
           <div class="stat_name"> Interests </div>
-          <div class="num1"> blank </div>
+          <div class="num1"> <?php echo $interest_name; ?> </div>
         </div>
       </div>
     </div>
@@ -212,14 +211,14 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">likes</th>
-      <td>$fanta likes</td>
-      <td>$Coca-cola likes</td>
+      <th scope="row">Likes</th>
+      <td><?php echo $likes_fanta['likes']; ?></td>
+      <td><?php echo $likes_cola['likes']; ?></td>
     </tr>
     <tr>
       <th scope="row">Retweets</th>
-      <td>$fanta Retweets</td>
-      <td>$Coca-cola retweets</td>
+      <td><?php echo $reweets_fanta['retweets']; ?></td>
+      <td><?php echo $reweets_cola['retweets']; ?></td>
     </tr>
   </tbody>
 </table>
