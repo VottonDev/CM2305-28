@@ -1,8 +1,8 @@
 <?php include_once 'header.php'; ?>
 <?php
- if (!(isset($_SESSION['username']))) {
-     header('Location: login.php');
- }
+if (!(isset($_SESSION['username']))) {
+    header('Location: login.php');
+}
    // Count how many text fields are in the json file
    $json = file_get_contents('./api/pulled_data_load.geojson');
    $json_data = json_decode($json, true);
@@ -112,14 +112,14 @@
      <link rel="stylesheet" href="static/bootstrap.min.css">
     <title> Group Project </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
     <script type="text/javascript">
         var fantaP = '<?php echo $sentiment_fanta['positive']; ?>';
         var fantaN = '<?php echo $sentiment_fanta['negative']; ?>';
         var colaP = '<?php echo $sentiment_cola['positive']; ?>';
         var colaN = '<?php echo $sentiment_cola['negative']; ?>';
     </script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
     <script src="mapConfig.js" defer></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
