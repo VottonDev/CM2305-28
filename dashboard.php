@@ -189,7 +189,7 @@ if (!(isset($_SESSION['username']))) {
       </div>
 
       <div class="chart">
-        <div class="titles"> Product Posts </div>
+        <div class="titles"> Overall Sentiment as Chart </div>
         <div class="chart-wrapper">
           <canvas id="postChart"></canvas>
         </div>
