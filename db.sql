@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 17, 2022 at 07:43 PM
+-- Generation Time: May 15, 2022 at 05:56 PM
 -- Server version: 10.5.15-MariaDB-1:10.5.15+maria~focal
--- PHP Version: 7.4.27
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,30 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `unicw`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Company`
---
-
-CREATE TABLE `Company` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `product` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Competitors`
---
-
-CREATE TABLE `Competitors` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `product` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,18 +41,6 @@ CREATE TABLE `Users` (
 --
 
 --
--- Indexes for table `Company`
---
-ALTER TABLE `Company`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `Competitors`
---
-ALTER TABLE `Competitors`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `Users`
 --
 ALTER TABLE `Users`
@@ -85,18 +49,6 @@ ALTER TABLE `Users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `Company`
---
-ALTER TABLE `Company`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Competitors`
---
-ALTER TABLE `Competitors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Users`
