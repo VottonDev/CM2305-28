@@ -102,6 +102,18 @@ if (!(isset($_SESSION['username']))) {
             ++$interest_count[array_search($interest_name, $interest_names)];
         }
     }
+
+    // Total posts by product
+    $total_posts_cola = 0;
+    $total_posts_fanta = 0;
+
+    for ($i = 0; $i < $totalPosts; ++$i) {
+        if ('Coca-cola' == $json_data['features'][$i]['properties']['product']) {
+            ++$total_posts_cola;
+        } elseif ('Fanta' == $json_data['features'][$i]['properties']['product']) {
+            ++$total_posts_fanta;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
