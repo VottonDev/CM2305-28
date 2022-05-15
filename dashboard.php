@@ -89,6 +89,20 @@
     //         $reweets_fanta['retweets'] += $json_data['features'][$i]['properties']['retweets'];
     //     }
     // }
+    
+    // Get top interest from properties and display the top interest
+    // $interest_names = [];
+    // $interest_count = [];
+
+    // for ($i = 0; $i < $totalPosts; ++$i) {
+    //     $interest_name = $json_data['features'][$i]['properties']['interests'];
+    //     if (!(in_array($interest_name, $interest_names))) {
+    //         $interest_names[] = $interest_name;
+    //         $interest_count[] = 1;
+    //     } else {
+    //         ++$interest_count[array_search($interest_name, $interest_names)];
+    //     }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
