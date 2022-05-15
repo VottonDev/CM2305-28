@@ -178,11 +178,6 @@
       <td><?php echo $sentiment_cola['negative']; ?></td>
     </tr>
     <tr>
-      <th scope="row">Neutral</th>
-      <td><?php echo $sentiment_fanta['neutral']; ?></td>
-      <td><?php echo $sentiment_cola['neutral']; ?></td>
-    </tr>
-    <tr>
       <th scope="row">Total</th>
       <td><?php echo $sentiment_fanta['total']; ?></td>
       <td><?php echo $sentiment_cola['total']; ?></td>
