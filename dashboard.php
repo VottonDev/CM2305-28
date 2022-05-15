@@ -89,7 +89,7 @@
     //         $reweets_fanta['retweets'] += $json_data['features'][$i]['properties']['retweets'];
     //     }
     // }
-    
+
     // Get top interest from properties and display the top interest
     // $interest_names = [];
     // $interest_count = [];
