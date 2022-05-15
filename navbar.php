@@ -12,9 +12,8 @@
         if (!(isset($_SESSION['username']))) {
             echo '<a class="nav-item nav-link right-align" href="login.php">Login</a>';
         } else {
-          echo '<a class="nav-item nav-link right-align2" width="20" class="right-align" href="logout.php">Log out</a>';
-          echo '<a class="nav-item nav-link" href="user-settings.php"><img src="../static/images/user_setting.png" alt="userSetting" width="20" class="right-align">';
-
+            echo '<a class="nav-item nav-link right-align2" width="20" class="right-align" href="logout.php">Log out</a>';
+            echo '<a class="nav-item nav-link" href="user-settings.php"><img src="../static/images/user_setting.png" alt="userSetting" width="20" class="right-align">';
         }
       ?>
       </a>
