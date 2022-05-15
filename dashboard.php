@@ -146,7 +146,12 @@
 
         <div class="stat">
           <div class="stat_name"> Most trending TV show </div>
-          <div class="num">  <?php echo $tv_show_name; ?> </div>
+          <div class="num1">  <?php echo $tv_show_name; ?> </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat_name"> Interests </div>
+          <div class="num1"> blank </div>
         </div>
       </div>
     </div>
@@ -194,6 +199,30 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="container2">
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Fanta</th>
+      <th scope="col">Coca-Cola</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">likes</th>
+      <td>$fanta likes</td>
+      <td>$Coca-cola likes</td>
+    </tr>
+    <tr>
+      <th scope="row">Retweets</th>
+      <td>$fanta Retweets</td>
+      <td>$Coca-cola retweets</td>
+    </tr>
+  </tbody>
+</table>
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
