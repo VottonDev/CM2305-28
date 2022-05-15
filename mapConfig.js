@@ -5,6 +5,7 @@ filter_button="";
 dataPoints = " ";
 
 //get filter option from button click
+// eslint-disable-next-line no-unused-vars
 function getButtonFilter(val){
      filter_button = val;
      console.log(filter_button);
@@ -160,7 +161,7 @@ function setupMap(){
 
           //perform action on cluster click (zoom in and popup)
           map.on('click', 'cluster-count', (e) => {
-
+               // eslint-disable-next-line no-unused-vars
                const features = map.queryRenderedFeatures(e.point, {
                     layers: ['cluster-count']
                });
