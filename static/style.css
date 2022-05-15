@@ -222,3 +222,14 @@ padding-right:5%;
   font-size: 40px;
   font-weight: bold;
 }
+.num1{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-weight: medium;
+}
+.right-align2 {
+  position: absolute;
+  left:90%;
+  top:10%;
+}
