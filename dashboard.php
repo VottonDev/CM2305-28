@@ -120,7 +120,7 @@ if (!(isset($_SESSION['username']))) {
         var colaN = '<?php echo $sentiment_cola['negative']; ?>';
     </script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
-    <script src="mapConfig.js" defer></script>
+    
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
@@ -129,6 +129,8 @@ if (!(isset($_SESSION['username']))) {
   </head>
 
   <body style="background-color: #1a1a1a;">
+      <script src="mapConfig.js" defer></script>
+  <input type="button" value="Coca-cola Only" onclick="getButtonFilter(this.value)">
     <article>
       <div class="mappingbox">
         <div class="innerbox">
