@@ -188,6 +188,13 @@ if (!(isset($_SESSION['username']))) {
 </table>
       </div>
 
+      <div class="chart">
+        <div class="titles"> Product Posts </div>
+        <div class="chart-wrapper">
+          <canvas id="postChart"></canvas>
+        </div>
+      </div>
+
     </div>
 
     <div class="container2">
@@ -215,6 +222,7 @@ if (!(isset($_SESSION['username']))) {
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script src="pieChart.js"></script>
 </article>
 </body>
 </html>
