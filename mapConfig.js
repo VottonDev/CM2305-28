@@ -52,7 +52,7 @@ function setupMap(){
           //add 2 data sources (1 for clusters, 1 for heatmap)
           map.addSource('sampleDataCluster', {
               type: 'geojson',
-              data: 'api\\pulled_data_load (4).geojson', //temp data file. Wider spread of data 
+              data: 'api\\pulled_data_load.geojson', //temp data file. Wider spread of data 
               cluster: true, //enable clustering
               clusterMaxZoom: 9,
               clusterRadius: 50,
@@ -62,13 +62,13 @@ function setupMap(){
 
           map.addSource('sampleDataHeat', {
                type: 'geojson',
-               data: 'api\\pulled_data_load (4).geojson',
+               data: 'api\\pulled_data_load.geojson',
                cluster:false
           });
 
           map.addSource('invisData', {
                type: 'geojson',
-               data: 'api\\pulled_data_load (4).geojson',
+               data: 'api\\pulled_data_load.geojson',
                cluster:false
           })
 
@@ -315,6 +315,38 @@ function setupMap(){
 
           map.moveLayer('cluster-count');  //move icons to top layer
           
+          /*
+          //filters points by product cocacola
+          map.setFilter('heatmap_layer', ['==', 'product', 'Coca-cola']); 
+
+          //filters points by product fanta
+          map.setFilter('heatmap_layer', ['==', 'product', 'Fanta']); 
+
+          */
+
+         
+         //filter by our product--------------------------------
+
+     /*
+          var posProductFilter = [
+               "all",
+               ["in", "product", 'Coca-cola'],
+               ["in", "sentiment", 'positive']
+         ]
+         map.setFilter('heatmap_layer', posProductFilter);
+     */
+
+         //filter by competitor product--------------------------
+
+         //filter by country code-------------------------------
+        // const country_code = "DZA";
+        // map.setFilter('heatmap_layer', ['==', ['get', 'country_code'] , country_code]);
+
+         //filter by sentiment
+
+        // map.setFilter('cluster-count', ['==', ['get','product'], 'Coca-cola']);
+         
+        // map.getSource('sampleDataCluster').setData('invisLayer');
 
         //function to re-add cluster layer when filter is applied
         function clusterLayer(filter_option){
