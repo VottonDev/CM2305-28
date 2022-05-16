@@ -11,7 +11,7 @@ async function get_recent_tweets(jsonArr) {
   jsonArr = [];
   let token = process.env.TWITTER_TOKEN;
   const response = await axios.get(
-    'https://api.twitter.com/2/tweets/search/recent' + '?expansions=geo.place_id&tweet.fields=lang,author_id&place.fields=geo,country_code,contained_within&max_results=100',
+    'https://api.twitter.com/2/tweets/search/recent' + "?expansions=geo.place_id&tweet.fields=context_annotations,public_metrics,lang,author_id,source&place.fields=geo,country_code,contained_within&max_results=100",
     {
       params: {
         query: 'Holiday',
@@ -26,19 +26,20 @@ async function get_recent_tweets(jsonArr) {
     //console.log(response.data.includes.places[0].geo.bbox);
     //console.log(response.data.includes.places[0].country_code);
     for (i = 0; i < 100; i++) {
-      if (response.data.data[i].geo != null) {
+      if (response.data.data[i].geo != null && 'context_annotations' in response.data.data[i]) {
         const payload = {
-          data: { text: ' ', author_id: ' ', coordinates: ' ', country_code: ' ' },
+          data: { text: ' ', author_id: ' ', coordinates: ' ', country_code: ' ', source:" ", retweets:" ", likes:" ", interests:" " },
         };
         //console.log(response.data.data[i].text);
-        payload.data.text = response.data.data[i].text;
-        //console.log(response.data.data[i].author_id);
-        payload.data.author_id = response.data.data[i].author_id;
-        counter += 1;
-        //console.log(response.data.includes.places[counter-1].geo.bbox);
-        payload.data.coordinates = response.data.includes.places[counter - 1].geo.bbox;
-        //console.log(response.data.includes.places[counter-1].country_code);
-        payload.data.country_code = response.data.includes.places[counter - 1].country_code;
+            counter += 1;
+            payload.data.interests = response.data.data[i].context_annotations[0].domain.description;
+            payload.data.text = response.data.data[i].text;
+            payload.data.author_id = response.data.data[i].author_id;
+            payload.data.coordinates = response.data.includes.places[counter-1].geo.bbox;
+            payload.data.country_code = response.data.includes.places[counter-1].country_code;
+            payload.data.source = response.data.data[i].source;
+            payload.data.retweets = response.data.data[i].public_metrics.retweet_count;
+            payload.data.likes = response.data.data[i].public_metrics.like_count;
 
         const temp = payload;
         //console.log(temp);
