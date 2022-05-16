@@ -71,7 +71,7 @@ for (let i = 0; i < jsonData.length; i++) {
       geoJSON['properties']['tv_show'] = ' ';
     });
 }
-
+//timeout to allow TV Show api to load
 setTimeout(function () {
   for (let i = 0; i < jsonData.length; i++) {
     geoJSON['properties']['tv_show'] = tempshow;
@@ -80,6 +80,7 @@ setTimeout(function () {
     //geoArray.push(temp);
     myObject.push(temp);
   }
+  // write copy of geojson
   const geoConvert = JSON.stringify(myObject);
   fs.writeFile('main_data.geojson', geoConvert, 'utf8', function (err) {
     if (err) {
@@ -96,7 +97,7 @@ const geoWrap={
 }
 
 const main_geo = JSON.stringify(geoWrap);
-
+//create main geojson
   fs.writeFile("pulled_data_load.geojson", main_geo, 'utf8', function (err) {
     if (err) {
         console.log("An error occured while writing JSON Object to File.");
@@ -105,4 +106,70 @@ const main_geo = JSON.stringify(geoWrap);
 
     console.log("geoJSON file has been saved.");
   });
+  
+//create data filters
+const coca_filter = ['in', 'product', 'Coca-Cola'];
+const fanta_filter = ['in', 'product', 'Fanta'];
+const positive_sent_filter = ['in', 'sentiment', 'positive'];
+const negative_sent_filter = ['in', 'sentiment', 'negative'];
+const demo_country_filter = ['==', 'country_code', 'CHN'];
+
+// write various filters to geojsons. Have to filter raw geojson as mapbox cluster layer doesn't allow filter application after intialisation
+var coca = JSON.stringify(geoFilter(geoWrap, coca_filter));
+fs.writeFile('coke_only.geojson', coca, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
+
+//geojson for coke + pos sent
+var coca_pos = JSON.stringify(geoFilter(geoWrap, ['all', coca_filter, positive_sent_filter]));
+fs.writeFile('coke_pos.geojson', coca_pos, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
+
+//geojson for coke + neg sent
+var coca_neg = JSON.stringify(geoFilter(geoWrap, ['all', coca_filter, negative_sent_filter]));
+fs.writeFile('coke_neg.geojson', coca_neg, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
+
+var fanta = JSON.stringify(geoFilter(geoWrap, fanta_filter));
+fs.writeFile('fanta_only.geojson', fanta, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
+
+var fanta_pos = JSON.stringify(geoFilter(geoWrap, ['all', fanta_filter, positive_sent_filter]));
+fs.writeFile('fanta_pos.geojson', fanta_pos, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
+
+var fanta_neg = JSON.stringify(geoFilter(geoWrap, ['all', fanta_filter, negative_sent_filter]));
+fs.writeFile('fanta_neg.geojson', fanta_neg, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
+// eslint-disable-next-line no-unused-vars
+var country_demo = JSON.stringify(geoFilter(geoWrap, demo_country_filter));
+fs.writeFile('country_demo.geojson', country_demo, 'utf8', function (err) {
+  if (err) {
+    console.log('An error occured while writing JSON Object to File.');
+    return console.log(err);
+  }
+});
 }, 2000);
