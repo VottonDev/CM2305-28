@@ -26,7 +26,7 @@ app.post('/register', (req, res) => {
           message: err,
         });
       } else {
-        // Create a randomised token that's 64 characters, covert to String hex format
+        // Create a randomised token that's 64 characters, convert to String hex format
         var token = require('crypto').randomBytes(64).toString('hex');
         db.query('INSERT INTO Users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
           if (err) {
