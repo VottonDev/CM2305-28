@@ -116,7 +116,7 @@ function setupMap(){
                     
                          //get total product and competitor counts per cluster (for popup)
                          for (let i in dataPoints){
-                              if(dataPoints[i].properties.product == "Coca-cola"){
+                              if(dataPoints[i].properties.product == "Coca-Cola"){
                                    product++;
                                    if(dataPoints[i].properties.sentiment == "positive"){
                                         prod_pos++;
@@ -225,7 +225,7 @@ function setupMap(){
                          property: 'product',
                          type: 'categorical',
                          stops: [
-                             ['Coca-cola', '#b31504'],
+                             ['Coca-Cola', '#b31504'],
                              ['Fanta', '#f78f2d'],
                              ['Other', '#ccc']]
                      },
@@ -285,7 +285,7 @@ function setupMap(){
 
      // create filter expressions
      // eslint-disable-next-line no-unused-vars
-     const coca_filter = ['in', 'product', 'Coca-cola'];
+     const coca_filter = ['in', 'product', 'Coca-Cola'];
      // eslint-disable-next-line no-unused-vars
      const fanta_filter = ['in', 'product', 'Fanta'];
      // eslint-disable-next-line no-unused-vars
