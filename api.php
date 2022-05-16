@@ -1,9 +1,6 @@
 <?php
 
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 // Request function to call the NodeJS API
 function request($route, $post_params = null, $get_params = null)
