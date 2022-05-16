@@ -1,8 +1,9 @@
 <?php
 
+// Start PHP Session
 session_start();
 
-// Request function to call the NodeJS API
+// Request function to build a query for NodeJS API
 function request($route, $post_params = null, $get_params = null)
 {
     $req_url = 'localhost:3001'.$route;

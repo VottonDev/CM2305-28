@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 
+// Set SMTP transport credentials
 let transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
   port: 587,
