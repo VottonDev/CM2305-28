@@ -6,6 +6,7 @@ dataPoints = " ";
 
 //get filter option from button click
 // eslint-disable-next-line no-unused-vars
+//supposed to assign button click value to global variable to use to check filter option (not functional)
 function getButtonFilter(val){
      filter_button = val;
      console.log(filter_button);
@@ -13,6 +14,7 @@ function getButtonFilter(val){
 
 setupMap()
 
+//function containing map setup (map data sources, layers, functionality)
 function setupMap(){
      const map = new mapboxgl.Map({
         container: 'map',
@@ -21,7 +23,8 @@ function setupMap(){
         center: [0,30]
       });
 
-      function addImages(map, images) {  //load in custom markers
+      //load in custom markers
+      function addImages(map, images) {  
           const addImage = (map, id, url) => {
             return new Promise((resolve, reject) => {
               map.loadImage(url, (error, image) => {
@@ -39,16 +42,14 @@ function setupMap(){
         }
 
 
-
-     const nav = new mapboxgl.NavigationControl() //adds zoom and rotate btns
+     //adds zoom and rotate btns
+     const nav = new mapboxgl.NavigationControl() 
      map.addControl(nav)
 
      map.on('load', () => {
-
+          //add various marker images
           addImages(map, [
-               {url: "static/images/map_marker.png", id:'marker'},
-               {url: "static/images/xbox-marker.png", id: 'xbox'},
-               {url: "static/images/ps4-marker.png", id: 'ps4'},
+               {url: "static/images/map_marker.png", id:'marker'}
              ]).then(() => {
                   
           //add 2 data sources (1 for clusters, 1 for heatmap)
@@ -68,8 +69,8 @@ function setupMap(){
                cluster:false
           });
 
-          
-          map.addLayer({ //add data count for each cluster
+          //add cluster layer
+          map.addLayer({ 
                id: 'cluster-count',
                type: 'symbol',
                source: 'sampleDataCluster',
@@ -129,8 +130,6 @@ function setupMap(){
                               //add data point tv shows to tv show list
                               tv_show_list[i]=dataPoints[i].properties.tv_show;
                          }
-
-                         console.log('tv show list:' + tv_show_list[1]);
                     
                          //calculate positive sentiment percentage for both products
                          if(product !=0){
@@ -140,8 +139,6 @@ function setupMap(){
                               compet_pos = Math.round((compet_pos/competitor)*100);
                          }
                          
-                         
-                    
                          console.log('Coca-Cola:' + product + ' Fanta:' + competitor);
 
                          //get most common tv show value
@@ -175,7 +172,9 @@ function setupMap(){
      
                     //popup on cluster click (display total point count)
                     new mapboxgl.Popup()
+                    //set popup coords based on cluster location on map
                      .setLngLat(clusterLoc)
+                     //set popup text (includes various stats)
                      .setHTML(`<strong>Total Tweets in Area:</strong> ${totalPosts} 
                               <br> <strong>Coca-Cola Posts:</strong> ${product} (${prod_pos}% positive) <br> <strong> Fanta Posts: </strong> ${competitor} (${compet_pos}% positive)
                               <br> <strong>TV Show to Advertise During: </strong> ${mode_show} `)
@@ -183,6 +182,7 @@ function setupMap(){
                });
                     
                }
+               //call createPopUp function to create popup for cluster
                createPopUp(clusterLoc, clusterId, clusterSource, totalPosts);
           });
              
@@ -194,7 +194,6 @@ function setupMap(){
                'source': 'sampleDataHeat',
                'maxzoom': 15,
                'paint': {
-                    'heatmap-weight': ['interpolate', ['linear'], ['get', 'mag'], 0, 0, 12, 1],
                     'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 0, 1, 9, 3],
                     'heatmap-color': ['interpolate', ['linear'], ['heatmap-density'],
                     0, 'rgba(33,102,172,0)',
@@ -236,11 +235,17 @@ function setupMap(){
                }
           });
 
-           // click on unclustered data point to display popup showing magnitude
+          // click on unclustered data point to display popup showing datapoint features
           map.on('click', 'data-point', (event) => {
              new mapboxgl.Popup()
-               .setLngLat(event.features[0].geometry.coordinates)
-               .setHTML(`<strong>Product:</strong> ${event.features[0].properties.product}, <br> <strong>Sentiment:</strong> ${event.features[0].properties.sentiment}, <br> <strong>Tweet: </strong> ${event.features[0].properties.text}, <br> <strong>Country Code: </strong> ${event.features[0].properties.country_code}, <br> <strong>Posted via: </strong> ${event.features[0].properties.source}`)
+               //set popup coordinates to data point clicked
+               .setLngLat(event.features[0].geometry.coordinates) 
+               //set popup text (includes various properties like product, sentiment, message, etc)
+               .setHTML(`<strong>Product:</strong> ${event.features[0].properties.product}, <br> 
+                         <strong>Sentiment:</strong> ${event.features[0].properties.sentiment}, <br> 
+                         <strong>Tweet: </strong> ${event.features[0].properties.text}, <br> 
+                         <strong>Country Code: </strong> ${event.features[0].properties.country_code}, <br> 
+                         <strong>Posted via: </strong> ${event.features[0].properties.source}`)
                .addTo(map);
           });
 
@@ -276,16 +281,18 @@ function setupMap(){
                }      
           });
           console.log('updated sources');
-
         }
-    
+        
+     /* purpose - conditional to check which filter button is clicked and pass its value to clusterLayer function to apply filter (not fully functional: button value is undefined when reaching this conditional)
      console.log(filter_button);
      if(filter_button=="Coca-cola Only"){
           console.log("this runs");
           clusterLayer("coke_only");
           map.setFilter('heatmap_layer', ['==', ['get', 'product'], 'Coca-cola']);
     }  
+    */
 
+    //create filter expressions
      const coca_filter = ['in', 'product', 'Coca-cola'];
      const fanta_filter = ['in', 'product', 'Fanta'];
      const positive_sent_filter = ['in', 'sentiment', 'positive'];
