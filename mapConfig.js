@@ -282,15 +282,6 @@ function setupMap(){
           });
           console.log('updated sources');
         }
-        
-     /* purpose - conditional to check which filter button is clicked and pass its value to clusterLayer function to apply filter (not fully functional: button value is undefined when reaching this conditional)
-     console.log(filter_button);
-     if(filter_button=="Coca-cola Only"){
-          console.log("this runs");
-          clusterLayer("coke_only");
-          map.setFilter('heatmap_layer', ['==', ['get', 'product'], 'Coca-cola']);
-    }  
-    */
 
      // create filter expressions
      // eslint-disable-next-line no-unused-vars
@@ -304,11 +295,23 @@ function setupMap(){
      // eslint-disable-next-line no-unused-vars
      const country_demo_filter = ['in', 'country_code', 'CHN'];
 
+     /*
+     // purpose - conditional to check which filter button is clicked and pass its value to clusterLayer function to apply filter (not fully functional: button value is undefined when reaching this conditional)
+     //coke filter button
+     //check filter_button value (error:comes as undefined/blank)
+     if(filter_button=="Coca-cola Only"){  
+          clusterLayer("coke_only"); //run clusterLayer to filter by coke_only
+          map.setFilter('heatmap_layer', coca_filter); //set heatmap filter to coke_only
+          map.setFilter('data-point', coca_filter);
+    }  
+    
+*/
+
     //for demo purposes in presentation
 
-     /* coke only filter
-     clusterLayer("coke_only");
-     map.setFilter('heatmap_layer', coca_filter);
+     /*coke only filter
+     clusterLayer("coke_only"); //call clusterLayer function to apply filter to cluster layer
+     map.setFilter('heatmap_layer', coca_filter); //set heatmap filters
      map.setFilter('data-point', coca_filter);
      */
 
