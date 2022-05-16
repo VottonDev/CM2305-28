@@ -80,7 +80,7 @@ if (!(isset($_SESSION['username']))) {
     $reweets_fanta['retweets'] = 0;
 
     for ($i = 0; $i < $totalPosts; ++$i) {
-        if ('Coca-cola' == $json_data['features'][$i]['properties']['product']) {
+        if ('Coca-Cola' == $json_data['features'][$i]['properties']['product']) {
             $likes_cola['likes'] += $json_data['features'][$i]['properties']['likes'];
             $reweets_cola['retweets'] += $json_data['features'][$i]['properties']['retweets'];
         } elseif ('Fanta' == $json_data['features'][$i]['properties']['product']) {
@@ -108,7 +108,7 @@ if (!(isset($_SESSION['username']))) {
     $total_posts_fanta = 0;
 
     for ($i = 0; $i < $totalPosts; ++$i) {
-        if ('Coca-cola' == $json_data['features'][$i]['properties']['product']) {
+        if ('Coca-Cola' == $json_data['features'][$i]['properties']['product']) {
             ++$total_posts_cola;
         } elseif ('Fanta' == $json_data['features'][$i]['properties']['product']) {
             ++$total_posts_fanta;
@@ -162,7 +162,7 @@ if (!(isset($_SESSION['username']))) {
 
         <div class="stat">
           <div class="stat_name"> Interests </div>
-          <div class="num2"> <?php echo $interest_name; ?> </div>
+          <div class="num1"> <?php echo $interest_name; ?> </div>
         </div>
       </div>
     </div>
