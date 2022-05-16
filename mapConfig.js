@@ -295,24 +295,28 @@ function setupMap(){
      const fanta_filter = ['in', 'product', 'Fanta'];
      const positive_sent_filter = ['in', 'sentiment', 'positive'];
      const negative_sent_filter = ['in', 'sentiment', 'negative'];
+     const country_demo_filter = ['in', 'country_code', 'CHN'];
 
     //for demo purposes in presentation
 
      /* coke only filter
-    clusterLayer("coke_only");
-    map.setFilter('heatmap_layer', coca_filter);
-    map.setFilter('data-point', coca_filter);
+     clusterLayer("coke_only");
+     map.setFilter('heatmap_layer', coca_filter);
+     map.setFilter('data-point', coca_filter);
      */
 
-/* fanta only filter
-    clusterLayer("fanta_only");
-    map.setFilter('heatmap_layer', fanta_filter);
-    map.setFilter('data-point', fanta_filter);
+     /* fanta only filter
+     clusterLayer("fanta_only");
+     map.setFilter('heatmap_layer', fanta_filter);
+     map.setFilter('data-point', fanta_filter);
 */
 
+/* country code = var some_country_code  (CHN for demo purpose)
+     clusterLayer("country_demo");
+     map.setFilter('heatmap_layer', country_demo_filter);
+     map.setFilter('data-point', country_demo_filter);
+*/
     
-    
-
 
      });
 });
