@@ -11,8 +11,8 @@
       <div class="col-md-6 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold" style="color: #ededed; opacity:0.9;">Footer Head 1</h5>
-        <p style="color:#ededed; opacity:0.8; font-size:15px;"> insert footer data here...</p>
+        <h5 class="text-uppercase font-weight-bold" style="color: #ededed; opacity:0.9;">Social Media</h5>
+        <p style="color:#ededed; opacity:0.8; font-size:15px;"> Instagram: MarketFinder <br> Twitter: MarketFinder</p>
 
       </div>
       <!-- Grid column -->
@@ -23,8 +23,8 @@
       <div class="col-md-6 mb-md-0 mb-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold" style="color:#ededed; opacity:0.9;">Footer Head 2</h5>
-        <p style="color:#ededed; opacity:0.8; font-size:15px;"> *insert footer info data/links here..</p>
+        <h5 class="text-uppercase font-weight-bold" style="color:#ededed; opacity:0.9;"></h5>
+        <p style="color:#ededed; opacity:0.8; font-size:15px;"></p>
 
       </div>
       <!-- Grid column -->
