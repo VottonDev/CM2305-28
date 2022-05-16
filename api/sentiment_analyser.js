@@ -18,7 +18,7 @@ function analysis(text) {
 //read in json payload
 const jsonData = require('./json.json');
 
-const prev_data = fs.readFileSync('pulled_data_load.geojson');
+const prev_data = fs.readFileSync('main_data.geojson');
 const myObject = JSON.parse(prev_data);
 
 // hold all objects to later convert to JSON file
@@ -81,12 +81,28 @@ setTimeout(function () {
     myObject.push(temp);
   }
   const geoConvert = JSON.stringify(myObject);
-  fs.writeFile('pulled_data_load.geojson', geoConvert, 'utf8', function (err) {
+  fs.writeFile('main_data.geojson', geoConvert, 'utf8', function (err) {
     if (err) {
       console.log('An error occured while writing JSON Object to File.');
       return console.log(err);
     }
 
     console.log('JSON file for geoJSON file has been saved.');
+  });
+  
+const geoWrap={
+  type:'FeatureCollection',
+  features: myObject
+}
+
+const main_geo = JSON.stringify(geoWrap);
+
+  fs.writeFile("pulled_data_load.geojson", main_geo, 'utf8', function (err) {
+    if (err) {
+        console.log("An error occured while writing JSON Object to File.");
+        return console.log(err);
+    }
+
+    console.log("geoJSON file has been saved.");
   });
 }, 2000);
