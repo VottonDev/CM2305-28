@@ -35,7 +35,7 @@ for (let i = 0; i < jsonData.length; i++) {
   //created object for geoJSON variable
   geoJSON = {
     type: 'Feature',
-    properties: { text: ' ', author_id: ' ', sentiment: ' ', tv_show: ' ' },
+    properties: { text: ' ', author_id: ' ', sentiment: ' ', tv_show: ' ', product: ' ', country_code:" ", source: " ", retweets:" ", likes:" ", interests:" "},
     geometry: { type: 'Point', coordinates: [] },
   };
 
@@ -43,15 +43,25 @@ for (let i = 0; i < jsonData.length; i++) {
   text_temp = jsonData[i].data.text;
   author_temp = jsonData[i].data.author_id;
   country_code_temp = jsonData[i].data.country_code;
+  coordinates = jsonData[i].data.coordinates;
+  product_temp = jsonData[i].data.product;
+  source_temp = jsonData[i].data.source;
+  retweets_temp  = jsonData[i].data.retweets;
+  likes_temp = jsonData[i].data.likes;
+  interests_temp  =  jsonData[i].data.interests;
+
 
   geoJSON['properties']['text'] = text_temp;
   geoJSON['properties']['author_id'] = author_temp;
-  //Add sentiment field to the json object
-  //jsonData['data'][i]['sentiment'] = analysis(jsonData['data'][i]["text"]);
   geoJSON['properties']['sentiment'] = analysis(text_temp);
-  geoJSON['geometry']['coordinates'] = jsonData[0].data.coordinates;
-
-  geoJSON['properties']['tv_show'] = tv_show(country_code_temp)
+  geoJSON['geometry']['coordinates'] = coordinates;
+  geoJSON['properties']['product'] = product_temp;
+  geoJSON['properties']['country_code'] = country_code_temp;
+  geoJSON['properties']['source'] = source_temp;
+  geoJSON['properties']['retweets'] = retweets_temp;
+  geoJSON['properties']['likes'] = likes_temp;
+  geoJSON['properties']['interests']  = interests_temp;
+  
     .then((show) => {
       geoJSON['properties']['tv_show'] = show;
       tempshow = show;
