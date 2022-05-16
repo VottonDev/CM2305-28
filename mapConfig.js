@@ -176,9 +176,9 @@ function setupMap(){
                     //popup on cluster click (display total point count)
                     new mapboxgl.Popup()
                      .setLngLat(clusterLoc)
-                     .setHTML(`<strong>Total Tweets in Area:</strong> ` + totalPosts + 
-                              '<br>Coca-Cola Posts: ' + product + ' (' + prod_pos + '% positive)' +  '<br> Fanta Posts: ' + competitor + ' (' + compet_pos + '% positive)' + 
-                              '<br>TV Show to Advertise During: ' + mode_show)
+                     .setHTML(`<strong>Total Tweets in Area:</strong> ${totalPosts} 
+                              <br> <strong>Coca-Cola Posts:</strong> ${product} (${prod_pos}% positive) <br> <strong> Fanta Posts: </strong> ${competitor} (${compet_pos}% positive)
+                              <br> <strong>TV Show to Advertise During: </strong> ${mode_show} `)
                      .addTo(map);
                });
                     
