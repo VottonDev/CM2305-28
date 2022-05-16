@@ -18,7 +18,7 @@ function analysis(text) {
 //read in json payload
 const jsonData = require('./json.json');
 
-const prev_data = fs.readFileSync('pulled_data3.geojson');
+const prev_data = fs.readFileSync('pulled_data_load.geojson');
 const myObject = JSON.parse(prev_data);
 
 // hold all objects to later convert to JSON file
@@ -81,7 +81,7 @@ setTimeout(function () {
     myObject.push(temp);
   }
   const geoConvert = JSON.stringify(myObject);
-  fs.writeFile('pulled_data3.geojson', geoConvert, 'utf8', function (err) {
+  fs.writeFile('pulled_data_load.geojson', geoConvert, 'utf8', function (err) {
     if (err) {
       console.log('An error occured while writing JSON Object to File.');
       return console.log(err);
