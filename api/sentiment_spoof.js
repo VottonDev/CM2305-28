@@ -97,7 +97,7 @@ fs.writeFile('pulled_data_load.geojson', geoConvert, 'utf8', function (err) {
 });
 
 //create data filters
-const coca_filter = ['in', 'product', 'Coca-cola'];
+const coca_filter = ['in', 'product', 'Coca-Cola'];
 const fanta_filter = ['in', 'product', 'Fanta'];
 const positive_sent_filter = ['in', 'sentiment', 'positive'];
 const negative_sent_filter = ['in', 'sentiment', 'negative'];
@@ -155,7 +155,7 @@ fs.writeFile('fanta_neg.geojson', fanta_neg, 'utf8', function (err) {
 });
 // eslint-disable-next-line no-unused-vars
 var country_demo = JSON.stringify(geoFilter(geoWrap, demo_country_filter));
-fs.writeFile('country_demo.geojson', coca, 'utf8', function (err) {
+fs.writeFile('country_demo.geojson', country_demo, 'utf8', function (err) {
   if (err) {
     console.log('An error occured while writing JSON Object to File.');
     return console.log(err);
