@@ -68,11 +68,6 @@ function setupMap(){
                cluster:false
           });
 
-          map.addSource('invisData', {
-               type: 'geojson',
-               data: 'api\\pulled_data_load.geojson',
-               cluster:false
-          })
           
           map.addLayer({ //add data count for each cluster
                id: 'cluster-count',
