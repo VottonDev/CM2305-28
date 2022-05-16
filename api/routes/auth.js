@@ -11,12 +11,14 @@ app.post('/register', (req, res) => {
   let password = req.body.password;
   let confirm_password = req.body.confirm_password;
 
+  // Check that passwords match
   if (password !== confirm_password) {
     return res.status(400).send({
       success: false,
       message: 'Passwords do not match',
     });
   } else {
+    // Hash the password using bcrypt
     bcrypt.hash(password, 10, (err, hash) => {
       if (err) {
         return res.status(500).send({
@@ -24,6 +26,7 @@ app.post('/register', (req, res) => {
           message: err,
         });
       } else {
+        // Create a randomised token that's 64 characters, covert to String hex format
         var token = require('crypto').randomBytes(64).toString('hex');
         db.query('INSERT INTO Users (username, email, password, token) VALUES (?, ?, ?, ?)', [username, email, hash, token], (err) => {
           if (err) {
@@ -32,6 +35,7 @@ app.post('/register', (req, res) => {
               message: err,
             });
           } else {
+            // Use e-mail module to send confirmation e-mail
             mail.sendEmail(email, 'Confirm your account', 'Click the link below to confirm your account: http://localhost:3001/auth/verify/' + email + '/' + token);
             return res.status(200).send({
               success: true,
@@ -61,6 +65,7 @@ app.post('/login', (req, res) => {
         message: 'User does not exist',
       });
     }
+    // Convert password to hash and compare it with the hash in the database
     bcrypt.compare(password, result[0].password, (err, valid_password) => {
       if (err) {
         return res.status(500).send({

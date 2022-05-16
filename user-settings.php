@@ -1,4 +1,8 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+if (!(isset($_SESSION['username']))) {
+    header('Location: login.php');
+}
+?>
 
 <div style="background-image: url('static/images/frontpage_map.png');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3" style="padding-top: 2%; padding-bottom: 5%;">
