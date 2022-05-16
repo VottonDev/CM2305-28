@@ -285,11 +285,15 @@ function setupMap(){
           clusterLayer("coke_only");
           map.setFilter('heatmap_layer', ['==', ['get', 'product'], 'Coca-cola']);
     }  
-
+     // eslint-disable-next-line no-unused-vars
      const coca_filter = ['in', 'product', 'Coca-cola'];
+     // eslint-disable-next-line no-unused-vars
      const fanta_filter = ['in', 'product', 'Fanta'];
+     // eslint-disable-next-line no-unused-vars
      const positive_sent_filter = ['in', 'sentiment', 'positive'];
+     // eslint-disable-next-line no-unused-vars
      const negative_sent_filter = ['in', 'sentiment', 'negative'];
+     // eslint-disable-next-line no-unused-vars
      const country_demo_filter = ['in', 'country_code', 'CHN'];
 
     //for demo purposes in presentation
