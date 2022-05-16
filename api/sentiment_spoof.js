@@ -93,7 +93,7 @@ const coca_filter = ['in', 'product', 'Coca-cola'];
 const fanta_filter = ['in', 'product', 'Fanta'];
 const positive_sent_filter = ['in', 'sentiment', 'positive'];
 const negative_sent_filter = ['in', 'sentiment', 'negative'];
- const demo_country_filter = ['==', 'country_code', 'CHN'];
+const demo_country_filter = ['==', 'country_code', 'CHN'];
 
 // write various filters to geojsons. Have to filter raw geojson as mapbox cluster layer doesn't allow filter application after intialisation
 var coca = JSON.stringify(geoFilter(geoWrap, coca_filter));
@@ -145,7 +145,7 @@ fs.writeFile('fanta_neg.geojson', fanta_neg, 'utf8', function (err) {
     return console.log(err);
   }
 });
-
+// eslint-disable-next-line no-unused-vars
 var country_demo = JSON.stringify(geoFilter(geoWrap, demo_country_filter));
 fs.writeFile('country_demo.geojson', coca, 'utf8', function (err) {
   if (err) {
@@ -153,4 +153,3 @@ fs.writeFile('country_demo.geojson', coca, 'utf8', function (err) {
     return console.log(err);
   }
 });
-
