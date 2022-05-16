@@ -35,7 +35,8 @@ async function get_recent_tweets(jsonArr) {
             payload.data.interests = response.data.data[i].context_annotations[0].domain.description;
             payload.data.text = response.data.data[i].text;
             payload.data.author_id = response.data.data[i].author_id;
-            payload.data.coordinates = response.data.includes.places[counter-1].geo.bbox;
+            payload.data.coordinates = [(response.data.includes.places[counter-1].geo.bbox[2]-response.data.includes.places[counter-1].geo.bbox[0])/2,
+          (response.data.includes.places[counter-1].geo.bbox[3]-response.data.includes.places[counter-1].geo.bbox[1])/2];
             payload.data.country_code = response.data.includes.places[counter-1].country_code;
             payload.data.source = response.data.data[i].source;
             payload.data.retweets = response.data.data[i].public_metrics.retweet_count;
