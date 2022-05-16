@@ -94,7 +94,7 @@ if (!(isset($_SESSION['username']))) {
     $interest_count = [];
 
     for ($i = 0; $i < $totalPosts; ++$i) {
-        $interest_name = $json_data['features'][$i]['properties']['interests'];
+        $interest_name = @$json_data['features'][$i]['properties']['interests'];
         if (!(in_array($interest_name, $interest_names))) {
             $interest_names[] = $interest_name;
             $interest_count[] = 1;
