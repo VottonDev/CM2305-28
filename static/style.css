@@ -204,3 +204,32 @@ padding-right:5%;
   height: 500px;
   margin: 0 auto;
 }
+.stat_value{
+  text-align: left;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+.table{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+}
+.num{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+.num1{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-weight: medium;
+}
+.right-align2 {
+  position: absolute;
+  left:90%;
+  top:10%;
+}

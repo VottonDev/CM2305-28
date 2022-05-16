@@ -1,0 +1,1509 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [95.44, 32.34] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "ARE",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [55.02, 23.66] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "height         : 165\nshoe size    : 40\nzodiac sign : aries\ntattoos        : 0\npiercings     : 0\nfav color     : sage green\nfav drink     : coca cola, toracafe milky latte\n\nanyone who sees this tweet has to quote it with their own https://t.co/XurMWaoQks",
+        "author_id": "1512760887966601216",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "IRN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [61.57, 28.88] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "The Resident",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-72.01, 70.62] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "1489014262475468800",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "IRN",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [59.83, 28.73] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "See this is why an Edit Button\nIs necessary Elon Coca-Cola\n@elonmusk  I miss spelled the\nName Sayuri (*Saure*)\nCause U no I'm a klutzy Dude\nSometimes ehhhh",
+        "author_id": "3407012453",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "MEX",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-98.97, 26.29] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@agencialavieja mi perro caniche, le ladra a un mastín napolitano, pero no anda sintiéndose referente de San Martin por ello!!\naparte no cruzaste la cordillera, no revelaste la formula de la coca cola, le pegaste a un periodista rentado, del que todos sabemos que trabaja para Macri",
+        "author_id": "2492207160",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter Web App",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Named people in the world like Nelson Mandela"
+      },
+      "geometry": { "type": "Point", "coordinates": [47.78, -73.2] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [118.3, 31.7] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "ZAF",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [18.73, -32.09] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "1489014262475468800",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [80.45, -80.25] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "20803768",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-110.44, 64.72] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "La gente soñando con ser influencer y yo solo quiero que Coca-Cola zero me use de promoción a cambio de mandarme cajas 😂\n\nSí, tengo un problema de adicción y no me escondo.",
+        "author_id": "29446870",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 1,
+        "likes": 7,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-95.39, -82.05] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "DEU",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [10.21, 53.35] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [76.14, 65.01] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14733264",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "TweetDeck",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-96.71, 55.51] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@jenoculo la vodka e lo jager sopra 😭 in realtà era una storia per chiederci quale alcolico prendere da abbinare alla coca cola",
+        "author_id": "1169323843758022657",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "COL",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-69.26, 4.66] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [131.88, 62.83] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Me invitas a comer en tu casa y obligatoriamente me tienes que servir coca-cola friita si no quieres que te deje la comida servida",
+        "author_id": "358160643",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [85.93, 28.58] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-104.47, 67.22] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "no me gusta la pepsi, soy team coca cola",
+        "author_id": "1227369517413806080",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "NGA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [8.17, 9.13] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "height         : 165\nshoe size    : 40\nzodiac sign : aries\ntattoos        : 0\npiercings     : 0\nfav color     : sage green\nfav drink     : coca cola, toracafe milky latte\n\nanyone who sees this tweet has to quote it with their own https://t.co/XurMWaoQks",
+        "author_id": "1512760887966601216",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-118.15, 61.11] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14733264",
+        "sentiment": "negative",
+        "tv_show": "This Is Us",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "TweetDeck",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [109.41, 22.62] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@NCTDreamINA coca cola jerman sama korea rasanya beda kah na?😭",
+        "author_id": "741267996690128896",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "USA",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-96.28, 48.56] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@jenoculo la vodka e lo jager sopra 😭 in realtà era una storia per chiederci quale alcolico prendere da abbinare alla coca cola",
+        "author_id": "1169323843758022657",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-69.74, -74.17] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [40.53, -69.09] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@NCTDreamINA coca cola jerman sama korea rasanya beda kah na?😭",
+        "author_id": "741267996690128896",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [7.63, -75.39] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [63.46, -68.81] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [41.39, -80.35] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.74, 56.02] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "628727094",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-71.22, 69.27] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Me invitas a comer en tu casa y obligatoriamente me tienes que servir coca-cola friita si no quieres que te deje la comida servida",
+        "author_id": "358160643",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [163.07, -75.18] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [122.96, 54.16] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "1489014262475468800",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "PAK",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [70.46, 29.57] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "See this is why an Edit Button\nIs necessary Elon Coca-Cola\n@elonmusk  I miss spelled the\nName Sayuri (*Saure*)\nCause U no I'm a klutzy Dude\nSometimes ehhhh",
+        "author_id": "3407012453",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "USA",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-94.15, 47.94] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "no me gusta la pepsi, soy team coca cola",
+        "author_id": "1227369517413806080",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [154.11, -79.07] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "La gente soñando con ser influencer y yo solo quiero que Coca-Cola zero me use de promoción a cambio de mandarme cajas 😂\n\nSí, tengo un problema de adicción y no me escondo.",
+        "author_id": "29446870",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "NIC",
+        "source": "Twitter for Android",
+        "retweets": 1,
+        "likes": 7,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-87.25, 12.54] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14733264",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "USA",
+        "source": "TweetDeck",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-81.71, 28.23] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [133.08, 68.47] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@agencialavieja mi perro caniche, le ladra a un mastín napolitano, pero no anda sintiéndose referente de San Martin por ello!!\naparte no cruzaste la cordillera, no revelaste la formula de la coca cola, le pegaste a un periodista rentado, del que todos sabemos que trabaja para Macri",
+        "author_id": "2492207160",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter Web App",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Named people in the world like Nelson Mandela"
+      },
+      "geometry": { "type": "Point", "coordinates": [90.36, 55.74] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14822662",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "OMN",
+        "source": "Twitter for iPhone",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [53.21, 18.47] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [35.63, 58.74] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "MNG",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [106.87, 44.66] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "See this is why an Edit Button\nIs necessary Elon Coca-Cola\n@elonmusk  I miss spelled the\nName Sayuri (*Saure*)\nCause U no I'm a klutzy Dude\nSometimes ehhhh",
+        "author_id": "3407012453",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "IND",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [70.89, 22.22] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "no me gusta la pepsi, soy team coca cola",
+        "author_id": "1227369517413806080",
+        "sentiment": "negative",
+        "tv_show": "This Is Us",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [147.44, -69.79] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14733264",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "FIN",
+        "source": "TweetDeck",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [23.67, 61.86] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14822662",
+        "sentiment": "negative",
+        "tv_show": "This Is Us",
+        "product": "Coca-cola",
+        "country_code": "BRA",
+        "source": "Twitter for iPhone",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-42.71, -16.13] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [173.02, 67.16] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Me invitas a comer en tu casa y obligatoriamente me tienes que servir coca-cola friita si no quieres que te deje la comida servida",
+        "author_id": "358160643",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [99.55, 25.44] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14733264",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "TweetDeck",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-120.54, -76.41] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [117.89, 24.4] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "NGA",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [8, 10.64] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "height         : 165\nshoe size    : 40\nzodiac sign : aries\ntattoos        : 0\npiercings     : 0\nfav color     : sage green\nfav drink     : coca cola, toracafe milky latte\n\nanyone who sees this tweet has to quote it with their own https://t.co/XurMWaoQks",
+        "author_id": "1512760887966601216",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "BRA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-67.61, -1.85] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "COD",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [23.64, 3.23] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "20803768",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "MLI",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [0.23, 19.2] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "628727094",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [22.9, -74.27] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter Web App",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [102.55, -65.98] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "20803768",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [163.12, -70.95] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "no me gusta la pepsi, soy team coca cola",
+        "author_id": "1227369517413806080",
+        "sentiment": "negative",
+        "tv_show": "The Resident",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [147.31, 61.13] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "The Resident",
+        "product": "Coca-cola",
+        "country_code": "NOR",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [18.83, 79.29] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [106.04, -77.98] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "height         : 165\nshoe size    : 40\nzodiac sign : aries\ntattoos        : 0\npiercings     : 0\nfav color     : sage green\nfav drink     : coca cola, toracafe milky latte\n\nanyone who sees this tweet has to quote it with their own https://t.co/XurMWaoQks",
+        "author_id": "1512760887966601216",
+        "sentiment": "negative",
+        "tv_show": "Star Trek: Picard",
+        "product": "Coca-cola",
+        "country_code": "ROU",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [22.5, 46.33] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "1231395613390069760",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "USA",
+        "source": "Twitter for Android",
+        "retweets": 73,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-163.82, 60.51] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "See this is why an Edit Button\nIs necessary Elon Coca-Cola\n@elonmusk  I miss spelled the\nName Sayuri (*Saure*)\nCause U no I'm a klutzy Dude\nSometimes ehhhh",
+        "author_id": "3407012453",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [135.39, 63.71] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "20803768",
+        "sentiment": "negative",
+        "tv_show": "Star Trek: Picard",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [162.47, -76.35] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Coca Cola y Millo, a q @TheBigBossPutin no ataca  a Finlandia ya? Advierto esto su tienen muchas armas tecnológicas q Putin no aguantaria https://t.co/b5td7OTLZn",
+        "author_id": "1083134007431319552",
+        "sentiment": "negative",
+        "tv_show": "This Is Us",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-108.27, 58.98] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "ARG",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-66.26, -24.1] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "height         : 165\nshoe size    : 40\nzodiac sign : aries\ntattoos        : 0\npiercings     : 0\nfav color     : sage green\nfav drink     : coca cola, toracafe milky latte\n\nanyone who sees this tweet has to quote it with their own https://t.co/XurMWaoQks",
+        "author_id": "1512760887966601216",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [125.26, 67.01] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [115.48, 45.24] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "See this is why an Edit Button\nIs necessary Elon Coca-Cola\n@elonmusk  I miss spelled the\nName Sayuri (*Saure*)\nCause U no I'm a klutzy Dude\nSometimes ehhhh",
+        "author_id": "3407012453",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "GRL",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-44.23, 65.36] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "La gente soñando con ser influencer y yo solo quiero que Coca-Cola zero me use de promoción a cambio de mandarme cajas 😂\n\nSí, tengo un problema de adicción y no me escondo.",
+        "author_id": "29446870",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 1,
+        "likes": 7,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [64.91, -77.51] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14822662",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "LTU",
+        "source": "Twitter for iPhone",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [22.71, 54.52] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "NOR",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [8.11, 60.82] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "GRL",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-40.66, 72.63] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Me invitas a comer en tu casa y obligatoriamente me tienes que servir coca-cola friita si no quieres que te deje la comida servida",
+        "author_id": "358160643",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [144.86, 63.66] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "67384528",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [152.87, -83.52] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "@agencialavieja mi perro caniche, le ladra a un mastín napolitano, pero no anda sintiéndose referente de San Martin por ello!!\naparte no cruzaste la cordillera, no revelaste la formula de la coca cola, le pegaste a un periodista rentado, del que todos sabemos que trabaja para Macri",
+        "author_id": "2492207160",
+        "sentiment": "negative",
+        "tv_show": "FBI",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter Web App",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Named people in the world like Nelson Mandela"
+      },
+      "geometry": { "type": "Point", "coordinates": [83.93, 44.13] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "14822662",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "ARG",
+        "source": "Twitter for iPhone",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-55.94, -28.32] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "483897140",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "SVK",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [18.04, 48.34] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "New Amsterdam",
+        "product": "Coca-cola",
+        "country_code": "TZA",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [30.67, -7.85] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "1489014262475468800",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "BRA",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-59.86, -5.91] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "628727094",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "CAN",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-122.45, 60.61] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "GRL",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-60.31, 77.08] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "MasterChef Australia",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-19.85, -77.51] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "1231395613390069760",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "CZE",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [12.27, 50.23] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "20803768",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "PRY",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [-60.53, -20.96] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "O que eu mesmo esperava aconteceu 😩😩😩😩😩 proibida tomar coca cola",
+        "author_id": "1210638528868225025",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "ARG",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-72.22, -48.66] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Check out Coca-Cola 12 Oz stainless steel Mug with Lid New CC Football￼ Logo￼  New https://t.co/MwOuUBvYde #eBay via @eBay",
+        "author_id": "3633055761",
+        "sentiment": "negative",
+        "tv_show": "Ozark",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [95.14, -75.89] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "20803768",
+        "sentiment": "negative",
+        "tv_show": "Better Call Saul",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for Android",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [57.85, -77.81] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "no me gusta la pepsi, soy team coca cola",
+        "author_id": "1227369517413806080",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "CHN",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [89.7, 43.17] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Coca Cola y Millo, a q @TheBigBossPutin no ataca  a Finlandia ya? Advierto esto su tienen muchas armas tecnológicas q Putin no aguantaria https://t.co/b5td7OTLZn",
+        "author_id": "1083134007431319552",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [-82.28, -74.2] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "Me invitas a comer en tu casa y obligatoriamente me tienes que servir coca-cola friita si no quieres que te deje la comida servida",
+        "author_id": "358160643",
+        "sentiment": "negative",
+        "tv_show": "The Resident",
+        "product": "Coca-cola",
+        "country_code": "ATA",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [126.23, -72.03] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "RT @adamkoford: Sure, you're familiar with the hidden arrow in the FedEx logo, but did you know about the confused wheeled elephant on ever…",
+        "author_id": "191748769",
+        "sentiment": "negative",
+        "tv_show": "Moon Knight",
+        "product": "Coca-cola",
+        "country_code": "AUS",
+        "source": "Twitter Web App",
+        "retweets": 74,
+        "likes": 0,
+        "interests": "Categories within Brand Verticals that narrow down the scope of Brands"
+      },
+      "geometry": { "type": "Point", "coordinates": [133.96, -21.54] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "See this is why an Edit Button\nIs necessary Elon Coca-Cola\n@elonmusk  I miss spelled the\nName Sayuri (*Saure*)\nCause U no I'm a klutzy Dude\nSometimes ehhhh",
+        "author_id": "3407012453",
+        "sentiment": "negative",
+        "tv_show": "Halo",
+        "product": "Coca-cola",
+        "country_code": "RUS",
+        "source": "Twitter for Android",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [170.56, 68.34] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "text": "no me gusta la pepsi, soy team coca cola",
+        "author_id": "1227369517413806080",
+        "sentiment": "negative",
+        "tv_show": "The Resident",
+        "product": "Coca-cola",
+        "country_code": "KOR",
+        "source": "Twitter for iPhone",
+        "retweets": 0,
+        "likes": 0,
+        "interests": "Top level entities that describe a Brands industry"
+      },
+      "geometry": { "type": "Point", "coordinates": [128.69, 37.13] }
+    }
+  ]
+}

@@ -67,7 +67,7 @@ for (let i = 0; i < jsonData.length; i++) {
       tempshow = show;
       //console.log(geoJSON);
     })
-    .catch((err) => {
+    .catch(() => {
       geoJSON['properties']['tv_show'] = ' ';
     });
 }
