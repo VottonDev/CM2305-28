@@ -22,7 +22,7 @@ if (!(isset($_SESSION['username']))) {
     $sentiment_fanta['total'] = 0;
 
     foreach ($json_data['features'] as $post) {
-        if ('Coca-cola' == $post['properties']['product']) {
+        if ('Coca-Cola' == $post['properties']['product']) {
             ++$sentiment_cola['total'];
             if ('positive' == $post['properties']['sentiment']) {
                 ++$sentiment_cola['positive'];
@@ -162,7 +162,7 @@ if (!(isset($_SESSION['username']))) {
 
         <div class="stat">
           <div class="stat_name"> Interests </div>
-          <div class="num1"> <?php echo $interest_name; ?> </div>
+          <div class="num2"> <?php echo $interest_name; ?> </div>
         </div>
       </div>
     </div>
