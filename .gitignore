@@ -4,3 +4,5 @@ api/node_modules
 vendor
 .php-cs-fixer.cache
 .idea
+.env
+api/.env
