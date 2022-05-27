@@ -1,19 +1,19 @@
 CM2305 Cardiff University Group Project (Social media sentiment analyser)
 
-To run the project, you need the following programs:
-NodeJS (https://nodejs.org/en/)
-PHP (https://www.php.net/)
-A webserver (e.g. Apache)
-MySQL Database (https://www.mysql.com/)
+To run the project, you need the following programs:<br>
+NodeJS (https://nodejs.org/en/)<br>
+PHP (https://www.php.net/)<br>
+A webserver (e.g. Apache)<br>
+MySQL Database (https://www.mysql.com/)<br>
 A SMTP server (e.g. Mailgun) (Optional)
 
-Alternatively:
+Alternatively:<br>
 WAMP (https://www.wampserver.com/) (Windows only)
 
-Other requirements:
-Twitter API access (https://developer.twitter.com/en/apps)
-Trakt API access (https://trakt.tv/oauth/applications)
-Mapbox API access (https://www.mapbox.com/developers/api/overview/)
+Other requirements:<br>
+Twitter API access (https://developer.twitter.com/en/apps)<br>
+Trakt API access (https://trakt.tv/oauth/applications)<br>
+Mapbox API access (https://www.mapbox.com/developers/api/overview/)<br>
 Flickr API access (https://www.flickr.com/services/api/misc.api_keys.html) (Optional)
 
 You need to create a .env file in the api directory of the project with the following variables:
