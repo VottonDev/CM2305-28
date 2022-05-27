@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const compression = require('compression');
 const cors = require('cors');
+const limiter = require('express-rate-limit');
 const app = express();
 const auth = require('./routes/auth.js');
 const profile = require('./routes/profile.js');
@@ -15,6 +16,12 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+// Ratelimit requests
+const limiter = new limiter({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+});
+
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -25,7 +32,9 @@ app.use(compression());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(cors(corsOptions));
+  app.use(limiter);
 }
+
 app.use('/auth', auth);
 app.use('/profile', profile);
 app.use('/twitter', twitter);
