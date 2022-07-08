@@ -17,7 +17,7 @@ const corsOptions = {
 };
 
 // Ratelimit requests
-const limiter = new limiter({
+const ip_limiter = new limiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
 });
@@ -32,7 +32,7 @@ app.use(compression());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(cors(corsOptions));
-  app.use(limiter);
+  app.use(ip_limiter);
 }
 
 app.use('/auth', auth);
