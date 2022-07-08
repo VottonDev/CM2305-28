@@ -16,7 +16,9 @@
 </div>
 
 <div>
-  <textarea style="margin-top:2em; font-family:Century Gothic;" name="message" placeholder="Enter your message here" cols="30" rows="15"></textarea>
+  <div class="textarea-container">
+    <textarea name="message" placeholder="Enter your message here" cols="30" rows="15"></textarea>
+  </div>
 </div>
 
 <div>

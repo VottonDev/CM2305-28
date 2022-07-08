@@ -18,7 +18,7 @@ console.log(myObject.length);
 
 let counter = 0;
 
-async function get_recent_tweets(jsonArr) {
+async function get_recent_tweets() {
   function getRandomFloat(min, max, decimals) {
     const str = (Math.random() * (max - min) + min).toFixed(decimals);
     return parseFloat(str);
@@ -30,7 +30,6 @@ async function get_recent_tweets(jsonArr) {
 
   //let token = req.body.token;
   query = 'Fanta';
-  jsonArr = [];
   let token = process.env.TWITTER_TOKEN;
   const response = await axios.get(
     'https://api.twitter.com/2/tweets/search/recent' +

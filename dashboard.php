@@ -170,7 +170,7 @@ if (!(isset($_SESSION['username']))) {
     <div class="container2">
       <div class="db_output">
       <div class="titles">  Overall Sentiment </div>
-      <table class="table">
+      <table aria-label="table" class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col"> </th>
@@ -208,7 +208,7 @@ if (!(isset($_SESSION['username']))) {
     </div>
 
     <div class="container2">
-    <table class="table table-dark">
+    <table aria-label="dark table" class="table table-dark">
   <thead>
     <tr>
       <th scope="col"> </th>
