@@ -2,7 +2,7 @@
 
 
     <div class="imgbox">
-      <img class="center-fit" src ="static/images/front_map.PNG">
+      <img alt="front map" class="center-fit" src ="static/images/front_map.PNG">
     </div>
 
     <h1 class="center-header"> Find your Market </h1>
