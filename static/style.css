@@ -239,3 +239,7 @@ padding-right:5%;
   font-size: 15px;
   font-weight: 300;
 }
+.textarea-container {
+  margin-top: 2em;
+  font-family: "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
+}
