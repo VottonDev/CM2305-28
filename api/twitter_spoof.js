@@ -18,7 +18,7 @@ console.log(myObject.length);
 
 let counter = 0;
 
-async function get_recent_tweets(jsonArr = []) {
+async function get_recent_tweets() {
   function getRandomFloat(min, max, decimals) {
     const str = (Math.random() * (max - min) + min).toFixed(decimals);
     return parseFloat(str);
