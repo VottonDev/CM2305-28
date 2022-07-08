@@ -22,18 +22,18 @@ footer{
 .center-header{
   padding-top: 2.5%;
   text-align: center;
-  font-family: "Century Gothic";
+  font-family:  "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
 }
 .intro-p{
   text-align:center;
-  font-family: "Century Gothic";
+  font-family:  "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
 }
 .btn-container{
   padding-top:2.5%;
 }
 .signup-btns{
   text-align: center;
-  font-family: "Century Gothic";
+  font-family:  "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
   font-size: 30px;
 }
 .signup-btns li{
@@ -99,7 +99,7 @@ padding-right:5%;
 .stat .stat_name{
   font-size: 20px;
   color:#ededed;
-  font-family:"Century Gothic";
+  font-family: "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
   padding-left: 20px;
   padding-top:15px;
   min-height:70px;
@@ -126,7 +126,7 @@ padding-right:5%;
 .titles{
   font-size:20px;
   color:#ededed;
-  font-family:"Century Gothic";
+  font-family: "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
   padding-left:30px;
   padding-top:15px;
 }
@@ -161,7 +161,7 @@ padding-right:5%;
   margin-top:2rem;
   border:none;
   border-bottom: 2px solid black;
-  font-family: "Century Gothic";
+  font-family:  "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
 }
 .submit-btn{
   padding:1rem;   
@@ -182,7 +182,7 @@ padding-right:5%;
   margin: 0 auto;
   text-align: center;
   border-collapse: collapse;
-  font-family: "Century Gothic";
+  font-family:  "Century Gothic" , CenturyGothic, AppleGothic, sans-serif;
 }
 .usersettingTable tr td {
   width: 500px;
