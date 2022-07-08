@@ -12,7 +12,7 @@
     "multilang-sentiment": "^2.0.0",
     "mysql": "^2.18.1",
     "nodemailer": "^6.7.5",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "promise": "^8.1.0",
     "random-coordinates": "^1.0.1",
     "trakt.tv": "^8.1.1",
