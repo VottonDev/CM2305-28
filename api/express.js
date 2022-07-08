@@ -17,7 +17,7 @@ const corsOptions = {
 };
 
 // Ratelimit requests
-const ip_limiter = new limiter({
+const ip_limiter = limiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
 });
