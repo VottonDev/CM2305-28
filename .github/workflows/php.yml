@@ -29,9 +29,6 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run friendsofphp/php-cs-fixer
-      run: PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix . --dry-run --show-progress=dots --using-cache=no --verbose
-
     - name: Build test suite
       run: php vendor/bin/codecept build
 
